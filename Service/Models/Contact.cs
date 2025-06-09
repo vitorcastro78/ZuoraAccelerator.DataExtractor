@@ -16,7 +16,7 @@ namespace Service.Models
         /// <value>Identifier of a customer account with which this contact is associated.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
@@ -31,7 +31,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -151,7 +151,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

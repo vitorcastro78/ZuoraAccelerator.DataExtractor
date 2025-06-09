@@ -56,7 +56,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -191,7 +191,7 @@ namespace Service.Models
         /// <value>The ID of a contact that belongs to the billing account of the order line item. Use this field to assign an existing account as the sold-to contact of an order line item.</value>
         [DataMember(Name = "original_sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_sold_to_id")]
-        public Guid OriginalSoldToId { get; set; }
+        public string OriginalSoldToId { get; set; }
 
         /// <summary>
         /// Identifier of the price.
@@ -199,7 +199,7 @@ namespace Service.Models
         /// <value>Identifier of the price.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public Guid PriceId { get; set; }
+        public string PriceId { get; set; }
 
         /// <summary>
         /// The product code for the order line item.
@@ -262,7 +262,7 @@ namespace Service.Models
         /// <value>Customer address used for calculating tax.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public Guid SoldToId { get; set; }
+        public string SoldToId { get; set; }
 
         /// <summary>
         /// The date a transaction starts. The default value of this field is the order date.
@@ -358,7 +358,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

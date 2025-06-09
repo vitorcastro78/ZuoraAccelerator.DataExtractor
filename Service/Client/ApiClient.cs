@@ -762,7 +762,7 @@ namespace Service.Client
                             break;
                     }
                    
-                    _context.SaveChanges();
+                    //_context.SaveChanges();
 
                     Counter++;
                 }

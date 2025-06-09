@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>Identifier of the credit memo template associated with this customer.</value>
         [DataMember(Name = "credit_memo_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_memo_template_id")]
-        public Guid CreditMemoTemplateId { get; set; }
+        public string CreditMemoTemplateId { get; set; }
 
         /// <summary>
         /// Identifier of the debit memo template associated with this customer.
@@ -32,7 +32,7 @@ namespace Service.Models
         /// <value>Identifier of the debit memo template associated with this customer.</value>
         [DataMember(Name = "debit_memo_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "debit_memo_template_id")]
-        public Guid DebitMemoTemplateId { get; set; }
+        public string DebitMemoTemplateId { get; set; }
 
         /// <summary>
         /// Whether the customer wants to receive email invoices.
@@ -48,7 +48,7 @@ namespace Service.Models
         /// <value>Identifier of the invoice template associated with this customer.</value>
         [DataMember(Name = "invoice_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_template_id")]
-        public Guid InvoiceTemplateId { get; set; }
+        public string InvoiceTemplateId { get; set; }
 
         /// <summary>
         /// Whether the customer wants to receive printed invoices.

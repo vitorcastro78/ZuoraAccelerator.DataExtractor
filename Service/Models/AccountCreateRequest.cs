@@ -63,7 +63,7 @@ namespace Service.Models
         /// <value>Identifier of the communication profile associated with this customer.</value>
         [DataMember(Name = "communication_profile_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "communication_profile_id")]
-        public Guid CommunicationProfileId { get; set; }
+        public string CommunicationProfileId { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -71,7 +71,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -87,7 +87,7 @@ namespace Service.Models
         /// <value>CRM account identifier.</value>
         [DataMember(Name = "crm_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "crm_id")]
-        public Guid CrmId { get; set; }
+        public string CrmId { get; set; }
 
         /// <summary>
         /// Three-letter ISO currency code. Once the currency is set for an account, it cannot be updated.
@@ -118,7 +118,7 @@ namespace Service.Models
         /// <value>Identifier of the default payment method on the customer account.</value>
         [DataMember(Name = "default_payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "default_payment_method_id")]
-        public Guid DefaultPaymentMethodId { get; set; }
+        public string DefaultPaymentMethodId { get; set; }
 
         /// <summary>
         /// An arbitrary string attached to the object. Often useful for displaying to users.
@@ -134,7 +134,7 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The name of the customer account.
@@ -150,7 +150,7 @@ namespace Service.Models
         /// <value>Identifier of this customer's parent account, if any.</value>
         [DataMember(Name = "parent_account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parent_account_id")]
-        public Guid ParentAccountId { get; set; }
+        public string ParentAccountId { get; set; }
 
         /// <summary>
         /// Payment gateway name.
@@ -190,7 +190,7 @@ namespace Service.Models
         /// <value>The identifier or the billing document sequence set that is assigned to the customer account.</value>
         [DataMember(Name = "sequence_set_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence_set_id")]
-        public Guid SequenceSetId { get; set; }
+        public string SequenceSetId { get; set; }
 
         /// <summary>
         /// Customer address used for calculating tax.
@@ -220,7 +220,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

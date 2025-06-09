@@ -16,7 +16,7 @@ namespace Service.Models
         /// <value>Identifier of the account that owns the invoice.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account that owns the invoice.

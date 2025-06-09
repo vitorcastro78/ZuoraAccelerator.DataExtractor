@@ -18,12 +18,12 @@ namespace Service.Models
         public SubscriptionPreviewAccountRequest AccountData { get; set; }
 
         /// <summary>
-        /// Identifier of the account that owns the order.
+        /// Identifier of the account.
         /// </summary>
-        /// <value>Identifier of the account that owns the order.</value>
+        /// <value>Identifier of the account.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account. It can be user-supplied.

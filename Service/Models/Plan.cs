@@ -32,7 +32,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -80,7 +80,7 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The name of the plan.
@@ -120,7 +120,7 @@ namespace Service.Models
         /// <value>Identifier of the product associated with this plan.</value>
         [DataMember(Name = "product_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "product_id")]
-        public Guid ProductId { get; set; }
+        public string ProductId { get; set; }
 
         /// <summary>
         /// The product sku. This field is only availble for customers using high speed cache.
@@ -144,7 +144,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

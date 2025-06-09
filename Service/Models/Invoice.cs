@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>Identifier of the account that owns the invoice.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account that owns the invoice.
@@ -59,20 +59,20 @@ namespace Service.Models
         public AllOfinvoiceBillTo BillTo { get; set; }
 
         /// <summary>
-        /// Identifier of the bill-to contact.
+        /// ID of the bill-to contact.
         /// </summary>
-        /// <value>Identifier of the bill-to contact.</value>
+        /// <value>ID of the bill-to contact.</value>
         [DataMember(Name = "bill_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_to_id")]
-        public Guid BillToId { get; set; }
+        public string BillToId { get; set; }
 
         /// <summary>
-        /// Identifier of the user who created the invoice.
+        /// Unique identifier of the Zuora user who created the object
         /// </summary>
-        /// <value>Identifier of the user who created the invoice.</value>
+        /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -136,7 +136,7 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// A human-readable identifier for the invoice; may be user-supplied.
@@ -187,12 +187,12 @@ namespace Service.Models
         public string PaymentTerms { get; set; }
 
         /// <summary>
-        /// Identifier of the user who posted the invoice.
+        /// Identifier of the Zuora user who posted the invoice.
         /// </summary>
-        /// <value>Identifier of the user who posted the invoice.</value>
+        /// <value>Identifier of the Zuora user who posted the invoice.</value>
         [DataMember(Name = "posted_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posted_by_id")]
-        public Guid PostedById { get; set; }
+        public string PostedById { get; set; }
 
         /// <summary>
         /// The total balance remaining.
@@ -211,12 +211,12 @@ namespace Service.Models
         public AllOfinvoiceSoldTo SoldTo { get; set; }
 
         /// <summary>
-        /// Identifier of the sold-to contact.
+        /// ID of the sold-to contact.
         /// </summary>
-        /// <value>Identifier of the sold-to contact.</value>
+        /// <value>ID of the sold-to contact.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public Guid SoldToId { get; set; }
+        public string SoldToId { get; set; }
 
         /// <summary>
         /// The status of the invoice.
@@ -266,12 +266,12 @@ namespace Service.Models
         public bool? TransferToAccounting { get; set; }
 
         /// <summary>
-        /// Identifier of the user who last updated the invoice.
+        /// Unique identifier of the Zuora user who last updated the object
         /// </summary>
-        /// <value>Identifier of the user who last updated the invoice.</value>
+        /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

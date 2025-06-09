@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
-using System;
 
 namespace Service.Models
 {
@@ -167,7 +166,7 @@ namespace Service.Models
         /// <value>The unique identifier of a contact belonging to the billing account of the order line item. Use this field to assign and existing contact as the sold to contact of an order line item.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public Guid SoldToId { get; set; }
+        public string SoldToId { get; set; }
 
         /// <summary>
         /// The date a transaction starts. The default value of this field is the order date.

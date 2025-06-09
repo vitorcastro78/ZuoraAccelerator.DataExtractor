@@ -34,20 +34,20 @@ namespace Service.Models
         public bool? DraftInvoice { get; set; }
 
         /// <summary>
-        /// Identifier of the payment gateway.
+        /// Identifier of the payment gateway Zuora will use to authorize the payments that are made with this payment method.
         /// </summary>
-        /// <value>Identifier of the payment gateway.</value>
+        /// <value>Identifier of the payment gateway Zuora will use to authorize the payments that are made with this payment method.</value>
         [DataMember(Name = "payment_gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_gateway_id")]
-        public Guid PaymentGatewayId { get; set; }
+        public string PaymentGatewayId { get; set; }
 
         /// <summary>
-        /// Identifier of the payment method.
+        /// Payment method Id used to pay billing documents.
         /// </summary>
-        /// <value>Identifier of the payment method.</value>
+        /// <value>Payment method Id used to pay billing documents.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public Guid PaymentMethodId { get; set; }
+        public string PaymentMethodId { get; set; }
 
         /// <summary>
         /// Gets or Sets RefundReasonCode

@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
-using System;
 
 namespace Service.Models
 {
@@ -33,7 +32,7 @@ namespace Service.Models
         /// <value>Identifier of the taxation item to which the payment is applied.</value>
         [DataMember(Name = "taxation_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxation_item_id")]
-        public Guid TaxationItemId { get; set; }
+        public string TaxationItemId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

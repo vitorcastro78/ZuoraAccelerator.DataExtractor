@@ -16,7 +16,7 @@ namespace Service.Models
         /// <value>Identifier of the customer account associated with this payment.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account associated with this payment. It can be user-supplied.
@@ -40,7 +40,7 @@ namespace Service.Models
         /// <value>Identifier of the authorization transaction from the payment gateway.</value>
         [DataMember(Name = "authorization_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorization_id")]
-        public Guid AuthorizationId { get; set; }
+        public string AuthorizationId { get; set; }
 
         /// <summary>
         /// Indicates to which billing documents (invoices or debit memos) are the payment applied.
@@ -56,7 +56,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -111,7 +111,7 @@ namespace Service.Models
         /// <value>Identifier of the payment gateway that Zuora will use to authorize this payment.</value>
         [DataMember(Name = "gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gateway_id")]
-        public Guid GatewayId { get; set; }
+        public string GatewayId { get; set; }
 
         /// <summary>
         /// Gets or Sets GatewayOptions
@@ -126,7 +126,7 @@ namespace Service.Models
         /// <value>A merchant-specified natural key value that can be passed to the payment gateway when a payment is created. If not specified, the payment number will be passed in instead.</value>
         [DataMember(Name = "gateway_order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gateway_order_id")]
-        public Guid GatewayOrderId { get; set; }
+        public string GatewayOrderId { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -134,7 +134,7 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The date and time when the payment takes effect.
@@ -150,7 +150,7 @@ namespace Service.Models
         /// <value>Identifier of the payment method used to create this payment.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public Guid PaymentMethodId { get; set; }
+        public string PaymentMethodId { get; set; }
 
         /// <summary>
         /// Transaction identifier returned by the payment gateway. You may use this field to reconcile payments between your payment gateway and Zuora Payments.
@@ -158,7 +158,7 @@ namespace Service.Models
         /// <value>Transaction identifier returned by the payment gateway. You may use this field to reconcile payments between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reference_id")]
-        public Guid ReferenceId { get; set; }
+        public string ReferenceId { get; set; }
 
         /// <summary>
         /// A second transaction identifier returned by the payment gateway if there is an additional transaction for the refunds. You may use this field to reconcile payments between your payment gateway and Zuora Payments.
@@ -166,7 +166,7 @@ namespace Service.Models
         /// <value>A second transaction identifier returned by the payment gateway if there is an additional transaction for the refunds. You may use this field to reconcile payments between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "second_reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "second_reference_id")]
-        public Guid SecondReferenceId { get; set; }
+        public string SecondReferenceId { get; set; }
 
         /// <summary>
         /// A payment gateway-specific field used by Orbital, Vantiv and Verifi.
@@ -190,7 +190,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

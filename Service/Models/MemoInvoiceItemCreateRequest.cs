@@ -70,7 +70,7 @@ namespace Service.Models
         /// <value>The identifier of the invoice item associated with this memo item.</value>
         [DataMember(Name = "invoice_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_item_id")]
-        public Guid InvoiceItemId { get; set; }
+        public string InvoiceItemId { get; set; }
 
         /// <summary>
         /// Name of the invoice item displayed to customers on billing documents.
@@ -94,7 +94,7 @@ namespace Service.Models
         /// <value>The identifier of the price this invoice item is associated with.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public Guid PriceId { get; set; }
+        public string PriceId { get; set; }
 
         /// <summary>
         /// The purchase order number associated with this invoice item.

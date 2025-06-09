@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>Identifier of an invoice item that this credit memo item is applied to.</value>
         [DataMember(Name = "applied_to_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applied_to_item_id")]
-        public Guid AppliedToItemId { get; set; }
+        public string AppliedToItemId { get; set; }
 
         /// <summary>
         /// Type of the charge. It can be one of the following types: one-time, recurring, or usage.
@@ -118,7 +118,7 @@ namespace Service.Models
         /// <value>The identifier of the subscription associated with the credit memo item.</value>
         [DataMember(Name = "subscription_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_id")]
-        public Guid SubscriptionId { get; set; }
+        public string SubscriptionId { get; set; }
 
         /// <summary>
         /// The identifier the subscription item associated with this credit memo item.
@@ -126,7 +126,7 @@ namespace Service.Models
         /// <value>The identifier the subscription item associated with this credit memo item.</value>
         [DataMember(Name = "subscription_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_item_id")]
-        public Guid SubscriptionItemId { get; set; }
+        public string SubscriptionItemId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the subscription. It can be user-supplied.

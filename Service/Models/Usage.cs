@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>Identifier of the account associated with this subscription. Either `account_id` or `account_number` is required.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account. It can be user-supplied. Either `account_number` or `account_id` is required.
@@ -40,7 +40,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -119,7 +119,7 @@ namespace Service.Models
         /// <value>The identifier of the subscription associated with the billing document item.</value>
         [DataMember(Name = "subscription_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_id")]
-        public Guid SubscriptionId { get; set; }
+        public string SubscriptionId { get; set; }
 
         /// <summary>
         /// Identifier of the subscription item.
@@ -127,7 +127,7 @@ namespace Service.Models
         /// <value>Identifier of the subscription item.</value>
         [DataMember(Name = "subscription_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_item_id")]
-        public Guid SubscriptionItemId { get; set; }
+        public string SubscriptionItemId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the subscription item.
@@ -159,7 +159,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

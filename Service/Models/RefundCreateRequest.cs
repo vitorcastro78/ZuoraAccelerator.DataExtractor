@@ -86,7 +86,7 @@ namespace Service.Models
         /// <value>Identifier for the payment, either `payment_number` or `payment_id.</value>
         [DataMember(Name = "payment_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_id")]
-        public Guid PaymentId { get; set; }
+        public string PaymentId { get; set; }
 
         /// <summary>
         /// Identifier of the payment method used to create this refund.
@@ -94,7 +94,7 @@ namespace Service.Models
         /// <value>Identifier of the payment method used to create this refund.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public Guid PaymentMethodId { get; set; }
+        public string PaymentMethodId { get; set; }
 
         /// <summary>
         /// User-provided reason for the refund.
@@ -110,7 +110,7 @@ namespace Service.Models
         /// <value>Transaction identifier returned by the payment gateway. You may use this field to reconcile refunds between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reference_id")]
-        public Guid ReferenceId { get; set; }
+        public string ReferenceId { get; set; }
 
         /// <summary>
         /// The date when the refund takes effect.
@@ -133,7 +133,7 @@ namespace Service.Models
         /// <value>A second transaction identifier returned by the payment gateway if there is an additional transaction for the refunds. You may use this field to reconcile payments between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "second_reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "second_reference_id")]
-        public Guid SecondReferenceId { get; set; }
+        public string SecondReferenceId { get; set; }
 
         /// <summary>
         /// A payment gateway-specific field used by Orbital, Vantiv and Verifi.

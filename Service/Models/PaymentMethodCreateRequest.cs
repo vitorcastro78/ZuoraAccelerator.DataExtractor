@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
-using System;
 
 namespace Service.Models
 {
@@ -25,7 +24,7 @@ namespace Service.Models
         /// <value>A customer account identifier.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// A human-readable customer account identifier. It can be user-supplied.
@@ -76,7 +75,7 @@ namespace Service.Models
         /// <value>The first six or eight digits of the payment method's number, such as the credit card number or account number. Banks use this number to identify a payment method.</value>
         [DataMember(Name = "bank_identification_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_identification_number")]
-        public Guid BankIdentificationNumber { get; set; }
+        public string BankIdentificationNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets BetalingsDebit
@@ -112,7 +111,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -151,7 +150,7 @@ namespace Service.Models
         /// <value>Identifier of the device browser session.</value>
         [DataMember(Name = "device_session_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "device_session_id")]
-        public Guid DeviceSessionId { get; set; }
+        public string DeviceSessionId { get; set; }
 
         /// <summary>
         /// Identifier of the payment gateway Zuora will use to authorize the payments that are made with this payment method.
@@ -159,7 +158,7 @@ namespace Service.Models
         /// <value>Identifier of the payment gateway Zuora will use to authorize the payments that are made with this payment method.</value>
         [DataMember(Name = "gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gateway_id")]
-        public Guid GatewayId { get; set; }
+        public string GatewayId { get; set; }
 
         /// <summary>
         /// Gets or Sets GatewayOptions
@@ -271,7 +270,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

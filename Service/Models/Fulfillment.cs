@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -64,7 +64,7 @@ namespace Service.Models
         /// <value>An external identifier for the fulfillment.</value>
         [DataMember(Name = "external_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "external_id")]
-        public Guid ExternalId { get; set; }
+        public string ExternalId { get; set; }
 
         /// <summary>
         /// The date of the fulfillment.
@@ -112,7 +112,7 @@ namespace Service.Models
         /// <value>The unique identifier of the associated order line item.</value>
         [DataMember(Name = "order_line_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_line_item_id")]
-        public Guid OrderLineItemId { get; set; }
+        public string OrderLineItemId { get; set; }
 
         /// <summary>
         /// The number of units of this item.
@@ -167,7 +167,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

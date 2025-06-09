@@ -32,7 +32,7 @@ namespace Service.Models
         /// <value>Identifier of the billing document to which the credit memo, payment, or refund is applied.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The billing document items (invoice items or debit memo items or taxation items) to which the payment is applied.

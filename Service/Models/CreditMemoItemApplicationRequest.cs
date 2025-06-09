@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
-using System;
 
 namespace Service.Models
 {
@@ -25,7 +24,7 @@ namespace Service.Models
         /// <value>The identifier of the credit memo item to apply.</value>
         [DataMember(Name = "credit_memo_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_memo_item_id")]
-        public Guid CreditMemoItemId { get; set; }
+        public string CreditMemoItemId { get; set; }
 
         /// <summary>
         /// The identifier of the credit memo taxation item to apply.
@@ -33,7 +32,7 @@ namespace Service.Models
         /// <value>The identifier of the credit memo taxation item to apply.</value>
         [DataMember(Name = "credit_memo_taxation_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_memo_taxation_item_id")]
-        public Guid CreditMemoTaxationItemId { get; set; }
+        public string CreditMemoTaxationItemId { get; set; }
 
         /// <summary>
         /// The identifier of an invoice item or debit memo item.
@@ -49,7 +48,7 @@ namespace Service.Models
         /// <value>The identifier of a taxation item.</value>
         [DataMember(Name = "taxation_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxation_item_id")]
-        public Guid TaxationItemId { get; set; }
+        public string TaxationItemId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

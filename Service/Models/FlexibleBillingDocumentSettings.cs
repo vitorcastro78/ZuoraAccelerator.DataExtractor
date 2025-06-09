@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
-using System;
 
 namespace Service.Models
 {
@@ -17,7 +16,7 @@ namespace Service.Models
         /// <value>ID of the billing document sequence set.</value>
         [DataMember(Name = "sequence_set_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence_set_id")]
-        public Guid SequenceSetId { get; set; }
+        public string SequenceSetId { get; set; }
 
         /// <summary>
         /// Identifier of the invoice template associated with this customer. Not applicable for debit memos or credit memos.
@@ -25,7 +24,7 @@ namespace Service.Models
         /// <value>Identifier of the invoice template associated with this customer. Not applicable for debit memos or credit memos.</value>
         [DataMember(Name = "template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template_id")]
-        public Guid TemplateId { get; set; }
+        public string TemplateId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
