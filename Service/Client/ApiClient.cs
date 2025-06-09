@@ -69,31 +69,13 @@ namespace Service.Client
 
         public string BasePath { get; set; }
 
-        /// <summary>
-        /// Gets or sets the base path.
-        /// </summary>
-        /// <value>The base path</value>
-
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
         public Dictionary<string, string> DefaultHeader
         {
             get { return _defaultHeaderMap; }
         }
 
-        /// <summary>
-        /// Gets or sets the RestClient.
-        /// </summary>
-        /// <value>An instance of the RestClient</value>
         public RestClient RestClient { get; set; }
 
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
         public void AddDefaultHeader(string key, string value)
         {
             _defaultHeaderMap.Add(key, value);
@@ -402,10 +384,6 @@ namespace Service.Client
             }
         }
 
-
-
-
-
         /// <summary>
         /// Escape string (url-encoded).
         /// </summary>
@@ -415,7 +393,6 @@ namespace Service.Client
         {
             return HttpUtility.UrlEncode(str);
         }
-
 
         public void FillPersistentTable<T>(string path, Dictionary<string, string> queryParams, string postBody)
         {
@@ -449,8 +426,6 @@ namespace Service.Client
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException((int)response.StatusCode, $"Error calling {path}: " + response.ErrorMessage, response.ErrorMessage);
         }
-
-
 
         public T ExecuteRequest<T>(string path, Dictionary<string, string> queryParams, string postBody)
         {
@@ -534,7 +509,6 @@ namespace Service.Client
                 return apiKeyValue;
         }
 
-
         public string GetToken()
         {
             var token = new ZuoraToken();
@@ -602,8 +576,6 @@ namespace Service.Client
                 return Convert.ToString(obj);
         }
 
-
-
         /// <summary>
         /// Serialize an object into JSON string.
         /// </summary>
@@ -647,7 +619,6 @@ namespace Service.Client
                 }
             }
         }
-
         private void FillCache(dynamic resultData, out int counter)
         {
             if (resultData.Data != null)
@@ -656,9 +627,9 @@ namespace Service.Client
                 {
                     var propriedadeDbSet = _context.GetType()
                             .GetProperties()
-                            .FirstOrDefault(p => p.Name.Equals(item.GetType().Name, StringComparison.OrdinalIgnoreCase) &&
-                                     p.PropertyType.IsGenericType &&
-                                     p.PropertyType.GetGenericTypeDefinition() == typeof(DbSet<>));
+                            .FirstOrDefault(p => p.Name.Equals(item.GetType().Name, StringComparison.OrdinalIgnoreCase) && 
+                            p.PropertyType.IsGenericType &&
+                            p.PropertyType.GetGenericTypeDefinition() == typeof(DbSet<>));
 
                     switch (item.GetType().Name)
                     {
@@ -763,7 +734,6 @@ namespace Service.Client
                             _context.Contact.Add(contactMapped);
                             break;
 
-
                         default:
                             break;
                     }
@@ -774,7 +744,7 @@ namespace Service.Client
             }
             else
             {
-                global::System.Diagnostics.Debug.WriteLine($"No data found for {resultData.GetType().Name}");
+               Console.WriteLine($"No data found for {resultData.GetType().Name}");
             }
             counter = Counter;
         }
@@ -785,16 +755,14 @@ namespace Service.Client
             string path = uri.AbsolutePath;
             string[] segments = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
 
-            // Remove o último segmento (que seria o ID)
+            // Remove o Ãºltimo segmento (que seria o ID)
             if (segments.Length > 0)
             {
-                // Junta todos os segmentos exceto o último
+                // Junta todos os segmentos exceto o Ãºltimo
                 routeWithoutId = "/" + string.Join("/", segments.Take(segments.Length - 1));
             }
             return routeWithoutId;
         }
-
-
         private object InserirEntidadeDinamica(string nomeTabela, object entidade)
         {
             var propriedadeDbSet = _context.GetType()
@@ -804,7 +772,7 @@ namespace Service.Client
                                p.PropertyType.GetGenericTypeDefinition() == typeof(DbSet<>));
 
             if (propriedadeDbSet == null)
-                throw new ArgumentException($"DbSet '{nomeTabela}' não encontrado");
+                throw new ArgumentException($"DbSet '{nomeTabela}' nÃ£o encontrado");
 
             var dbSet = propriedadeDbSet.GetValue(_context);
             var addMethod = dbSet.GetType().GetMethod("Add");
