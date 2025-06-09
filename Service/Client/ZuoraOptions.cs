@@ -18,7 +18,7 @@
 
         public PromotionSection Promotion { get; set; }
 
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
 
         public IDictionary<string, WorkFlowSection> WorkflowSections { get; set; }
 
@@ -46,14 +46,14 @@
 
             public string PaymentGateway { get; set; }
 
-            public string SequenceSetID { get; set; }
+            public Guid SequenceSetID { get; set; }
         }
 
         public class HostedPage
         {
             public string Gateway { get; set; }
 
-            public string PageId { get; set; }
+            public Guid PageId { get; set; }
         }
 
         public class LocaleSection
