@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string? CreatedById { get; set; }
+        public Guid? CreatedById  { get; set; }
 
         /// <summary>
         /// Gets or Sets File
@@ -94,7 +94,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

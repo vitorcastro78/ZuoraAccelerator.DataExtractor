@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the customer account the payment schedule belongs to.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string? AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Account number of the customer account the payment schedule belongs to.
@@ -49,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the user who created the payment schedule.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string? CreatedById { get; set; }
+        public Guid? CreatedById  { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -248,7 +248,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the user who last updated the payment schedule.</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string? UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Indicates whether to generate a preview of future invoice items and credit memo items with the assumption that the subscriptions are renewed. **all**: The assumption is applied to all the subscriptions. Zuora generates preview invoice item data and credit memo item data from the first day of the customer's next billing period to the target date. **auto_renew_only**: The assumption is applied to the subscriptions that have auto_renew enabled. Zuora generates preview invoice item data and credit memo item data from the first day of the customer's next billing period to the target date.</value>
         [DataMember(Name = "assume_renewal")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assume_renewal")]
-        public string AssumeRenewal { get; set; }
+        public string? AssumeRenewal { get; set; }
 
         /// <summary>
         /// Identifiers of the customer account batches to be included in this bill run preview.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier for this object.</value>
         [DataMember(Name = "billing_preview_run_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_preview_run_number")]
-        public string BillingPreviewRunNumber { get; set; }
+        public string? BillingPreviewRunNumber { get; set; }
 
         /// <summary>
         /// Charge type or types to be excluded from this bill run preview.
@@ -49,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -88,7 +88,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// If true, draft items will be included in this bill run preview.
@@ -128,7 +128,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The state of the bill run preview.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Gets or Sets StateTransitions
@@ -151,7 +151,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -165,7 +165,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

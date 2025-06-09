@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code defined in **Finance Settings > Configure Accounting Codes** in your Zuora tenant.</value>
         [DataMember(Name = "accounting_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accounting_code")]
-        public string AccountingCode { get; set; }
+        public string? AccountingCode { get; set; }
 
         /// <summary>
         /// An active account in your Zuora Chart of Accounts.
@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active account in your Zuora Chart of Accounts.</value>
         [DataMember(Name = "account_receivable_accounting_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_receivable_accounting_code")]
-        public string AccountReceivableAccountingCode { get; set; }
+        public string? AccountReceivableAccountingCode { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -32,13 +32,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

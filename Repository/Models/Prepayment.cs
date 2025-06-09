@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The way to calculate credit. See <a href='https://knowledgecenter.zuora.com/Zuora_Billing/Billing_and_Invoicing/JA_Advanced_Consumption_Billing/Prepaid_with_Drawdown/A_Create_prepayment_charge#Credit_Option'  target='_blank'>Credit Option</a> for more information.</value>
         [DataMember(Name = "credit_option")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_option")]
-        public string CreditOption { get; set; }
+        public string? CreditOption { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The number of units included in a prepayment charge.
@@ -49,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A configured unit of measure. This field is required for per-unit prices.</value>
         [DataMember(Name = "unit_of_measure")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unit_of_measure")]
-        public string UnitOfMeasure { get; set; }
+        public string? UnitOfMeasure { get; set; }
 
         /// <summary>
         /// The period in which the prepayment units are valid to use as defined in a prepayment charge.
@@ -57,13 +57,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>The period in which the prepayment units are valid to use as defined in a prepayment charge.</value>
         [DataMember(Name = "validity_period")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "validity_period")]
-        public Guid ValidityPeriod { get; set; }
+        public Guid? ValidityPeriod { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

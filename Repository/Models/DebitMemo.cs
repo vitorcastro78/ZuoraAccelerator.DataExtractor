@@ -217,7 +217,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of payment term associated with the invoice.</value>
         [DataMember(Name = "payment_terms")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_terms")]
-        public string PaymentTerms { get; set; }
+        public string? PaymentTerms { get; set; }
 
         /// <summary>
         /// Identifier of the Zuora user who posted the debit memo.
@@ -225,7 +225,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the Zuora user who posted the debit memo.</value>
         [DataMember(Name = "posted_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posted_by_id")]
-        public Guid PostedById { get; set; }
+        public Guid? PostedById { get; set; }
 
         /// <summary>
         /// Reason for issuing this debit memo. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.
@@ -233,7 +233,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Reason for issuing this debit memo. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.</value>
         [DataMember(Name = "reason_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason_code")]
-        public string ReasonCode { get; set; }
+        public string? ReasonCode { get; set; }
 
         /// <summary>
         /// The total balance remaining.
@@ -249,7 +249,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The status of the debit memo.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Gets or Sets StateTransitions
@@ -296,7 +296,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -310,7 +310,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

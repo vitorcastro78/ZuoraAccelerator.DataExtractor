@@ -26,7 +26,7 @@
 
         public string ZuoraIdempotencyKey { get; set; }
 
-        public Guid ZuoraTrackId { get; set; } = Guid.NewGuid();
+         public Guid? ZuoraTrackId { get; set; } = Guid.NewGuid();
 
         public class CountrySection
         {
@@ -58,9 +58,9 @@
 
         public class LocaleSection
         {
-            public Guid CommunicationProfile { get; set; }
+             public Guid? CommunicationProfile { get; set; }
 
-            public Guid InvoiceTemplate { get; set; }
+             public Guid? InvoiceTemplate { get; set; }
         }
 
         public class PromotionSection

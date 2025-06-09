@@ -157,7 +157,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string? Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The maximum quantity for a price. Specify this field and the `min_quantity` field to create a range of quantities allowed in a price.
@@ -196,7 +196,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Specify the ID of a plan to which this price is associated.</value>
         [DataMember(Name = "plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plan_id")]
-        public string? PlanId { get; set; }
+        public Guid? PlanId { get; set; }
 
         /// <summary>
         /// Specify the number of a plan to which this price is associated. This field is required if plan_id is not supplied
@@ -335,7 +335,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the user who last updated the price.</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string? UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -349,7 +349,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the shipping carrier for this fulfillment.</value>
         [DataMember(Name = "carrier")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "carrier")]
-        public string Carrier { get; set; }
+        public string? Carrier { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -57,7 +57,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string attached to the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// An external identifier for the fulfillment.
@@ -65,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An external identifier for the fulfillment.</value>
         [DataMember(Name = "external_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "external_id")]
-        public Guid ExternalId { get; set; }
+        public Guid? ExternalId { get; set; }
 
         /// <summary>
         /// The date of the fulfillment.
@@ -81,7 +81,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier for the object. It can be user-supplied.</value>
         [DataMember(Name = "fulfillment_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fulfillment_number")]
-        public string FulfillmentNumber { get; set; }
+        public string? FulfillmentNumber { get; set; }
 
         /// <summary>
         /// The fulfillment system for the fulfillment.
@@ -89,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The fulfillment system for the fulfillment.</value>
         [DataMember(Name = "fulfillment_system")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fulfillment_system")]
-        public string FulfillmentSystem { get; set; }
+        public string? FulfillmentSystem { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -97,7 +97,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The fulfillment location of the fulfillment.
@@ -113,7 +113,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of the associated order line item.</value>
         [DataMember(Name = "order_line_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_line_item_id")]
-        public Guid OrderLineItemId { get; set; }
+        public Guid? OrderLineItemId { get; set; }
 
         /// <summary>
         /// The number of units of this item.
@@ -136,7 +136,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The status of the invoice.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// All order line items associated with this fulfillment that were unbilled on or before this date are included in future bill runs.
@@ -152,7 +152,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The tracking number of the fulfillment.</value>
         [DataMember(Name = "tracking_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tracking_number")]
-        public string TrackingNumber { get; set; }
+        public string? TrackingNumber { get; set; }
 
         /// <summary>
         /// The type of fulfillment.
@@ -160,7 +160,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The type of fulfillment.</value>
         [DataMember(Name = "type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type")]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who last updated the object
@@ -168,7 +168,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -182,7 +182,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

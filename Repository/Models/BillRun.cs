@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the customer account to bill.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Number of accounts billed from this bill run.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the customer account batch to be included in this bill run.</value>
         [DataMember(Name = "batches")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "batches")]
-        public string Batches { get; set; }
+        public string? Batches { get; set; }
 
         /// <summary>
         /// Human-readable identifier for this object.
@@ -41,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier for this object.</value>
         [DataMember(Name = "bill_run_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_run_number")]
-        public string BillRunNumber { get; set; }
+        public string? BillRunNumber { get; set; }
 
         /// <summary>
         /// The date and time on which this bill run starts.
@@ -57,7 +57,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Type of the charge to be excluded from the bill run.</value>
         [DataMember(Name = "charges_excluded")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "charges_excluded")]
-        public string ChargesExcluded { get; set; }
+        public string? ChargesExcluded { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -65,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -105,7 +105,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The day of the month to bill multiple customer accounts.</value>
         [DataMember(Name = "day_of_month")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "day_of_month")]
-        public string DayOfMonth { get; set; }
+        public string? DayOfMonth { get; set; }
 
         /// <summary>
         /// If set to `true`, invoices will be automatically emailed to customers.
@@ -129,7 +129,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for this object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The date displayed on the invoice.
@@ -169,7 +169,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the bill run.</value>
         [DataMember(Name = "name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Indicates whether to automatically post a billing document after it is created.
@@ -193,7 +193,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Status of the bill run.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// All unbilled items on or before this date are included in this bill run.
@@ -209,7 +209,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -223,7 +223,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

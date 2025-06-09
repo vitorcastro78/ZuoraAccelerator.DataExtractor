@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account associated with this subscription.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string? AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// If this field is set to `true`, the subscription automatically renews at the end of the current term.
@@ -57,7 +57,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the bill-to contact.</value>
         [DataMember(Name = "bill_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_to_id")]
-        public string? BillToId { get; set; }
+        public Guid? BillToId { get; set; }
 
         /// <summary>
         /// The reason for cancelling the subscription.
@@ -89,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string? CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -105,7 +105,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>3-letter ISO 4217 currency code. This field is available only if you have the [Multiple Currencies](https://knowledgecenter.zuora.com/Zuora_Billing/Bill_your_customers/Flexible_Billing/Multiple_Currencies) feature enabled.</value>
         [DataMember(Name = "currency")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency")]
-        public string Currency { get; set; }
+        public string? Currency { get; set; }
 
         /// <summary>
         /// Current term information for the subscription
@@ -193,7 +193,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account that owns the invoice associated with this subscription.</value>
         [DataMember(Name = "invoice_owner_account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_owner_account_id")]
-        public string? InvoiceOwnerAccountId { get; set; }
+        public Guid? InvoiceOwnerAccountId { get; set; }
 
         /// <summary>
         /// If true, the subscription is billed separately from other subscriptions. If false, the subscription is included with other subscriptions in the account invoice. The default is false.
@@ -225,7 +225,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The order number of the order created by Zuora.</value>
         [DataMember(Name = "order_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_number")]
-        public string OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// The name of payment term associated with the invoice.
@@ -281,7 +281,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the sold-to contact.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public string? SoldToId { get; set; }
+        public Guid? SoldToId { get; set; }
 
         /// <summary>
         /// Date when the subscription starts.
@@ -321,7 +321,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string? UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -339,66 +339,5 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version")]
         public int? Version { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Subscription {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  UpdatedById: ").Append(UpdatedById).Append("\n");
-            sb.Append("  UpdatedTime: ").Append(UpdatedTime).Append("\n");
-            sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  CreatedTime: ").Append(CreatedTime).Append("\n");
-            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
-            sb.Append("  CustomObjects: ").Append(CustomObjects).Append("\n");
-            sb.Append("  SubscriptionNumber: ").Append(SubscriptionNumber).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
-            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-            sb.Append("  Account: ").Append(Account).Append("\n");
-            sb.Append("  InvoiceOwnerAccountId: ").Append(InvoiceOwnerAccountId).Append("\n");
-            sb.Append("  InvoiceOwnerAccount: ").Append(InvoiceOwnerAccount).Append("\n");
-            sb.Append("  AutoRenew: ").Append(AutoRenew).Append("\n");
-            sb.Append("  LatestVersion: ").Append(LatestVersion).Append("\n");
-            sb.Append("  InitialTerm: ").Append(InitialTerm).Append("\n");
-            sb.Append("  CurrentTerm: ").Append(CurrentTerm).Append("\n");
-            sb.Append("  RenewalTerm: ").Append(RenewalTerm).Append("\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  ContractEffective: ").Append(ContractEffective).Append("\n");
-            sb.Append("  ServiceActivation: ").Append(ServiceActivation).Append("\n");
-            sb.Append("  CustomerAcceptance: ").Append(CustomerAcceptance).Append("\n");
-            sb.Append("  InvoiceSeparately: ").Append(InvoiceSeparately).Append("\n");
-            sb.Append("  OrderNumber: ").Append(OrderNumber).Append("\n");
-            sb.Append("  SubscriptionPlans: ").Append(SubscriptionPlans).Append("\n");
-            sb.Append("  InvoiceItems: ").Append(InvoiceItems).Append("\n");
-            sb.Append("  PrepaidBalance: ").Append(PrepaidBalance).Append("\n");
-            sb.Append("  PrepaidBalances: ").Append(PrepaidBalances).Append("\n");
-            sb.Append("  ContractedMrr: ").Append(ContractedMrr).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  CancelReason: ").Append(CancelReason).Append("\n");
-            sb.Append("  LastBookingDate: ").Append(LastBookingDate).Append("\n");
-            sb.Append("  BillToId: ").Append(BillToId).Append("\n");
-            sb.Append("  PaymentTerms: ").Append(PaymentTerms).Append("\n");
-            sb.Append("  BillTo: ").Append(BillTo).Append("\n");
-            sb.Append("  BillingDocumentSettings: ").Append(BillingDocumentSettings).Append("\n");
-            sb.Append("  SoldToId: ").Append(SoldToId).Append("\n");
-            sb.Append("  SoldTo: ").Append(SoldTo).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
     }
 }

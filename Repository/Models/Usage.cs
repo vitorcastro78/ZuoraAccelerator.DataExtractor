@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account associated with this subscription. Either `account_id` or `account_number` is required.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string? AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account. It can be user-supplied. Either `account_number` or `account_id` is required.
@@ -89,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string? Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The number of units of this item.
@@ -120,7 +120,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the subscription associated with the billing document item.</value>
         [DataMember(Name = "subscription_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_id")]
-        public string? SubscriptionId { get; set; }
+        public Guid? SubscriptionId { get; set; }
 
         /// <summary>
         /// Identifier of the subscription item.
@@ -128,7 +128,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the subscription item.</value>
         [DataMember(Name = "subscription_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_item_id")]
-        public string? SubscriptionItemId { get; set; }
+        public Guid? SubscriptionItemId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the subscription item.
@@ -170,45 +170,6 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_time")]
         public DateTime? UpdatedTime { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Usage {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  UpdatedById: ").Append(UpdatedById).Append("\n");
-            sb.Append("  UpdatedTime: ").Append(UpdatedTime).Append("\n");
-            sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  CreatedTime: ").Append(CreatedTime).Append("\n");
-            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
-            sb.Append("  CustomObjects: ").Append(CustomObjects).Append("\n");
-            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
-            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-            sb.Append("  SubscriptionItemId: ").Append(SubscriptionItemId).Append("\n");
-            sb.Append("  SubscriptionItemNumber: ").Append(SubscriptionItemNumber).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  EndTime: ").Append(EndTime).Append("\n");
-            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  StartTime: ").Append(StartTime).Append("\n");
-            sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
-            sb.Append("  SubscriptionNumber: ").Append(SubscriptionNumber).Append("\n");
-            sb.Append("  UnitOfMeasure: ").Append(UnitOfMeasure).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Account: ").Append(Account).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+      
     }
 }

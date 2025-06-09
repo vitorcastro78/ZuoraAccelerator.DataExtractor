@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Mandate
@@ -31,13 +31,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>A gateway unique identifier that replaces sensitive payment method data. This field is conditionally required only when `token` is being used to represent a gateway customer profile.</value>
         [DataMember(Name = "second_token")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "second_token")]
-        public string SecondToken { get; set; }
+        public string? SecondToken { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

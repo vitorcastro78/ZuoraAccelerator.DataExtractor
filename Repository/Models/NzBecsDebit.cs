@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The bank account number of the account holder.</value>
         [DataMember(Name = "account_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_number")]
-        public string AccountNumber { get; set; }
+        public string? AccountNumber { get; set; }
 
         /// <summary>
         /// Identifier of the bank associated with this bank account.
@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the bank associated with this bank account.</value>
         [DataMember(Name = "bank_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_code")]
-        public string BankCode { get; set; }
+        public string? BankCode { get; set; }
 
         /// <summary>
         /// Identifier of the bank branch associated with this bank account.
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the bank branch associated with this bank account.</value>
         [DataMember(Name = "branch_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "branch_code")]
-        public string BranchCode { get; set; }
+        public string? BranchCode { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Mandate
@@ -53,7 +53,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

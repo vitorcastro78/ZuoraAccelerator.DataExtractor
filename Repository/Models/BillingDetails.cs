@@ -23,11 +23,11 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer email address.</value>
         [DataMember(Name = "email")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Customer full name or business name.
@@ -35,7 +35,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer full name or business name.</value>
         [DataMember(Name = "name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Customer phone (including extension).
@@ -43,13 +43,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer phone (including extension).</value>
         [DataMember(Name = "phone")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phone")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

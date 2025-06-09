@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the action.</value>
         [DataMember(Name = "action_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action_id")]
-        public Guid ActionId { get; set; }
+        public Guid? ActionId { get; set; }
 
         /// <summary>
         /// Specify this field to add subscription plans to existing subscriptions.
@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Specify this field to pause an existing subscription.
@@ -118,7 +118,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The action associated with this metric.</value>
         [DataMember(Name = "type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type")]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Specify this field to update subscription plans on the existing subscriptions.
@@ -132,7 +132,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

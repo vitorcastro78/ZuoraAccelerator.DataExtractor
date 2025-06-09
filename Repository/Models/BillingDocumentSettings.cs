@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the credit memo template associated with this customer.</value>
         [DataMember(Name = "credit_memo_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_memo_template_id")]
-        public string CreditMemoTemplateId { get; set; }
+        public string? CreditMemoTemplateId { get; set; }
 
         /// <summary>
         /// Identifier of the debit memo template associated with this customer.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the debit memo template associated with this customer.</value>
         [DataMember(Name = "debit_memo_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "debit_memo_template_id")]
-        public Guid DebitMemoTemplateId { get; set; }
+        public Guid? DebitMemoTemplateId { get; set; }
 
         /// <summary>
         /// Whether the customer wants to receive email invoices.
@@ -45,7 +45,7 @@ namespace ZIP2GO.Repository.Models
 
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Identifier of the invoice template associated with this customer.
@@ -53,7 +53,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the invoice template associated with this customer.</value>
         [DataMember(Name = "invoice_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_template_id")]
-        public Guid InvoiceTemplateId { get; set; }
+        public Guid? InvoiceTemplateId { get; set; }
 
         /// <summary>
         /// Whether the customer wants to receive printed invoices.
@@ -67,7 +67,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

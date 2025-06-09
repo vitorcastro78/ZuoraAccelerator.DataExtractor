@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Card brand.</value>
         [DataMember(Name = "brand")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "brand")]
-        public string Brand { get; set; }
+        public string? Brand { get; set; }
 
         /// <summary>
         /// One or two digit expiration month (1-12) of the credit card.
@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The last four digits of the card number.
@@ -48,13 +48,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>The last four digits of the card number.</value>
         [DataMember(Name = "last_4")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last_4")]
-        public string Last4 { get; set; }
+        public string? Last4 { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

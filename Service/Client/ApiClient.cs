@@ -8,6 +8,7 @@ using RestSharp;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Web;
 using ZIP2GO.Repository.Models;
@@ -387,6 +388,9 @@ namespace Service.Client
             }
 
             // at this point, it must be a model (json)
+
+
+
             try
             {
                 return JsonConvert.DeserializeObject(content, type);
@@ -396,6 +400,10 @@ namespace Service.Client
                 throw new ApiException(500, e.Message);
             }
         }
+
+
+
+
 
         /// <summary>
         /// Escape string (url-encoded).

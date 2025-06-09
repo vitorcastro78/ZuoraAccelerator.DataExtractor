@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Category of the order to indicate a product sale or return. Default value is `sale`.</value>
         [DataMember(Name = "category")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category")]
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string? CreatedById { get; set; }
+        public Guid? CreatedById  { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -63,7 +63,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string attached to the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -71,7 +71,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LineItems
@@ -94,7 +94,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The order number of the new order. If not provided, system will auto-generate a number for this order.     Note: Ensure that the order number does not contain a slash.</value>
         [DataMember(Name = "order_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_number")]
-        public string OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// The status of the order.
@@ -102,7 +102,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The status of the order.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who last updated the object
@@ -110,7 +110,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string? UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -124,7 +124,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

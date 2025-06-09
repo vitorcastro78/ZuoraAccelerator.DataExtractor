@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The number of units included in a prepayment charge.
@@ -33,13 +33,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>The period in which the prepayment units are valid to use as defined in a prepayment charge.</value>
         [DataMember(Name = "validity_period")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "validity_period")]
-        public Guid ValidityPeriod { get; set; }
+        public Guid? ValidityPeriod { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The total billing document amount that is written off.</value>
         [DataMember(Name = "amount")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "amount")]
-        public string Amount { get; set; }
+        public string? Amount { get; set; }
 
         /// <summary>
         /// The credit memo number.
@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The credit memo number.</value>
         [DataMember(Name = "credit_memo_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_memo_number")]
-        public string CreditMemoNumber { get; set; }
+        public string? CreditMemoNumber { get; set; }
 
         /// <summary>
         /// Reasons for failure.
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Reasons for failure.</value>
         [DataMember(Name = "failed_reason")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "failed_reason")]
-        public string FailedReason { get; set; }
+        public string? FailedReason { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The related invoice.
@@ -56,7 +56,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The invoice number.</value>
         [DataMember(Name = "invoice_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_number")]
-        public string InvoiceNumber { get; set; }
+        public string? InvoiceNumber { get; set; }
 
         /// <summary>
         /// The states of the transactions.
@@ -70,7 +70,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

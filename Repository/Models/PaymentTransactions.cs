@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The number of the payment.
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The number of the payment.</value>
         [DataMember(Name = "payment_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_number")]
-        public string PaymentNumber { get; set; }
+        public string? PaymentNumber { get; set; }
 
         /// <summary>
         /// The related payments.
@@ -54,7 +54,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Quantity of the prepaid balance transaction.
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Date on which the transaction occurs.</value>
         [DataMember(Name = "transaction_date")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transaction_date")]
-        public string TransactionDate { get; set; }
+        public string? TransactionDate { get; set; }
 
         /// <summary>
         /// An action that increases or decreases its associated prepaid balance.
@@ -40,13 +40,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>An action that increases or decreases its associated prepaid balance. </value>
         [DataMember(Name = "type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type")]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

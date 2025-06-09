@@ -23,7 +23,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Can be either the end of the current billing period or a specific date.
@@ -31,7 +31,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Can be either the end of the current billing period or a specific date.</value>
         [DataMember(Name = "pause_at")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pause_at")]
-        public string PauseAt { get; set; }
+        public string? PauseAt { get; set; }
 
         /// <summary>
         /// Date on which the subscription is paused.
@@ -39,7 +39,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Date on which the subscription is paused.</value>
         [DataMember(Name = "pause_date")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pause_date")]
-        public string PauseDate { get; set; }
+        public string? PauseDate { get; set; }
 
         /// <summary>
         /// Unit in which the pause duration is defined. One of day, week, month or year.
@@ -47,7 +47,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unit in which the pause duration is defined. One of day, week, month or year.</value>
         [DataMember(Name = "pause_interval")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pause_interval")]
-        public string PauseInterval { get; set; }
+        public string? PauseInterval { get; set; }
 
         /// <summary>
         /// The number of intervals in a duration where the subscription is paused. For example, pause_interval=year and pause_interval_count=1 represents a 1-year pause.
@@ -68,7 +68,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The Merchant ID that was configured for use with Apple Pay in the Apple iOS Developer Center.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The id of invoice this payment will apply to.      Note: When `collect_payment` is true, this field is required.      Only one invoice can be paid; for scenarios where you want to pay for multiple invoices, set collect_payment to false and use [Create Payment](#operation/createPayment) API separately.
@@ -41,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The id of invoice this payment will apply to.      Note: When `collect_payment` is true, this field is required.      Only one invoice can be paid; for scenarios where you want to pay for multiple invoices, set collect_payment to false and use [Create Payment](#operation/createPayment) API separately.</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public Guid InvoiceId { get; set; }
+        public Guid? InvoiceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Mandate
@@ -54,7 +54,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

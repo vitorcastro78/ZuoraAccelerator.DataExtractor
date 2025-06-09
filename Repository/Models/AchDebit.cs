@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The nine-digit routing number or ABA number used by banks.</value>
         [DataMember(Name = "bank_aba_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_aba_code")]
-        public string BankAbaCode { get; set; }
+        public string? BankAbaCode { get; set; }
 
         /// <summary>
         /// The name of the account holder, which can be either a person or a company.
@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the account holder, which can be either a person or a company.</value>
         [DataMember(Name = "bank_account_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_account_name")]
-        public string BankAccountName { get; set; }
+        public string? BankAccountName { get; set; }
 
         /// <summary>
         /// The bank account number of the account holder.
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The bank account number of the account holder.</value>
         [DataMember(Name = "bank_account_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_account_number")]
-        public string BankAccountNumber { get; set; }
+        public string? BankAccountNumber { get; set; }
 
         /// <summary>
         /// The type of bank account associated with the payment method.
@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The type of bank account associated with the payment method.</value>
         [DataMember(Name = "bank_account_type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_account_type")]
-        public string BankAccountType { get; set; }
+        public string? BankAccountType { get; set; }
 
         /// <summary>
         /// Name of the bank associated with this bank account.
@@ -48,7 +48,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Name of the bank associated with this bank account.</value>
         [DataMember(Name = "bank_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_name")]
-        public string BankName { get; set; }
+        public string? BankName { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -56,7 +56,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Mandate

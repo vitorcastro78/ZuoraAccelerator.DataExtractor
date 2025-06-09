@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets OverageRatedAmount
@@ -47,7 +47,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unit of measure for the prepaid balance.</value>
         [DataMember(Name = "prepaid_uom")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prepaid_uom")]
-        public Guid PrepaidUOM { get; set; }
+        public Guid? PrepaidUOM { get; set; }
 
         /// <summary>
         /// Remaining balance on the fund, which is the remaining units of the fund.
@@ -85,7 +85,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

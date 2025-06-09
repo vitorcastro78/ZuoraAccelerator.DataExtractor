@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of an invoice or a debit memo.</value>
         [DataMember(Name = "billing_document_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_id")]
-        public Guid BillingDocumentId { get; set; }
+        public Guid? BillingDocumentId { get; set; }
 
         /// <summary>
         /// The type of billing document. Can be one of the debit memo or invoice.
@@ -41,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The type of billing document. Can be one of the debit memo or invoice.</value>
         [DataMember(Name = "billing_document_type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_type")]
-        public string BillingDocumentType { get; set; }
+        public string? BillingDocumentType { get; set; }
 
         /// <summary>
         /// Identifier of the payment application.
@@ -49,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the payment application.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The related billing document item.
@@ -64,13 +64,13 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

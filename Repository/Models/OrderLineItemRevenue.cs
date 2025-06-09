@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "adjustment_revenue_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adjustment_revenue_account")]
-        public string AdjustmentRevenueAccount { get; set; }
+        public string? AdjustmentRevenueAccount { get; set; }
 
         /// <summary>
         /// An active accounting code in your Zuora chart of accounts.
@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "contract_recognized_revenue_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contract_recognized_revenue_account")]
-        public string ContractRecognizedRevenueAccount { get; set; }
+        public string? ContractRecognizedRevenueAccount { get; set; }
 
         /// <summary>
         /// An active accounting code in your Zuora chart of accounts.
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "deferred_revenue_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deferred_revenue_account")]
-        public string DeferredRevenueAccount { get; set; }
+        public string? DeferredRevenueAccount { get; set; }
 
         /// <summary>
         /// If set to `true`, any associated billing document items are excluded from the revenue accounting.
@@ -56,7 +56,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// An active accounting code in your Zuora chart of accounts.
@@ -64,7 +64,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "recognized_revenue_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recognized_revenue_account")]
-        public string RecognizedRevenueAccount { get; set; }
+        public string? RecognizedRevenueAccount { get; set; }
 
         /// <summary>
         /// The revenue recognition rule for the order line item.
@@ -72,13 +72,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>The revenue recognition rule for the order line item.</value>
         [DataMember(Name = "revenue_recognition_rule_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "revenue_recognition_rule_name")]
-        public string RevenueRecognitionRuleName { get; set; }
+        public string? RevenueRecognitionRuleName { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

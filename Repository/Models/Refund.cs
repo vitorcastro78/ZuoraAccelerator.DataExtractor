@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the customer this refund is for, if one exists.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string? AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Refund amount.
@@ -64,7 +64,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the user who created the refund.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string? CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -120,7 +120,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the gateway.</value>
         [DataMember(Name = "gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gateway_id")]
-        public string? GatewayId { get; set; }
+        public Guid? GatewayId { get; set; }
 
         /// <summary>
         /// Gets or Sets GatewayOptions
@@ -191,7 +191,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the payment.</value>
         [DataMember(Name = "payment_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_id")]
-        public string? PaymentId { get; set; }
+        public Guid? PaymentId { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethod
@@ -206,7 +206,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the payment method.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public string? PaymentMethodId { get; set; }
+        public Guid? PaymentMethodId { get; set; }
 
         /// <summary>
         /// The ID of the payout.
@@ -214,7 +214,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the payout.</value>
         [DataMember(Name = "payout_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payout_id")]
-        public string? PayoutId { get; set; }
+        public Guid? PayoutId { get; set; }
 
         /// <summary>
         /// User-provided reason for the refund.
@@ -230,7 +230,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the reference.</value>
         [DataMember(Name = "reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reference_id")]
-        public string? ReferenceId { get; set; }
+        public Guid? ReferenceId { get; set; }
 
         /// <summary>
         /// The date when the refund takes effect.
@@ -261,7 +261,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the second reference.</value>
         [DataMember(Name = "second_reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "second_reference_id")]
-        public string? SecondReferenceId { get; set; }
+        public Guid? SecondReferenceId { get; set; }
 
         /// <summary>
         /// The state of the refund.
@@ -308,7 +308,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the user who last updated the refund.</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string? UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -318,64 +318,6 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_time")]
         public DateTime? UpdatedTime { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
 
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Refund {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  UpdatedById: ").Append(UpdatedById).Append("\n");
-            sb.Append("  UpdatedTime: ").Append(UpdatedTime).Append("\n");
-            sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  CreatedTime: ").Append(CreatedTime).Append("\n");
-            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
-            sb.Append("  CustomObjects: ").Append(CustomObjects).Append("\n");
-            sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  GatewayOptions: ").Append(GatewayOptions).Append("\n");
-            sb.Append("  RefundDate: ").Append(RefundDate).Append("\n");
-            sb.Append("  RefundMethodType: ").Append(RefundMethodType).Append("\n");
-            sb.Append("  PaymentId: ").Append(PaymentId).Append("\n");
-            sb.Append("  ReasonCode: ").Append(ReasonCode).Append("\n");
-            sb.Append("  StatementDescriptor: ").Append(StatementDescriptor).Append("\n");
-            sb.Append("  StatementDescriptorPhone: ").Append(StatementDescriptorPhone).Append("\n");
-            sb.Append("  External: ").Append(External).Append("\n");
-            sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
-            sb.Append("  SecondReferenceId: ").Append(SecondReferenceId).Append("\n");
-            sb.Append("  BankAccountAccount: ").Append(BankAccountAccount).Append("\n");
-            sb.Append("  OnAccountAccount: ").Append(OnAccountAccount).Append("\n");
-            sb.Append("  UnappliedPaymentAccount: ").Append(UnappliedPaymentAccount).Append("\n");
-            sb.Append("  PaymentMethodId: ").Append(PaymentMethodId).Append("\n");
-            sb.Append("  CreditMemo: ").Append(CreditMemo).Append("\n");
-            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-            sb.Append("  Account: ").Append(Account).Append("\n");
-            sb.Append("  GatewayId: ").Append(GatewayId).Append("\n");
-            sb.Append("  Comment: ").Append(Comment).Append("\n");
-            sb.Append("  GatewayResponse: ").Append(GatewayResponse).Append("\n");
-            sb.Append("  GatewayResponseCode: ").Append(GatewayResponseCode).Append("\n");
-            sb.Append("  GatewayState: ").Append(GatewayState).Append("\n");
-            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
-            sb.Append("  RefundNumber: ").Append(RefundNumber).Append("\n");
-            sb.Append("  StateTransitions: ").Append(StateTransitions).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  GatewayReconciliationReason: ").Append(GatewayReconciliationReason).Append("\n");
-            sb.Append("  GatewayReconciliationStatus: ").Append(GatewayReconciliationStatus).Append("\n");
-            sb.Append("  PayoutId: ").Append(PayoutId).Append("\n");
-            sb.Append("  AppliedTo: ").Append(AppliedTo).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
     }
 }

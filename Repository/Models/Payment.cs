@@ -260,7 +260,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Transaction identifier returned by the payment gateway. You may use this field to reconcile payments between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reference_id")]
-        public Guid ReferenceId { get; set; }
+        public Guid? ReferenceId { get; set; }
 
         /// <summary>
         /// The total remaining balance.
@@ -276,7 +276,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A second transaction identifier returned by the payment gateway if there is an additional transaction for the refunds. You may use this field to reconcile payments between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "second_reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "second_reference_id")]
-        public Guid SecondReferenceId { get; set; }
+        public Guid? SecondReferenceId { get; set; }
 
         /// <summary>
         /// The state of the payment.
@@ -284,7 +284,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The state of the payment.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// A payment gateway-specific field used by Orbital, Vantiv and Verifi.
@@ -292,7 +292,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A payment gateway-specific field used by Orbital, Vantiv and Verifi.</value>
         [DataMember(Name = "statement_descriptor")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statement_descriptor")]
-        public string StatementDescriptor { get; set; }
+        public string? StatementDescriptor { get; set; }
 
         /// <summary>
         /// A payment gateway-specific field used by Orbital, Vantiv and Verifi.
@@ -300,7 +300,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A payment gateway-specific field used by Orbital, Vantiv and Verifi.</value>
         [DataMember(Name = "statement_descriptor_phone")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "statement_descriptor_phone")]
-        public string StatementDescriptorPhone { get; set; }
+        public string? StatementDescriptorPhone { get; set; }
 
         /// <summary>
         /// Gets or Sets StateTransitions
@@ -315,7 +315,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -329,7 +329,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

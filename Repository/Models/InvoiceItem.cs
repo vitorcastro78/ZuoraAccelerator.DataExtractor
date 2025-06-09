@@ -200,7 +200,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the revenue recognition rule governing the revenue schedule.</value>
         [DataMember(Name = "revenue_recognition_rule_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "revenue_recognition_rule_name")]
-        public string RevenueRecognitionRuleName { get; set; }
+        public string? RevenueRecognitionRuleName { get; set; }
 
         /// <summary>
         /// The end date of the service period associated with this invoice item. If the associated charge is a one-time fee, then this date is the date of that charge.
@@ -208,7 +208,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The end date of the service period associated with this invoice item. If the associated charge is a one-time fee, then this date is the date of that charge.</value>
         [DataMember(Name = "service_end")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service_end")]
-        public string ServiceEnd { get; set; }
+        public string? ServiceEnd { get; set; }
 
         /// <summary>
         /// The start date of the service period associated with this invoice item. If the associated charge is a one-time fee, then this date is the date of that charge.
@@ -216,7 +216,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The start date of the service period associated with this invoice item. If the associated charge is a one-time fee, then this date is the date of that charge.</value>
         [DataMember(Name = "service_start")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service_start")]
-        public string ServiceStart { get; set; }
+        public string? ServiceStart { get; set; }
 
         /// <summary>
         /// The unique SKU (stock keeping unit) of the product associated with this item.
@@ -224,7 +224,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique SKU (stock keeping unit) of the product associated with this item.</value>
         [DataMember(Name = "sku")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sku")]
-        public string Sku { get; set; }
+        public string? Sku { get; set; }
 
         /// <summary>
         /// List of customer subscriptions.
@@ -232,7 +232,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>List of customer subscriptions.</value>
         [DataMember(Name = "subscription")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription")]
-        public Subscription Subscription { get; set; }
+        public Subscription? Subscription { get; set; }
 
         /// <summary>
         /// The identifier of the subscription associated with the invoice item.
@@ -240,7 +240,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the subscription associated with the invoice item.</value>
         [DataMember(Name = "subscription_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_id")]
-        public Guid SubscriptionId { get; set; }
+        public Guid? SubscriptionId { get; set; }
 
         /// <summary>
         /// The expandable subscription item associated with this billing document item.
@@ -256,7 +256,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier the subscription item associated with this invoice item.</value>
         [DataMember(Name = "subscription_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_item_id")]
-        public Guid SubscriptionItemId { get; set; }
+        public Guid? SubscriptionItemId { get; set; }
 
         /// <summary>
         /// The amount of tax applied to the invoice item.
@@ -279,7 +279,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The designated tax code.</value>
         [DataMember(Name = "tax_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_code")]
-        public string TaxCode { get; set; }
+        public string? TaxCode { get; set; }
 
         /// <summary>
         /// This specifies if the invoice item amount is inclusive or exclusive of tax.
@@ -303,7 +303,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Specifies the units used to measure usage.</value>
         [DataMember(Name = "unit_of_measure")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unit_of_measure")]
-        public string UnitOfMeasure { get; set; }
+        public string? UnitOfMeasure { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who last updated the object
@@ -311,7 +311,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -325,7 +325,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account that owns the invoice.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account that owns the invoice.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier of the account that owns the invoice.</value>
         [DataMember(Name = "account_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_number")]
-        public string AccountNumber { get; set; }
+        public string? AccountNumber { get; set; }
 
         /// <summary>
         /// The total balance remaining.  This field is deprecated. Use `remaining_balance` field.
@@ -65,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the bill-to contact.</value>
         [DataMember(Name = "bill_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_to_id")]
-        public Guid BillToId { get; set; }
+        public Guid? BillToId { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -73,7 +73,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -89,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>3-letter ISO 4217 currency code. This field is available only if you have the [Multiple Currencies](https://knowledgecenter.zuora.com/Zuora_Billing/Bill_your_customers/Flexible_Billing/Multiple_Currencies) feature enabled.</value>
         [DataMember(Name = "currency")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency")]
-        public string Currency { get; set; }
+        public string? Currency { get; set; }
 
         /// <summary>
         /// Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.
@@ -113,7 +113,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string associated with the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// The date when the invoice takes effect.
@@ -137,7 +137,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// A human-readable identifier for the invoice; may be user-supplied.
@@ -145,7 +145,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A human-readable identifier for the invoice; may be user-supplied.</value>
         [DataMember(Name = "invoice_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_number")]
-        public string InvoiceNumber { get; set; }
+        public string? InvoiceNumber { get; set; }
 
         /// <summary>
         /// List of invoice items.
@@ -185,7 +185,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of payment term associated with the invoice.</value>
         [DataMember(Name = "payment_terms")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_terms")]
-        public string PaymentTerms { get; set; }
+        public string? PaymentTerms { get; set; }
 
         /// <summary>
         /// Identifier of the Zuora user who posted the invoice.
@@ -193,7 +193,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the Zuora user who posted the invoice.</value>
         [DataMember(Name = "posted_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posted_by_id")]
-        public Guid PostedById { get; set; }
+        public Guid? PostedById { get; set; }
 
         /// <summary>
         /// The total balance remaining.
@@ -217,7 +217,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the sold-to contact.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public Guid SoldToId { get; set; }
+        public Guid? SoldToId { get; set; }
 
         /// <summary>
         /// The status of the invoice.
@@ -225,7 +225,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The status of the invoice.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Gets or Sets StateTransitions
@@ -272,7 +272,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -286,7 +286,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

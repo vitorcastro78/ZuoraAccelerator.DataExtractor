@@ -31,7 +31,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// You can use this field to resume a paused subscription from the pause date.
@@ -39,7 +39,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>You can use this field to resume a paused subscription from the pause date.</value>
         [DataMember(Name = "resume_at")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resume_at")]
-        public string ResumeAt { get; set; }
+        public string? ResumeAt { get; set; }
 
         /// <summary>
         /// Date on which the paused subscription is resumed.
@@ -47,13 +47,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>Date on which the paused subscription is resumed.</value>
         [DataMember(Name = "resume_date")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resume_date")]
-        public string ResumeDate { get; set; }
+        public string? ResumeDate { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

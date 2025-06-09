@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account associated with this subscription.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string? AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets Actions
@@ -72,7 +72,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The reason for cancelling the subscription.</value>
         [DataMember(Name = "cancel_reason")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cancel_reason")]
-        public string CancelReason { get; set; }
+        public string? CancelReason { get; set; }
 
         /// <summary>
         /// Monthly recurring revenue of the subscription.
@@ -80,7 +80,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Monthly recurring revenue of the subscription.</value>
         [DataMember(Name = "contracted_mrr")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contracted_mrr")]
-        public string ContractedMrr { get; set; }
+        public string? ContractedMrr { get; set; }
 
         /// <summary>
         /// Date when the subscriber contract is effective.
@@ -96,7 +96,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string? CreatedById { get; set; }
+        public Guid? CreatedById  { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -112,7 +112,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>3-letter ISO 4217 currency code. This field is available only if you have the [Multiple Currencies](https://knowledgecenter.zuora.com/Zuora_Billing/Bill_your_customers/Flexible_Billing/Multiple_Currencies) feature enabled.</value>
         [DataMember(Name = "currency")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency")]
-        public string Currency { get; set; }
+        public string? Currency { get; set; }
 
         /// <summary>
         /// Current term information for the subscription
@@ -152,7 +152,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Description of the subscription. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Date when the subscription ends.
@@ -168,7 +168,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Initial term information for the subscription.
@@ -239,7 +239,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The order number of the order created by Zuora.</value>
         [DataMember(Name = "order_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_number")]
-        public string OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
 
         /// <summary>
         /// The name of payment term associated with the invoice.
@@ -247,7 +247,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of payment term associated with the invoice.</value>
         [DataMember(Name = "payment_terms")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_terms")]
-        public string PaymentTerms { get; set; }
+        public string? PaymentTerms { get; set; }
 
         /// <summary>
         /// Total prepaid units available during a subscription. It is an aggregate of all funds under a subscription. **Deprecated, please use `prepaid_balances` instead.**
@@ -311,7 +311,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Status of the subscription.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the subscription. It can be user-supplied.
@@ -319,7 +319,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier of the subscription. It can be user-supplied.</value>
         [DataMember(Name = "subscription_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_number")]
-        public string SubscriptionNumber { get; set; }
+        public string? SubscriptionNumber { get; set; }
 
         /// <summary>
         /// List of subscription plans.
@@ -335,7 +335,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string? UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -357,7 +357,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

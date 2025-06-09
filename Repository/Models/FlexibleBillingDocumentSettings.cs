@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// ID of the billing document sequence set.
@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the billing document sequence set.</value>
         [DataMember(Name = "sequence_set_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sequence_set_id")]
-        public Guid SequenceSetId { get; set; }
+        public Guid? SequenceSetId { get; set; }
 
         /// <summary>
         /// Identifier of the invoice template associated with this customer. Not applicable for debit memos or credit memos.
@@ -32,13 +32,13 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the invoice template associated with this customer. Not applicable for debit memos or credit memos.</value>
         [DataMember(Name = "template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "template_id")]
-        public Guid TemplateId { get; set; }
+        public Guid? TemplateId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

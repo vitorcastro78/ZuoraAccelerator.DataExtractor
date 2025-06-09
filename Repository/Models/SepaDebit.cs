@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The BIC code used with the Sepa Debit payment method.</value>
         [DataMember(Name = "business_identification_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "business_identification_code")]
-        public Guid BusinessIdentificationCode { get; set; }
+        public Guid? BusinessIdentificationCode { get; set; }
 
         /// <summary>
         /// International Bank Account Number used to create the SEPA Debit payment method.
@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>International Bank Account Number used to create the SEPA Debit payment method.</value>
         [DataMember(Name = "IBAN")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "IBAN")]
-        public string IBAN { get; set; }
+        public string? IBAN { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Mandate
@@ -46,7 +46,7 @@ namespace ZIP2GO.Repository.Models
         /// Get the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public string? ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
