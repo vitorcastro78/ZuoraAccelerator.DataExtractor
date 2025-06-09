@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -46,7 +47,7 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "payment_gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_gateway_id")]
-        public string PaymentGatewayId { get; set; }
+        public Guid PaymentGatewayId { get; set; }
 
         /// <summary>
         /// Payment method Id used to pay billing documents.
@@ -54,7 +55,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Payment method Id used to pay billing documents.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public string PaymentMethodId { get; set; }
+        public Guid PaymentMethodId { get; set; }
 
         /// <summary>
         /// Gets or Sets RefundReasonCode

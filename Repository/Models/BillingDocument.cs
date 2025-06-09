@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -24,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account that owns the billing document.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account that owns the billing document.
@@ -72,7 +73,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -144,7 +145,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the invoice billing document from which this credit memo or debit memo billing document is created. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public string InvoiceId { get; set; }
+        public Guid InvoiceId { get; set; }
 
         /// <summary>
         /// List of billing document items.
@@ -184,7 +185,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the Zuora user who posted the billing document.</value>
         [DataMember(Name = "posted_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posted_by_id")]
-        public string PostedById { get; set; }
+        public Guid PostedById { get; set; }
 
         /// <summary>
         /// Reason for issuing this billing document. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.
@@ -263,7 +264,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

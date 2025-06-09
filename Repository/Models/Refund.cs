@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -24,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the customer this refund is for, if one exists.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Refund amount.
@@ -63,7 +64,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -119,7 +120,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the payment gateway that Zuora will use to authorize the payments that are made with this payment method. If you do not set this field, Zuora will use one of the following payment gateways instead: The default payment gateway of the customer account that owns the payment method, if the payment method is associated with a customer account or the default payment gateway of your Zuora tenant.</value>
         [DataMember(Name = "gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gateway_id")]
-        public string GatewayId { get; set; }
+        public Guid GatewayId { get; set; }
 
         /// <summary>
         /// Gets or Sets GatewayOptions
@@ -190,7 +191,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier for the payment, either `payment_number` or `payment_id.</value>
         [DataMember(Name = "payment_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_id")]
-        public string PaymentId { get; set; }
+        public Guid PaymentId { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentMethod
@@ -205,7 +206,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the payment method used to create this refund.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public string PaymentMethodId { get; set; }
+        public Guid PaymentMethodId { get; set; }
 
         /// <summary>
         /// Identifier of the payout from the payment gateway.
@@ -213,7 +214,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the payout from the payment gateway.</value>
         [DataMember(Name = "payout_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payout_id")]
-        public string PayoutId { get; set; }
+        public Guid PayoutId { get; set; }
 
         /// <summary>
         /// User-provided reason for the refund.
@@ -229,7 +230,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Transaction identifier returned by the payment gateway. You may use this field to reconcile refunds between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reference_id")]
-        public string ReferenceId { get; set; }
+        public Guid ReferenceId { get; set; }
 
         /// <summary>
         /// The date when the refund takes effect.
@@ -260,7 +261,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A second transaction identifier returned by the payment gateway if there is an additional transaction for the refunds. You may use this field to reconcile payments between your payment gateway and Zuora Payments.</value>
         [DataMember(Name = "second_reference_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "second_reference_id")]
-        public string SecondReferenceId { get; set; }
+        public Guid SecondReferenceId { get; set; }
 
         /// <summary>
         /// The state of the refund.
@@ -307,7 +308,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

@@ -72,7 +72,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the authorization transaction from the payment gateway.</value>
         [DataMember(Name = "authorization_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorization_id")]
-        public string AuthorizationId { get; set; }
+        public Guid AuthorizationId { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -136,7 +136,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the payment gateway that Zuora will use to authorize this payment.</value>
         [DataMember(Name = "gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gateway_id")]
-        public string GatewayId { get; set; }
+        public Guid GatewayId { get; set; }
 
         /// <summary>
         /// Gets or Sets GatewayOptions
@@ -151,7 +151,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A merchant-specified natural key value that can be passed to the payment gateway when a payment is created. If not specified, the payment number will be passed in instead.</value>
         [DataMember(Name = "gateway_order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "gateway_order_id")]
-        public string GatewayOrderId { get; set; }
+        public Guid GatewayOrderId { get; set; }
 
         /// <summary>
         /// Gateway reconciliation reason.
@@ -252,7 +252,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the payout associated with this payment.</value>
         [DataMember(Name = "payout_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payout_id")]
-        public string PayoutId { get; set; }
+        public Guid PayoutId { get; set; }
 
         /// <summary>
         /// Transaction identifier returned by the payment gateway. You may use this field to reconcile payments between your payment gateway and Zuora Payments.

@@ -57,7 +57,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the bill-to contact.</value>
         [DataMember(Name = "bill_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_to_id")]
-        public string BillToId { get; set; }
+        public Guid BillToId { get; set; }
 
         /// <summary>
         /// The reason for cancelling the subscription.
@@ -193,7 +193,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account that owns the invoice associated with this subscription.</value>
         [DataMember(Name = "invoice_owner_account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_owner_account_id")]
-        public string InvoiceOwnerAccountId { get; set; }
+        public Guid InvoiceOwnerAccountId { get; set; }
 
         /// <summary>
         /// If true, the subscription is billed separately from other subscriptions. If false, the subscription is included with other subscriptions in the account invoice. The default is false.

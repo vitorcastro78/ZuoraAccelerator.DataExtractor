@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -80,7 +81,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Value Added Tax (VAT) ID. Each VAT ID must begin with the code of the country code and followed by a block of digits or characters.</value>
         [DataMember(Name = "tax_identifier")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_identifier")]
-        public string TaxIdentifier { get; set; }
+        public Guid TaxIdentifier { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

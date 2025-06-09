@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -24,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of an invoice or a debit memo item.</value>
         [DataMember(Name = "credit_memo_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_memo_item_id")]
-        public string CreditMemoItemId { get; set; }
+        public Guid CreditMemoItemId { get; set; }
 
         /// <summary>
         /// Identifier of the payment application item.
@@ -40,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of a taxation item.</value>
         [DataMember(Name = "taxation_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxation_item_id")]
-        public string TaxationItemId { get; set; }
+        public Guid TaxationItemId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

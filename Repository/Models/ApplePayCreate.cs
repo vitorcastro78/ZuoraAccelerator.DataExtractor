@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -40,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The id of invoice this payment will apply to.      Note: When `collect_payment` is true, this field is required.      Only one invoice can be paid; for scenarios where you want to pay for multiple invoices, set collect_payment to false and use [Create Payment](#operation/createPayment) API separately.</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public string InvoiceId { get; set; }
+        public Guid InvoiceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Mandate

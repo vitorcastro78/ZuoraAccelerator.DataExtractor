@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of an invoice item or a debit memo item that this discount item or credit memo item is applied to.</value>
         [DataMember(Name = "applied_to_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applied_to_item_id")]
-        public string AppliedToItemId { get; set; }
+        public Guid AppliedToItemId { get; set; }
 
         /// <summary>
         /// The booking reference for this invoice item.

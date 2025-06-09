@@ -252,7 +252,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the subscription plan this subscription item belongs to.</value>
         [DataMember(Name = "subscription_plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_plan_id")]
-        public string SubscriptionPlanId { get; set; }
+        public Guid SubscriptionPlanId { get; set; }
 
         /// <summary>
         /// A tax code identifier. If the `tax_code` of a price is not provided when you create or override a price, Zuora will treat the charged amount as non-taxable. If this code is provide, Zuora considers that this price is taxable and the charged amount will be handled accordingly.

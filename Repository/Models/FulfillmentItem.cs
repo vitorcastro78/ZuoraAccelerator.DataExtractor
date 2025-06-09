@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -16,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -56,7 +57,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier for the object. It can be user-supplied.</value>
         [DataMember(Name = "fulfillment_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fulfillment_id")]
-        public string FulfillmentId { get; set; }
+        public Guid FulfillmentId { get; set; }
 
         /// <summary>
         /// Human-readable identifier for the object. It can be user-supplied.

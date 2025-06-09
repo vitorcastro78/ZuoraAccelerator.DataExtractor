@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -16,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the customer account the payment schedule belongs to.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Account number of the customer account the payment schedule belongs to.
@@ -48,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -135,7 +136,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the payment gateway used to collect payments. Note: This field is optional. The default value is the account's default payment gateway ID. If no payment gateway ID is found on the customer account level, the default value will be the tenant's default payment gateway ID. This field will be ignored when items is specified.</value>
         [DataMember(Name = "payment_gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_gateway_id")]
-        public string PaymentGatewayId { get; set; }
+        public Guid PaymentGatewayId { get; set; }
 
         /// <summary>
         /// ID of the payment method. Note: This field is optional. The default value is the account's default payment method ID. This field will be ignored when items is specified.
@@ -143,7 +144,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the payment method. Note: This field is optional. The default value is the account's default payment method ID. This field will be ignored when items is specified.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public string PaymentMethodId { get; set; }
+        public Guid PaymentMethodId { get; set; }
 
         /// <summary>
         /// Container for the payment options, which describe the transactional level rules for processing payments. Currently, only the gateway_options type is supported. Payment schedule payment_options take precedence over payment schedule item payment_options.
@@ -186,9 +187,9 @@ namespace ZIP2GO.Repository.Models
         public DateTime? RecentPaymentDate { get; set; }
 
         /// <summary>
-        /// At which hour in the day in the tenant's timezone this payment will be collected. Available values:[0,1,2,~,22,23]. If the time difference between your tenant’s timezone and the timezone where Zuora servers are located is not in full hours, for example, 2.5 hours, the payment schedule items will be triggered half an hour later than your scheduled time. The default value is 0. If the payment run_hour and scheduled_date are backdated, the system will collect the payment when the next run_hour occurs.
+        /// At which hour in the day in the tenant's timezone this payment will be collected. Available values:[0,1,2,~,22,23]. If the time difference between your tenant's timezone and the timezone where Zuora servers are located is not in full hours, for example, 2.5 hours, the payment schedule items will be triggered half an hour later than your scheduled time. The default value is 0. If the payment run_hour and scheduled_date are backdated, the system will collect the payment when the next run_hour occurs.
         /// </summary>
-        /// <value>At which hour in the day in the tenant's timezone this payment will be collected. Available values:[0,1,2,~,22,23]. If the time difference between your tenant’s timezone and the timezone where Zuora servers are located is not in full hours, for example, 2.5 hours, the payment schedule items will be triggered half an hour later than your scheduled time. The default value is 0. If the payment run_hour and scheduled_date are backdated, the system will collect the payment when the next run_hour occurs.</value>
+        /// <value>At which hour in the day in the tenant's timezone this payment will be collected. Available values:[0,1,2,~,22,23]. If the time difference between your tenant's timezone and the timezone where Zuora servers are located is not in full hours, for example, 2.5 hours, the payment schedule items will be triggered half an hour later than your scheduled time. The default value is 0. If the payment run_hour and scheduled_date are backdated, the system will collect the payment when the next run_hour occurs.</value>
         [DataMember(Name = "run_hour")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "run_hour")]
         public int? RunHour { get; set; }
@@ -247,7 +248,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

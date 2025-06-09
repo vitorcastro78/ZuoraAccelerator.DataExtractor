@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -54,17 +55,17 @@ namespace ZIP2GO.Repository.Models
         /// An entity ID. If you have multi-entity enabled and the authorization token is valid for more than one entity, you must use this header to specify which entity to perform the operation on. If the authorization token is only valid for a single entity, or you do not have multi-entity enabled, you do not need to set this header.
         /// </summary>
         /// <value>An entity ID. If you have multi-entity enabled and the authorization token is valid for more than one entity, you must use this header to specify which entity to perform the operation on. If the authorization token is only valid for a single entity, or you do not have multi-entity enabled, you do not need to set this header.</value>
-        [DataMember(Name = "zuora-entity-id")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zuora-entity-id")]
-        public string ZuoraEntityId { get; set; }
+        [DataMember(Name = "zuora_entity_id")]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zuora_entity_id")]
+        public Guid ZuoraEntityId { get; set; }
 
         /// <summary>
         /// A custom identifier for tracking API requests. If you set a value for this header, Zuora returns the same value in the response header. This header enables you to track your API calls to assist with troubleshooting in the event of an issue. The value of this field must use the US-ASCII character set and must not include any of the following characters: colon (:), semicolon (;), double quote (\"), or quote (').
         /// </summary>
         /// <value>A custom identifier for tracking API requests. If you set a value for this header, Zuora returns the same value in the response header. This header enables you to track your API calls to assist with troubleshooting in the event of an issue. The value of this field must use the US-ASCII character set and must not include any of the following characters: colon (:), semicolon (;), double quote (\"), or quote (').</value>
-        [DataMember(Name = "zuora-track-id")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zuora-track-id")]
-        public string ZuoraTrackId { get; set; }
+        [DataMember(Name = "zuora_track_id")]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "zuora_track_id")]
+        public Guid ZuoraTrackId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

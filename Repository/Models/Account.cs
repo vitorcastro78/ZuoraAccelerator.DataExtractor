@@ -64,15 +64,15 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer billing address.</value>
         [DataMember(Name = "bill_to")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_to")]
-        public Contact BillTo { get; set; }
+        public BillTo BillTo { get; set; }
 
-        /// <summary>
-        /// Customer billing address.
-        /// </summary>
-        /// <value>Customer billing address.</value>
-        [DataMember(Name = "bill_to_id")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_to_id")]
-        public Guid BillToId { get; set; }
+        ///// <summary>
+        ///// Customer billing address.
+        ///// </summary>
+        ///// <value>Customer billing address.</value>
+        //[DataMember(Name = "bill_to_id")]
+        //[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bill_to_id")]
+        //public Guid BillToId { get; set; }
 
         /// <summary>
         /// Identifier of the communication profile associated with this customer.
@@ -297,15 +297,15 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer address used for calculating tax.</value>
         [DataMember(Name = "sold_to")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to")]
-        public Contact SoldTo { get; set; }
+        public SoldTo SoldTo { get; set; }
 
-        /// <summary>
-        /// Customer address used for calculating tax.
-        /// </summary>
-        /// <value>Customer address used for calculating tax.</value>
-        [DataMember(Name = "sold_to_id")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public Guid SoldToId { get; set; }
+        ///// <summary>
+        ///// Customer address used for calculating tax.
+        ///// </summary>
+        ///// <value>Customer address used for calculating tax.</value>
+        //[DataMember(Name = "sold_to_id")]
+        //[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
+        //public Guid SoldToId { get; set; }
 
         /// <summary>
         /// List of customer subscriptions.

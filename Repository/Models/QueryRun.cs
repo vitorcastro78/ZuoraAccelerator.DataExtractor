@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -24,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets File

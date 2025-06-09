@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -30,9 +31,9 @@ namespace ZIP2GO.Repository.Models
         /// Unit of measure for the prepaid balance.
         /// </summary>
         /// <value>Unit of measure for the prepaid balance.</value>
-        [DataMember(Name = "prepaid_UOM")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prepaid_UOM")]
-        public string PrepaidUOM { get; set; }
+        [DataMember(Name = "prepaid_uom")]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "prepaid_uom")]
+        public Guid PrepaidUOM { get; set; }
 
         /// <summary>
         /// Remaining balance on the fund, which is the remaining units of the fund.

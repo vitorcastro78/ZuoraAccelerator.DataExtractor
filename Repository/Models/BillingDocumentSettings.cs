@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -32,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the debit memo template associated with this customer.</value>
         [DataMember(Name = "debit_memo_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "debit_memo_template_id")]
-        public string DebitMemoTemplateId { get; set; }
+        public Guid DebitMemoTemplateId { get; set; }
 
         /// <summary>
         /// Whether the customer wants to receive email invoices.

@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -47,7 +48,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the subscription plan.</value>
         [DataMember(Name = "previous_subscription_plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previous_subscription_plan_id")]
-        public string PreviousSubscriptionPlanId { get; set; }
+        public Guid PreviousSubscriptionPlanId { get; set; }
 
         /// <summary>
         /// The date when the replacement occurs. It can be either the current date or the end of the current billing period.

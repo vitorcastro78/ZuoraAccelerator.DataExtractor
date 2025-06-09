@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -35,7 +36,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of newly processed payment. Only available in the response of the Create Payment Method API request.</value>
         [DataMember(Name = "payment_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_id")]
-        public string PaymentId { get; set; }
+        public Guid PaymentId { get; set; }
 
         /// <summary>
         /// A gateway unique identifier that replaces sensitive payment method data or represents a gateway's unique customer profile. When `token` is used to represent a customer profile, `second_token` is conditionally required for representing the underlying tokenized payment method.

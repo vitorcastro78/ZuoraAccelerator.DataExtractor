@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -64,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -152,7 +153,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the taxation item of the invoice, from which the credit or debit memo is created. This field is only applicable when the `type` of the billing document is `credit_memo` and `debit_memo`.</value>
         [DataMember(Name = "source_tax_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source_tax_item_id")]
-        public string SourceTaxItemId { get; set; }
+        public Guid SourceTaxItemId { get; set; }
 
         /// <summary>
         /// A tax code identifier. If a `tax_code` of a price is not provided when you create or update a price, Zuora will treat the charged amount as non-taxable. If this code is provide, Zuora considers that this price is taxable and the charged amount will be handled accordingly.
@@ -216,7 +217,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

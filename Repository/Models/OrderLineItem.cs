@@ -201,7 +201,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of the original sales order for a return order line item.</value>
         [DataMember(Name = "original_order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_id")]
-        public string OriginalOrderId { get; set; }
+        public Guid OriginalOrderId { get; set; }
 
         /// <summary>
         /// The unique identifier of the original sales order line item for a return order line item.
@@ -209,7 +209,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of the original sales order line item for a return order line item.</value>
         [DataMember(Name = "original_order_line_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_line_item_id")]
-        public string OriginalOrderLineItemId { get; set; }
+        public Guid OriginalOrderLineItemId { get; set; }
 
         /// <summary>
         /// The number of the original sales order line item for a return order line item.
@@ -233,7 +233,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of a contact belonging to the billing account of the order line item that was the original sold to contact when the order line item was created. </value>
         [DataMember(Name = "original_sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_sold_to_id")]
-        public string OriginalSoldToId { get; set; }
+        public Guid OriginalSoldToId { get; set; }
 
         /// <summary>
         /// Identifier of the price.
@@ -320,7 +320,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of a contact belonging to the billing account of the order line item. Use this field to assign and existing contact as the sold to contact of an order line item.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public string SoldToId { get; set; }
+        public Guid SoldToId { get; set; }
 
         /// <summary>
         /// The date a transaction starts. The default value of this field is the order date.

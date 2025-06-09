@@ -9,7 +9,7 @@ namespace ZIP2GO.Repository.Models
     ///
     /// </summary>
     [DataContract]
-    public class Contact
+    public class BillTo 
     {
         /// <summary>
         /// Identifier of a customer account with which this contact is associated.
@@ -179,6 +179,5 @@ namespace ZIP2GO.Repository.Models
         public string WorkPhone { get; set; }
 
        
-        
     }
 }

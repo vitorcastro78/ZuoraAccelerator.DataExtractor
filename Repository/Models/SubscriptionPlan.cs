@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -16,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -72,7 +73,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the plan associated with this subscription plan.</value>
         [DataMember(Name = "plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plan_id")]
-        public string PlanId { get; set; }
+        public Guid PlanId { get; set; }
 
         /// <summary>
         /// The product associated with the subscription plan.
@@ -88,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the product associated with this subscription plan.</value>
         [DataMember(Name = "product_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "product_id")]
-        public string ProductId { get; set; }
+        public Guid ProductId { get; set; }
 
         /// <summary>
         /// The subscription to which this subscription plan belongs.
@@ -104,7 +105,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the subscription this subscription plan belongs to.</value>
         [DataMember(Name = "subscription_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_id")]
-        public string SubscriptionId { get; set; }
+        public Guid SubscriptionId { get; set; }
 
         /// <summary>
         /// List of subscription items.
@@ -120,7 +121,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

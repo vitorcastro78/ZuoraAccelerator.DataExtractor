@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -16,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of a PayPal billing agreement. For example, I-1TJ3GAGG82Y9.</value>
         [DataMember(Name = "baid")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "baid")]
-        public string Baid { get; set; }
+        public Guid Baid { get; set; }
 
         /// <summary>
         /// Email address associated with the payment method
