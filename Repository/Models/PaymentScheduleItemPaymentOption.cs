@@ -15,14 +15,14 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "detail")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detail")]
-        public Detail Detail { get; set; }
+        public Detail? Detail { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type")]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

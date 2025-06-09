@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The id of the subscription plan to be updated. It can be the latest version or any history version id.</value>
         [DataMember(Name = "plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plan_id")]
-        public Guid PlanId { get; set; }
+        public string? PlanId { get; set; }
 
         /// <summary>
         /// Gets or Sets SubscriptionItems

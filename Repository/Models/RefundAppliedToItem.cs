@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of an invoice or a debit memo item.</value>
         [DataMember(Name = "credit_memo_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credit_memo_item_id")]
-        public Guid CreditMemoItemId { get; set; }
+        public string? CreditMemoItemId { get; set; }
 
         /// <summary>
         /// Identifier of the payment application item.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the payment application item.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Identifier of a taxation item.
@@ -41,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of a taxation item.</value>
         [DataMember(Name = "taxation_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxation_item_id")]
-        public Guid TaxationItemId { get; set; }
+        public string? TaxationItemId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

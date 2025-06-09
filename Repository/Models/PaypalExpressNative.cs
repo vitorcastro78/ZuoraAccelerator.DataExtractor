@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of a PayPal billing agreement. For example, I-1TJ3GAGG82Y9.</value>
         [DataMember(Name = "baid")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "baid")]
-        public Guid Baid { get; set; }
+        public string? Baid { get; set; }
 
         /// <summary>
         /// Email address associated with the payment method. This is required with a paypal_express_checkout or a paypal_adaptive payment method.
@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Email address associated with the payment method. This is required with a paypal_express_checkout or a paypal_adaptive payment method.</value>
         [DataMember(Name = "email")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

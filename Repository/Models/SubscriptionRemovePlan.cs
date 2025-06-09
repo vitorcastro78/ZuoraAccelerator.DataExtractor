@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the subscription plan.</value>
         [DataMember(Name = "subscription_plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_plan_id")]
-        public Guid SubscriptionPlanId { get; set; }
+        public string? SubscriptionPlanId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

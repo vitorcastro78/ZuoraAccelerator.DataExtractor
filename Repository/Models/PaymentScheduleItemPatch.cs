@@ -25,14 +25,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>Currency of the payment schedule. The default value is the account's default currency. This field will be ignored when items is specified.</value>
         [DataMember(Name = "currency")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency")]
-        public string Currency { get; set; }
+        public string? Currency { get; set; }
 
         /// <summary>
         /// Gets or Sets CustomFields
         /// </summary>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// An arbitrary string attached to the object. Often useful for displaying to users.
@@ -40,14 +40,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string attached to the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Link
         /// </summary>
         [DataMember(Name = "link")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "link")]
-        public List<PaymentScheduleItemLink> Link { get; set; }
+        public List<PaymentScheduleItemLink>? Link { get; set; }
 
         /// <summary>
         /// ID of the payment gateway used to collect payments. The default value is the account's default payment gateway ID. If no payment gateway ID is found on the customer account level, the default value will be the tenant's default payment gateway ID. This field will be ignored when `items` is specified.
@@ -55,7 +55,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the payment gateway used to collect payments. The default value is the account's default payment gateway ID. If no payment gateway ID is found on the customer account level, the default value will be the tenant's default payment gateway ID. This field will be ignored when `items` is specified.</value>
         [DataMember(Name = "payment_gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_gateway_id")]
-        public Guid PaymentGatewayId { get; set; }
+        public string? PaymentGatewayId { get; set; }
 
         /// <summary>
         /// ID of the payment method. The default value is the account's default payment method ID. This field will be ignored when `items` is specified.
@@ -63,7 +63,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the payment method. The default value is the account's default payment method ID. This field will be ignored when `items` is specified.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public Guid PaymentMethodId { get; set; }
+        public string? PaymentMethodId { get; set; }
 
         /// <summary>
         /// Container for the payment options, which describe the transactional level rules for processing payments. Currently, only the `gateway_options` type is supported. Payment schedule `payment_options` take precedence over payment schedule item `payment_options`.
@@ -71,7 +71,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Container for the payment options, which describe the transactional level rules for processing payments. Currently, only the `gateway_options` type is supported. Payment schedule `payment_options` take precedence over payment schedule item `payment_options`.</value>
         [DataMember(Name = "payment_options")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_options")]
-        public List<PaymentScheduleItemPaymentOption> PaymentOptions { get; set; }
+        public List<PaymentScheduleItemPaymentOption>? PaymentOptions { get; set; }
 
         /// <summary>
         /// ID of the payment schedule.
@@ -79,7 +79,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>ID of the payment schedule.</value>
         [DataMember(Name = "payment_schedule_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_schedule_id")]
-        public Guid PaymentScheduleId { get; set; }
+        public string? PaymentScheduleId { get; set; }
 
         /// <summary>
         /// Number of the payment schedule.
@@ -87,7 +87,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Number of the payment schedule.</value>
         [DataMember(Name = "payment_schedule_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_schedule_number")]
-        public string PaymentScheduleNumber { get; set; }
+        public string? PaymentScheduleNumber { get; set; }
 
         /// <summary>
         /// At which hour in the day in the tenant's timezone this payment will be collected. Available values:[0,1,2,~,22,23]. If the time difference between your tenant's timezone and the timezone where Zuora servers are located is not in full hours, for example, 2.5 hours, the payment schedule items will be triggered half an hour later than your scheduled time. The default value is 0. If the payment run_hour and scheduled_date are backdated, the system will collect the payment when the next run_hour occurs.
@@ -110,7 +110,7 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "unlink")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unlink")]
-        public List<PaymentScheduleItemUnlink> Unlink { get; set; }
+        public List<PaymentScheduleItemUnlink>? Unlink { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

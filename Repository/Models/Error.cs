@@ -15,14 +15,14 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "parameter")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parameter")]
-        public string _Parameter { get; set; }
+        public string? _Parameter { get; set; }
 
         /// <summary>
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name = "code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code")]
-        public string Code { get; set; }
+        public string? Code { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -30,14 +30,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name = "message")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "message")]
-        public string Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

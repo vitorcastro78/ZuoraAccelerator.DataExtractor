@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the account that owns the billing document.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account that owns the billing document.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier of the account that owns the billing document.</value>
         [DataMember(Name = "account_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_number")]
-        public string AccountNumber { get; set; }
+        public string? AccountNumber { get; set; }
 
         /// <summary>
         /// The total amount paid.
@@ -65,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A human-readable identifier for the billing document; may be user-supplied.</value>
         [DataMember(Name = "billing_document_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_number")]
-        public string BillingDocumentNumber { get; set; }
+        public string? BillingDocumentNumber { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -73,7 +73,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -89,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// The custom objects associated with a Zuora standard object.
@@ -97,7 +97,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The custom objects associated with a Zuora standard object.</value>
         [DataMember(Name = "custom_objects")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_objects")]
-        public CustomObject CustomObjects { get; set; }
+        public CustomObject? CustomObjects { get; set; }
 
         /// <summary>
         /// An arbitrary string associated with the object. Often useful for displaying to users.
@@ -105,7 +105,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string associated with the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// The date when the billing document takes effect.
@@ -137,7 +137,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The identifier of the invoice billing document from which this credit memo or debit memo billing document is created. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.
@@ -145,7 +145,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the invoice billing document from which this credit memo or debit memo billing document is created. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public Guid InvoiceId { get; set; }
+        public Guid? InvoiceId { get; set; }
 
         /// <summary>
         /// List of billing document items.
@@ -153,7 +153,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>List of billing document items.</value>
         [DataMember(Name = "items")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items")]
-        public List<BillingDocumentItem> Items { get; set; }
+        public List<BillingDocumentItem>? Items { get; set; }
 
         /// <summary>
         /// Whether payment was successfully collected for this invoice. An invoice can be paid with a payment or a credit memo.
@@ -185,7 +185,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the Zuora user who posted the billing document.</value>
         [DataMember(Name = "posted_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posted_by_id")]
-        public Guid PostedById { get; set; }
+        public Guid? PostedById { get; set; }
 
         /// <summary>
         /// Reason for issuing this billing document. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.
@@ -193,7 +193,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Reason for issuing this billing document. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.</value>
         [DataMember(Name = "reason_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reason_code")]
-        public string ReasonCode { get; set; }
+        public string? ReasonCode { get; set; }
 
         /// <summary>
         /// The total balance remaining.
@@ -209,14 +209,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>The status of the billing document.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Gets or Sets StateTransitions
         /// </summary>
         [DataMember(Name = "state_transitions")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state_transitions")]
-        public List<BillingDocumentStateTransitions> StateTransitions { get; set; }
+        public List<BillingDocumentStateTransitions>? StateTransitions { get; set; }
 
         /// <summary>
         /// The total amount exclusive of tax.
@@ -256,7 +256,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The type of billing document. Can be one of the credit memo, debit memo, or invoice.</value>
         [DataMember(Name = "type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type")]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who last updated the object
@@ -264,7 +264,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

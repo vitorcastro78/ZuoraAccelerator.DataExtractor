@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Any combination of one_time, recurring and plan.</value>
         [DataMember(Name = "apply_discount_to")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apply_discount_to")]
-        public List<string> ApplyDiscountTo { get; set; }
+        public List<string>? ApplyDiscountTo { get; set; }
 
         /// <summary>
         /// The date through which a customer has been billed for the subscription item.
@@ -48,7 +48,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Charge model of the price. See [Charge models](https://knowledgecenter.zuora.com/Billing/Subscriptions/Product_Catalog/B_Charge_Models) for more information.</value>
         [DataMember(Name = "charge_model")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "charge_model")]
-        public string ChargeModel { get; set; }
+        public string? ChargeModel { get; set; }
 
         /// <summary>
         /// Type of the charge. It can be one of the following types: one-time, recurring, or usage.
@@ -56,7 +56,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Type of the charge. It can be one of the following types: one-time, recurring, or usage.</value>
         [DataMember(Name = "charge_type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "charge_type")]
-        public string ChargeType { get; set; }
+        public string? ChargeType { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -64,7 +64,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -80,7 +80,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// The custom objects associated with a Zuora standard object.
@@ -88,7 +88,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The custom objects associated with a Zuora standard object.</value>
         [DataMember(Name = "custom_objects")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_objects")]
-        public CustomObject CustomObjects { get; set; }
+        public CustomObject? CustomObjects { get; set; }
 
         /// <summary>
         /// An arbitrary string attached to the object. Often useful for displaying to users.
@@ -96,7 +96,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string attached to the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Discount amount. Specify this field if you offer an amount-based discount.
@@ -112,7 +112,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Specifies at what level a discount should be applied: one of account, subscription or plan.</value>
         [DataMember(Name = "discount_level")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "discount_level")]
-        public string DiscountLevel { get; set; }
+        public string? DiscountLevel { get; set; }
 
         /// <summary>
         /// Discount percent. Specify this field if you offer a percentage-based discount.
@@ -136,7 +136,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The name of the subscription item.
@@ -144,21 +144,21 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the subscription item.</value>
         [DataMember(Name = "name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Overage
         /// </summary>
         [DataMember(Name = "overage")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overage")]
-        public Overage Overage { get; set; }
+        public Overage? Overage { get; set; }
 
         /// <summary>
         /// Gets or Sets Price
         /// </summary>
         [DataMember(Name = "price")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price")]
-        public Price Price { get; set; }
+        public Price? Price { get; set; }
 
         /// <summary>
         /// Specifies the base interval of the price the subscriber is subscribed to. If not provided, this field defaults to `billing_period`.
@@ -166,7 +166,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Specifies the base interval of the price the subscriber is subscribed to. If not provided, this field defaults to `billing_period`.</value>
         [DataMember(Name = "price_base_interval")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_base_interval")]
-        public string PriceBaseInterval { get; set; }
+        public string? PriceBaseInterval { get; set; }
 
         /// <summary>
         /// Identifier of the price.
@@ -174,7 +174,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the price.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public Guid PriceId { get; set; }
+        public string? PriceId { get; set; }
 
         /// <summary>
         /// The date until when charges are processed. When billing takes place in arrears, such as usage-based prices, this field value is the the same as the `ChargedThroughDate` value. This date is the earliest date when a charge can be amended.
@@ -190,7 +190,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the product with which this subscription is associated.</value>
         [DataMember(Name = "product_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "product_id")]
-        public Guid ProductId { get; set; }
+        public string? ProductId { get; set; }
 
         /// <summary>
         /// Quantity of the product to which your customers subscribe.
@@ -252,7 +252,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the subscription plan this subscription item belongs to.</value>
         [DataMember(Name = "subscription_plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_plan_id")]
-        public Guid SubscriptionPlanId { get; set; }
+        public string? SubscriptionPlanId { get; set; }
 
         /// <summary>
         /// A tax code identifier. If the `tax_code` of a price is not provided when you create or override a price, Zuora will treat the charged amount as non-taxable. If this code is provide, Zuora considers that this price is taxable and the charged amount will be handled accordingly.
@@ -307,7 +307,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

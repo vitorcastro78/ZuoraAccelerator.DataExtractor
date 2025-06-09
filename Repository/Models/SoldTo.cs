@@ -17,14 +17,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of a customer account with which this contact is associated.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public Guid AccountId { get; set; }
+        public Guid? AccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address")]
-        public Address Address { get; set; }
+        public Address? Address { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -48,7 +48,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// The custom objects associated with a Zuora standard object.
@@ -56,7 +56,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The custom objects associated with a Zuora standard object.</value>
         [DataMember(Name = "custom_objects")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_objects")]
-        public CustomObject CustomObjects { get; set; }
+        public CustomObject? CustomObjects { get; set; }
 
         /// <summary>
         /// Customer email address.
@@ -64,7 +64,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer email address.</value>
         [DataMember(Name = "email")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// The contact's fax number.
@@ -72,7 +72,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The contact's fax number.</value>
         [DataMember(Name = "fax")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fax")]
-        public string Fax { get; set; }
+        public string? Fax { get; set; }
 
         /// <summary>
         /// Customer first name.
@@ -80,7 +80,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer first name.</value>
         [DataMember(Name = "first_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "first_name")]
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
         /// <summary>
         /// Customer home phone (including extension).
@@ -88,7 +88,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer home phone (including extension).</value>
         [DataMember(Name = "home_phone")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "home_phone")]
-        public string HomePhone { get; set; }
+        public string? HomePhone { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -96,7 +96,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Customer last name.
@@ -104,7 +104,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer last name.</value>
         [DataMember(Name = "last_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last_name")]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
         /// <summary>
         /// Customer phone (including extension).
@@ -112,7 +112,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer phone (including extension).</value>
         [DataMember(Name = "mobile_phone")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobile_phone")]
-        public string MobilePhone { get; set; }
+        public string? MobilePhone { get; set; }
 
         /// <summary>
         /// Nickname for this contact.
@@ -120,7 +120,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Nickname for this contact.</value>
         [DataMember(Name = "nickname")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nickname")]
-        public string Nickname { get; set; }
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// Other customer phone (including extension).
@@ -128,7 +128,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Other customer phone (including extension).</value>
         [DataMember(Name = "other_phone")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "other_phone")]
-        public string OtherPhone { get; set; }
+        public string? OtherPhone { get; set; }
 
         /// <summary>
         /// The type of the additional phone number.
@@ -136,7 +136,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The type of the additional phone number.</value>
         [DataMember(Name = "other_phone_type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "other_phone_type")]
-        public string OtherPhoneType { get; set; }
+        public string? OtherPhoneType { get; set; }
 
         /// <summary>
         /// A region defined in your Zuora Tax rules.
@@ -144,7 +144,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A region defined in your Zuora Tax rules.</value>
         [DataMember(Name = "tax_region")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_region")]
-        public string TaxRegion { get; set; }
+        public string? TaxRegion { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who last updated the object
@@ -152,7 +152,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.
@@ -168,7 +168,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer work email.</value>
         [DataMember(Name = "work_email")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "work_email")]
-        public string WorkEmail { get; set; }
+        public string? WorkEmail { get; set; }
 
         /// <summary>
         /// Customer work phone.
@@ -176,7 +176,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Customer work phone.</value>
         [DataMember(Name = "work_phone")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "work_phone")]
-        public string WorkPhone { get; set; }
+        public string? WorkPhone { get; set; }
 
         
     }

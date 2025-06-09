@@ -16,7 +16,7 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "accounting_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accounting_code")]
-        public string AccountingCode { get; set; }
+        public string? AccountingCode { get; set; }
 
         /// <summary>
         /// An active account in your Zuora Chart of Accounts.
@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active account in your Zuora Chart of Accounts.</value>
         [DataMember(Name = "accounts_receivable_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accounts_receivable_account")]
-        public string AccountsReceivableAccount { get; set; }
+        public string? AccountsReceivableAccount { get; set; }
 
         /// <summary>
         /// The total amount of this billing document item.
@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of an invoice item or a debit memo item that this discount item or credit memo item is applied to.</value>
         [DataMember(Name = "applied_to_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applied_to_item_id")]
-        public Guid AppliedToItemId { get; set; }
+        public Guid? AppliedToItemId { get; set; }
 
         /// <summary>
         /// The related billing document.
@@ -48,7 +48,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The related billing document.</value>
         [DataMember(Name = "billing_document")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document")]
-        public BillingDocument BillingDocument { get; set; }
+        public BillingDocument? BillingDocument { get; set; }
 
         /// <summary>
         /// The related billing document id.
@@ -56,7 +56,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The related billing document id.</value>
         [DataMember(Name = "billing_document_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_id")]
-        public Guid BillingDocumentId { get; set; }
+        public Guid? BillingDocumentId { get; set; }
 
         /// <summary>
         /// The booking reference for this billing document item.
@@ -64,7 +64,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The booking reference for this billing document item.</value>
         [DataMember(Name = "booking_reference")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "booking_reference")]
-        public string BookingReference { get; set; }
+        public string? BookingReference { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -72,7 +72,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -88,7 +88,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// The custom objects associated with a Zuora standard object.
@@ -96,7 +96,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The custom objects associated with a Zuora standard object.</value>
         [DataMember(Name = "custom_objects")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_objects")]
-        public CustomObject CustomObjects { get; set; }
+        public CustomObject? CustomObjects { get; set; }
 
         /// <summary>
         /// The accounting code for the deferred revenue, such as Monthly Recurring Liability.
@@ -104,7 +104,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The accounting code for the deferred revenue, such as Monthly Recurring Liability.</value>
         [DataMember(Name = "deferred_revenue_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deferred_revenue_account")]
-        public string DeferredRevenueAccount { get; set; }
+        public string? DeferredRevenueAccount { get; set; }
 
         /// <summary>
         /// An arbitrary string associated with the object. Often useful for displaying to users.
@@ -112,7 +112,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string associated with the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// If true, indicates that the item is a discount item.
@@ -136,7 +136,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The identifier of the invoice item associated with this billing document item.
@@ -144,7 +144,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the invoice item associated with this billing document item.</value>
         [DataMember(Name = "invoice_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_item_id")]
-        public Guid InvoiceItemId { get; set; }
+        public Guid? InvoiceItemId { get; set; }
 
         /// <summary>
         /// Name of the billing document item displayed to customers on the billing document.
@@ -152,7 +152,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Name of the billing document item displayed to customers on the billing document.</value>
         [DataMember(Name = "name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The accounting code that maps to an on account in your accounting system.
@@ -160,7 +160,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The accounting code that maps to an on account in your accounting system.</value>
         [DataMember(Name = "on_account_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "on_account_account")]
-        public string OnAccountAccount { get; set; }
+        public string? OnAccountAccount { get; set; }
 
         /// <summary>
         /// The description of the price this billing document item is associated with.
@@ -168,7 +168,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The description of the price this billing document item is associated with.</value>
         [DataMember(Name = "price_description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_description")]
-        public string PriceDescription { get; set; }
+        public string? PriceDescription { get; set; }
 
         /// <summary>
         /// The identifier of the price this billing document item is associated with.
@@ -176,7 +176,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the price this billing document item is associated with.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public Guid PriceId { get; set; }
+        public Guid? PriceId { get; set; }
 
         /// <summary>
         /// The name of the product associated with this item.
@@ -184,7 +184,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the product associated with this item.</value>
         [DataMember(Name = "product_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "product_name")]
-        public string ProductName { get; set; }
+        public string? ProductName { get; set; }
 
         /// <summary>
         /// The purchase order number associated with this billing document item.
@@ -192,7 +192,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The purchase order number associated with this billing document item.</value>
         [DataMember(Name = "purchase_order_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchase_order_number")]
-        public string PurchaseOrderNumber { get; set; }
+        public string? PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// The number of units of this item.
@@ -208,7 +208,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The accounting code for the recognized revenue, such as Monthly Recurring Charges or Overage Charges.</value>
         [DataMember(Name = "recognized_revenue_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recognized_revenue_account")]
-        public string RecognizedRevenueAccount { get; set; }
+        public string? RecognizedRevenueAccount { get; set; }
 
         /// <summary>
         /// The remaining balance of this billing document item.
@@ -224,7 +224,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the revenue recognition rule governing the revenue schedule.</value>
         [DataMember(Name = "revenue_recognition_rule_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "revenue_recognition_rule_name")]
-        public string RevenueRecognitionRuleName { get; set; }
+        public string? RevenueRecognitionRuleName { get; set; }
 
         /// <summary>
         /// The end date of the service period associated with this billing document item. If the associated charge is a one-time fee, then this date is the date of that charge.
@@ -232,7 +232,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The end date of the service period associated with this billing document item. If the associated charge is a one-time fee, then this date is the date of that charge.</value>
         [DataMember(Name = "service_end")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service_end")]
-        public string ServiceEnd { get; set; }
+        public string? ServiceEnd { get; set; }
 
         /// <summary>
         /// The start date of the service period associated with this billing document item. If the associated charge is a one-time fee, then this date is the date of that charge.
@@ -240,7 +240,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The start date of the service period associated with this billing document item. If the associated charge is a one-time fee, then this date is the date of that charge.</value>
         [DataMember(Name = "service_start")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service_start")]
-        public string ServiceStart { get; set; }
+        public string? ServiceStart { get; set; }
 
         /// <summary>
         /// The unique SKU (stock keeping unit) of the product associated with this item.
@@ -248,7 +248,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique SKU (stock keeping unit) of the product associated with this item.</value>
         [DataMember(Name = "sku")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sku")]
-        public string Sku { get; set; }
+        public string? Sku { get; set; }
 
         /// <summary>
         /// The expandable subscription associated with the billing document item.

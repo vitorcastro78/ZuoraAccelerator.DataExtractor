@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Specifies whether to just create an invoice, or to create an invoice and collect payment.</value>
         [DataMember(Name = "collection_method")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collection_method")]
-        public string CollectionMethod { get; set; }
+        public string? CollectionMethod { get; set; }
 
         /// <summary>
         /// The date printed on billing documents.
@@ -40,14 +40,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentGatewayId
         /// </summary>
         [DataMember(Name = "payment_gateway_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_gateway_id")]
-        public Guid PaymentGatewayId { get; set; }
+        public string? PaymentGatewayId { get; set; }
 
         /// <summary>
         /// Payment method Id used to pay billing documents.
@@ -55,14 +55,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>Payment method Id used to pay billing documents.</value>
         [DataMember(Name = "payment_method_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "payment_method_id")]
-        public Guid PaymentMethodId { get; set; }
+        public string? PaymentMethodId { get; set; }
 
         /// <summary>
         /// Gets or Sets RefundReasonCode
         /// </summary>
         [DataMember(Name = "refund_reason_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "refund_reason_code")]
-        public string RefundReasonCode { get; set; }
+        public string? RefundReasonCode { get; set; }
 
         /// <summary>
         /// The target date for the order to be picked up by bill run for billing.

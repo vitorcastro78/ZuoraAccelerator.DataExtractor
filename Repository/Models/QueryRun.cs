@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The character used as delimiter to separate values in the output file.</value>
         [DataMember(Name = "column_separator")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "column_separator")]
-        public string ColumnSeparator { get; set; }
+        public string? ColumnSeparator { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object.
@@ -25,14 +25,14 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string? CreatedById { get; set; }
 
         /// <summary>
         /// Gets or Sets File
         /// </summary>
         [DataMember(Name = "file")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "file")]
-        public QueryRunFile File { get; set; }
+        public QueryRunFile? File { get; set; }
 
         /// <summary>
         /// Unique identifier for the object.
@@ -40,7 +40,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The number of rows in the output file.
@@ -72,7 +72,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The SQL statement of the query.</value>
         [DataMember(Name = "sql")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sql")]
-        public string Sql { get; set; }
+        public string? Sql { get; set; }
 
         /// <summary>
         /// The query's execution state, which will be completed for successful runs.
@@ -80,7 +80,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The query's execution state, which will be completed for successful runs.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO-8601 UTC format.

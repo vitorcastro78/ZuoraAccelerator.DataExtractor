@@ -24,7 +24,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Unit in which term duration is defined. One of day, week, month or year.
@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unit in which term duration is defined. One of day, week, month or year.</value>
         [DataMember(Name = "interval")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "interval")]
-        public string Interval { get; set; }
+        public string? Interval { get; set; }
 
         /// <summary>
         /// The number of intervals in a term. For example, interval=year and interval_count=1 represents a 1 year term.

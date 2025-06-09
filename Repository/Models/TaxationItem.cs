@@ -65,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public string? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -81,7 +81,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// The custom objects associated with a Zuora standard object.
@@ -89,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The custom objects associated with a Zuora standard object.</value>
         [DataMember(Name = "custom_objects")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_objects")]
-        public CustomObject CustomObjects { get; set; }
+        public CustomObject? CustomObjects { get; set; }
 
         /// <summary>
         /// Identifier of the taxation item related to the invoice. Only applicable for credit memos created from invoices.
@@ -97,7 +97,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the taxation item related to the invoice. Only applicable for credit memos created from invoices.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// The jurisdiction that applies the tax or VAT. This value is typically a state, province, county, or city.
@@ -105,7 +105,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The jurisdiction that applies the tax or VAT. This value is typically a state, province, county, or city.</value>
         [DataMember(Name = "jurisdiction")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jurisdiction")]
-        public string Jurisdiction { get; set; }
+        public string? Jurisdiction { get; set; }
 
         /// <summary>
         /// The identifier for the location based on the value of the `tax_code` field.
@@ -113,7 +113,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier for the location based on the value of the `tax_code` field.</value>
         [DataMember(Name = "location_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location_code")]
-        public string LocationCode { get; set; }
+        public string? LocationCode { get; set; }
 
         /// <summary>
         /// The name of the taxation item.
@@ -121,7 +121,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the taxation item.</value>
         [DataMember(Name = "name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// An active account in your Zuora Chart of Accounts.
@@ -129,7 +129,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active account in your Zuora Chart of Accounts.</value>
         [DataMember(Name = "on_account_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "on_account_account")]
-        public string OnAccountAccount { get; set; }
+        public string? OnAccountAccount { get; set; }
 
         /// <summary>
         /// The remaining balance of the taxation item.
@@ -145,7 +145,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active account in your Zuora Chart of Accounts.</value>
         [DataMember(Name = "sales_tax_payable_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sales_tax_payable_account")]
-        public string SalesTaxPayableAccount { get; set; }
+        public string? SalesTaxPayableAccount { get; set; }
 
         /// <summary>
         /// The ID of the taxation item of the invoice, from which the credit or debit memo is created. This field is only applicable when the `type` of the billing document is `credit_memo` and `debit_memo`.
@@ -153,7 +153,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The ID of the taxation item of the invoice, from which the credit or debit memo is created. This field is only applicable when the `type` of the billing document is `credit_memo` and `debit_memo`.</value>
         [DataMember(Name = "source_tax_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "source_tax_item_id")]
-        public Guid SourceTaxItemId { get; set; }
+        public string? SourceTaxItemId { get; set; }
 
         /// <summary>
         /// A tax code identifier. If a `tax_code` of a price is not provided when you create or update a price, Zuora will treat the charged amount as non-taxable. If this code is provide, Zuora considers that this price is taxable and the charged amount will be handled accordingly.
@@ -161,7 +161,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A tax code identifier. If a `tax_code` of a price is not provided when you create or update a price, Zuora will treat the charged amount as non-taxable. If this code is provide, Zuora considers that this price is taxable and the charged amount will be handled accordingly.</value>
         [DataMember(Name = "tax_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_code")]
-        public string TaxCode { get; set; }
+        public string? TaxCode { get; set; }
 
         /// <summary>
         /// The amount of the tax applied to the total price.
@@ -169,7 +169,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The amount of the tax applied to the total price.</value>
         [DataMember(Name = "tax_code_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_code_name")]
-        public string TaxCodeName { get; set; }
+        public string? TaxCodeName { get; set; }
 
         /// <summary>
         /// The date on which the tax is applied.
@@ -201,7 +201,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the tax rate, such as sales tax or GST. This name is displayed on billing documents.</value>
         [DataMember(Name = "tax_rate_name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_rate_name")]
-        public string TaxRateName { get; set; }
+        public string? TaxRateName { get; set; }
 
         /// <summary>
         /// Indicates whether the tax rate is an amount or a percentage.
@@ -209,7 +209,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Indicates whether the tax rate is an amount or a percentage.</value>
         [DataMember(Name = "tax_rate_type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_rate_type")]
-        public string TaxRateType { get; set; }
+        public string? TaxRateType { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who last updated the object
@@ -217,7 +217,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public string? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "accounting_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accounting_code")]
-        public string AccountingCode { get; set; }
+        public string? AccountingCode { get; set; }
 
         /// <summary>
         /// An active accounting code in your Zuora chart of accounts.
@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "adjustment_liability_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adjustment_liability_account")]
-        public string AdjustmentLiabilityAccount { get; set; }
+        public string? AdjustmentLiabilityAccount { get; set; }
 
         /// <summary>
         /// The billing rule for the order line item.
@@ -33,7 +33,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The billing rule for the order line item.</value>
         [DataMember(Name = "billing_rule")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_rule")]
-        public string BillingRule { get; set; }
+        public string? BillingRule { get; set; }
 
         /// <summary>
         /// The category for the order line item, to indicate a product sale or return.
@@ -41,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The category for the order line item, to indicate a product sale or return.</value>
         [DataMember(Name = "category")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "category")]
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
         /// <summary>
         /// An active accounting code in your Zuora chart of accounts.
@@ -49,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "contract_asset_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contract_asset_account")]
-        public string ContractAssetAccount { get; set; }
+        public string? ContractAssetAccount { get; set; }
 
         /// <summary>
         /// An active accounting code in your Zuora chart of accounts.
@@ -57,7 +57,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts.</value>
         [DataMember(Name = "contract_liability_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contract_liability_account")]
-        public string ContractLiabilityAccount { get; set; }
+        public string? ContractLiabilityAccount { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who created the object
@@ -65,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -81,7 +81,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// The custom objects associated with a Zuora standard object.
@@ -89,7 +89,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The custom objects associated with a Zuora standard object.</value>
         [DataMember(Name = "custom_objects")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_objects")]
-        public CustomObject CustomObjects { get; set; }
+        public CustomObject? CustomObjects { get; set; }
 
         /// <summary>
         /// An arbitrary string attached to the object. Often useful for displaying to users.
@@ -97,7 +97,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An arbitrary string attached to the object. Often useful for displaying to users.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Discount percent.
@@ -137,7 +137,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// List of invoice items. EXPANDABLE
@@ -145,7 +145,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>List of invoice items. EXPANDABLE</value>
         [DataMember(Name = "invoice_items")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_items")]
-        public List<InvoiceItem> InvoiceItems { get; set; }
+        public List<InvoiceItem>? InvoiceItems { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the order item. It can be user-supplied.
@@ -153,7 +153,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Human-readable identifier of the order item. It can be user-supplied.</value>
         [DataMember(Name = "item_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "item_number")]
-        public string ItemNumber { get; set; }
+        public string? ItemNumber { get; set; }
 
         /// <summary>
         /// The extended list price for an order line item, calculated by the formula: listPrice = listPricePerUnit * quantity
@@ -177,7 +177,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the order line item.</value>
         [DataMember(Name = "name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The unique identifier for the order associated with this order line item.
@@ -185,7 +185,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier for the order associated with this order line item.</value>
         [DataMember(Name = "order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_id")]
-        public Guid OrderId { get; set; }
+        public Guid? OrderId { get; set; }
 
         /// <summary>
         /// The date when the subscription item is created through an order. This field is to standardize the booking date information to increase audit ability and traceability of data between Zuora Billing and Zuora Revenue. It is mapped as the booking date for a sales order line in Zuora Revenue.
@@ -201,7 +201,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of the original sales order for a return order line item.</value>
         [DataMember(Name = "original_order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_id")]
-        public Guid OriginalOrderId { get; set; }
+        public Guid? OriginalOrderId { get; set; }
 
         /// <summary>
         /// The unique identifier of the original sales order line item for a return order line item.
@@ -209,7 +209,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of the original sales order line item for a return order line item.</value>
         [DataMember(Name = "original_order_line_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_line_item_id")]
-        public Guid OriginalOrderLineItemId { get; set; }
+        public Guid? OriginalOrderLineItemId { get; set; }
 
         /// <summary>
         /// The number of the original sales order line item for a return order line item.
@@ -217,7 +217,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The number of the original sales order line item for a return order line item.</value>
         [DataMember(Name = "original_order_line_item_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_line_item_number")]
-        public string OriginalOrderLineItemNumber { get; set; }
+        public string? OriginalOrderLineItemNumber { get; set; }
 
         /// <summary>
         /// The number of the original sales order for a return order line item.
@@ -225,7 +225,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The number of the original sales order for a return order line item.</value>
         [DataMember(Name = "original_order_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_number")]
-        public string OriginalOrderNumber { get; set; }
+        public string? OriginalOrderNumber { get; set; }
 
         /// <summary>
         /// The unique identifier of a contact belonging to the billing account of the order line item that was the original sold to contact when the order line item was created.
@@ -233,7 +233,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of a contact belonging to the billing account of the order line item that was the original sold to contact when the order line item was created. </value>
         [DataMember(Name = "original_sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_sold_to_id")]
-        public Guid OriginalSoldToId { get; set; }
+        public Guid? OriginalSoldToId { get; set; }
 
         /// <summary>
         /// Identifier of the price.
@@ -241,7 +241,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the price.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public Guid PriceId { get; set; }
+        public Guid? PriceId { get; set; }
 
         /// <summary>
         /// The product code for the order line item.
@@ -249,7 +249,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The product code for the order line item.</value>
         [DataMember(Name = "product_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "product_code")]
-        public string ProductCode { get; set; }
+        public string? ProductCode { get; set; }
 
         /// <summary>
         /// Used by customers to specify the Purchase Order Number provided by the buyer.
@@ -257,7 +257,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Used by customers to specify the Purchase Order Number provided by the buyer.</value>
         [DataMember(Name = "purchase_order_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchase_order_number")]
-        public string PurchaseOrderNumber { get; set; }
+        public string? PurchaseOrderNumber { get; set; }
 
         /// <summary>
         /// The quantity of the product ordered.
@@ -297,7 +297,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Use this field to relate an order line item to an subscription.</value>
         [DataMember(Name = "related_subscription_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "related_subscription_number")]
-        public string RelatedSubscriptionNumber { get; set; }
+        public string? RelatedSubscriptionNumber { get; set; }
 
         /// <summary>
         /// If true, a fulfillment is required to trigger billing.
@@ -312,7 +312,7 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "revenue")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "revenue")]
-        public OrderLineItemRevenue Revenue { get; set; }
+        public decimal? Revenue { get; set; }
 
         /// <summary>
         /// The unique identifier of a contact belonging to the billing account of the order line item. Use this field to assign and existing contact as the sold to contact of an order line item.
@@ -320,7 +320,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier of a contact belonging to the billing account of the order line item. Use this field to assign and existing contact as the sold to contact of an order line item.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public Guid SoldToId { get; set; }
+        public Guid? SoldToId { get; set; }
 
         /// <summary>
         /// The date a transaction starts. The default value of this field is the order date.
@@ -336,7 +336,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The state of an order line item. If you want to generate billing documents for order line items, you must set this field to `sent_to_billing`. For invoice preview, you do not need to set this field.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Total before discounts and taxes are applied.
@@ -360,7 +360,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The tax code for the order line item.</value>
         [DataMember(Name = "tax_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_code")]
-        public string TaxCode { get; set; }
+        public string? TaxCode { get; set; }
 
         /// <summary>
         /// If this field is set to `true`, it indicates that amounts are inclusive of tax.
@@ -384,7 +384,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The type of the order line item.</value>
         [DataMember(Name = "type")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type")]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// An active accounting code in your Zuora chart of accounts..
@@ -392,7 +392,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>An active accounting code in your Zuora chart of accounts..</value>
         [DataMember(Name = "unbilled_receivables_account")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unbilled_receivables_account")]
-        public string UnbilledReceivablesAccount { get; set; }
+        public string? UnbilledReceivablesAccount { get; set; }
 
         /// <summary>
         /// The unit amount to be charged.
@@ -408,7 +408,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A configured unit of measure.</value>
         [DataMember(Name = "unit_of_measure")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unit_of_measure")]
-        public string UnitOfMeasure { get; set; }
+        public string? UnitOfMeasure { get; set; }
 
         /// <summary>
         /// Unique identifier of the Zuora user who last updated the object
@@ -416,7 +416,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public Guid UpdatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

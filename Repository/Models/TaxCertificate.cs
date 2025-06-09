@@ -17,7 +17,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique code that identifies a company account in Avalara. Use this field to calculate taxes based on country of origin and sold-to addresses in Avalara.</value>
         [DataMember(Name = "company_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "company_code")]
-        public string CompanyCode { get; set; }
+        public string? CompanyCode { get; set; }
 
         /// <summary>
         /// Description of the tax exemption certificate.
@@ -25,7 +25,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Description of the tax exemption certificate.</value>
         [DataMember(Name = "description")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// The tax certificate end date.
@@ -41,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>A unique entity use code used by Avalara to apply exemptions. This field is required only when you choose Avalara as your tax engine. See [Exempt Transactions](https://developer.avalara.com/avatax/handling-tax-exempt-customers/) for more information.</value>
         [DataMember(Name = "entity_use_code")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entity_use_code")]
-        public string EntityUseCode { get; set; }
+        public string? EntityUseCode { get; set; }
 
         /// <summary>
         /// Identifier of the tax exemption certificate.
@@ -49,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the tax exemption certificate.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         /// <summary>
         /// Typically, this is a state or government agency
@@ -57,7 +57,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Typically, this is a state or government agency</value>
         [DataMember(Name = "issuing_jurisdiction")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuing_jurisdiction")]
-        public string IssuingJurisdiction { get; set; }
+        public string? IssuingJurisdiction { get; set; }
 
         /// <summary>
         /// The tax certificate start date.
@@ -73,7 +73,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Status of the tax exemption certificate, indication whether the certificate has been verified.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Value Added Tax (VAT) ID. Each VAT ID must begin with the code of the country code and followed by a block of digits or characters.
@@ -81,7 +81,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Value Added Tax (VAT) ID. Each VAT ID must begin with the code of the country code and followed by a block of digits or characters.</value>
         [DataMember(Name = "tax_identifier")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tax_identifier")]
-        public Guid TaxIdentifier { get; set; }
+        public Guid? TaxIdentifier { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

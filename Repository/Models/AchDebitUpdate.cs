@@ -57,30 +57,6 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mandate")]
         public Mandate Mandate { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class AchDebitUpdate {\n");
-            sb.Append("  Mandate: ").Append(Mandate).Append("\n");
-            sb.Append("  BankAbaCode: ").Append(BankAbaCode).Append("\n");
-            sb.Append("  BankAccountName: ").Append(BankAccountName).Append("\n");
-            sb.Append("  BankAccountType: ").Append(BankAccountType).Append("\n");
-            sb.Append("  BankName: ").Append(BankName).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+        
     }
 }

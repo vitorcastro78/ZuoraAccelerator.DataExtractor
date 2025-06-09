@@ -31,7 +31,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The name of the workflow definition.</value>
         [DataMember(Name = "name")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Identifier of the original Workflow version.
@@ -47,7 +47,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The status of an active version.</value>
         [DataMember(Name = "state")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// The type of the active version. Currently the only valid value is `Workflow::Setup`.
