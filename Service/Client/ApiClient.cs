@@ -1,3 +1,4 @@
+using Auth0.ManagementApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
@@ -46,7 +47,7 @@ namespace Service.Client
         /// Initializes a new instance of the <see cref="ApiClient" /> class.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(ILogger<ApiClient> logger, IMemoryCache cache, AppDataContext context )
+        public ApiClient(ILogger<ApiClient> logger, IMemoryCache cache, AppDataContext context)
         {
             _cache = cache ?? throw new ArgumentNullException(nameof(cache));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -538,7 +539,7 @@ namespace Service.Client
         {
             var token = new ZuoraToken();
 
-            if (_cache != null && _cache.TryGetValue("ZuoraToken",out token))
+            if (_cache != null && _cache.TryGetValue("ZuoraToken", out token))
             {
                 token = _cache.Get<ZuoraToken>("ZuoraToken");
             }
@@ -601,7 +602,7 @@ namespace Service.Client
                 return Convert.ToString(obj);
         }
 
-     
+
 
         /// <summary>
         /// Serialize an object into JSON string.
@@ -653,14 +654,11 @@ namespace Service.Client
             {
                 foreach (var item in resultData.Data)
                 {
-                    //var dbset = GetDbSetByName(item.GetType().Name);
                     var propriedadeDbSet = _context.GetType()
                             .GetProperties()
                             .FirstOrDefault(p => p.Name.Equals(item.GetType().Name, StringComparison.OrdinalIgnoreCase) &&
-                             p.PropertyType.IsGenericType &&
-                             p.PropertyType.GetGenericTypeDefinition() == typeof(DbSet<>));
-
-                    
+                                     p.PropertyType.IsGenericType &&
+                                     p.PropertyType.GetGenericTypeDefinition() == typeof(DbSet<>));
 
                     switch (item.GetType().Name)
                     {
@@ -769,8 +767,6 @@ namespace Service.Client
                         default:
                             break;
                     }
-                   
-                    //_context.SaveChanges();
 
                     Counter++;
                 }

@@ -132,23 +132,18 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankAbaCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankAccountName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankAccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankAccountType")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -245,11 +240,10 @@ namespace Repository.Migrations
                     b.Property<Guid>("MandateId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PaymentId")
+                    b.Property<Guid?>("PaymentId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Token")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -287,11 +281,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BranchCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -311,15 +303,12 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BranchCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IdentityNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -339,11 +328,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -363,15 +350,12 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IdentityNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -474,15 +458,12 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -690,10 +671,10 @@ namespace Repository.Migrations
                     b.Property<string>("Sku")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionId")
+                    b.Property<Guid?>("SubscriptionId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionItemId")
+                    b.Property<Guid?>("SubscriptionItemId")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Subtotal")
@@ -703,24 +684,21 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TaxCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("TaxInclusive")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("UnitAmount")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UnitOfMeasure")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -757,16 +735,15 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CreditMemoTemplateId")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("DebitMemoTemplateId")
+                    b.Property<Guid?>("DebitMemoTemplateId")
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("EmailDocuments")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("InvoiceTemplateId")
+                    b.Property<Guid?>("InvoiceTemplateId")
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("PrintDocuments")
@@ -808,11 +785,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Brand")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CardNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("ExpiryMonth")
@@ -822,14 +797,12 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Last4")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("SecurityCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -848,19 +821,16 @@ namespace Repository.Migrations
                     b.Property<Guid>("CustomerAcceptanceId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("NetworkTransactionId")
+                    b.Property<Guid?>("NetworkTransactionId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Reason")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("Verified")
@@ -889,11 +859,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("SecondToken")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Token")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -912,7 +880,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Brand")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("ExpiryMonth")
@@ -922,7 +889,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Last4")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -1013,11 +979,10 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AccountId")
+                    b.Property<Guid?>("AccountId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("AmountRefunded")
@@ -1029,10 +994,10 @@ namespace Repository.Migrations
                     b.Property<decimal?>("Balance")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("BillToId")
+                    b.Property<Guid?>("BillToId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CreatedById")
+                    b.Property<Guid?>("CreatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CreatedTime")
@@ -1042,11 +1007,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CreditMemoNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Currency")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("CustomFieldsId")
@@ -1056,7 +1019,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("DocumentDate")
@@ -1065,21 +1027,19 @@ namespace Repository.Migrations
                     b.Property<bool?>("ExcludeFromAutoApplyRules")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("InvoiceId")
+                    b.Property<Guid?>("InvoiceId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PostedById")
+                    b.Property<Guid?>("PostedById")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ReasonCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("StateTransitionsId")
@@ -1097,7 +1057,7 @@ namespace Repository.Migrations
                     b.Property<bool?>("TransferToAccounting")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -1131,11 +1091,10 @@ namespace Repository.Migrations
                     b.Property<decimal?>("Amount")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("BillingDocumentId")
+                    b.Property<Guid?>("BillingDocumentId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BillingDocumentType")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -1152,26 +1111,24 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountingCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountsReceivableAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Amount")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AppliedToItemId")
+                    b.Property<Guid?>("AppliedToItemId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CreatedById")
+                    b.Property<Guid?>("CreatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CreatedTime")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CreditMemoId")
+                    b.Property<Guid?>("CreditMemoId")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("CustomFieldsId")
@@ -1181,11 +1138,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DeferredRevenueAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("DiscountItem")
@@ -1194,54 +1149,46 @@ namespace Repository.Migrations
                     b.Property<DateTime?>("DocumentItemDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("InvoiceItemId")
+                    b.Property<Guid?>("InvoiceItemId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OnAccountAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PriceId")
+                    b.Property<Guid?>("PriceId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PurchaseOrderNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Quantity")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RecognizedRevenueAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RevenueRecognitionRuleName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ServiceEnd")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ServiceStart")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Sku")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionId")
+                    b.Property<Guid?>("SubscriptionId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionItemId")
+                    b.Property<Guid?>("SubscriptionItemId")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Subtotal")
@@ -1251,7 +1198,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TaxCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("TaxInclusive")
@@ -1261,10 +1207,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UnitOfMeasure")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -1391,21 +1336,18 @@ namespace Repository.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PaymentTerms")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PostedById")
+                    b.Property<Guid?>("PostedById")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ReasonCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("StateTransitionsId")
@@ -1423,7 +1365,7 @@ namespace Repository.Migrations
                     b.Property<bool?>("TransferToAccounting")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -1453,20 +1395,18 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountingCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountsReceivableAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Amount")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AppliedToItemId")
+                    b.Property<Guid?>("AppliedToItemId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CreatedById")
+                    b.Property<Guid?>("CreatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CreatedTime")
@@ -1478,15 +1418,13 @@ namespace Repository.Migrations
                     b.Property<Guid>("CustomObjectsId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("DebitMemoId")
+                    b.Property<Guid?>("DebitMemoId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DeferredRevenueAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("DiscountItem")
@@ -1495,54 +1433,46 @@ namespace Repository.Migrations
                     b.Property<DateTime?>("DocumentItemDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("InvoiceItemId")
+                    b.Property<Guid?>("InvoiceItemId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OnAccountAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PriceId")
+                    b.Property<Guid?>("PriceId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PurchaseOrderNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Quantity")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RecognizedRevenueAccount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RevenueRecognitionRuleName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ServiceEnd")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ServiceStart")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Sku")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionId")
+                    b.Property<Guid?>("SubscriptionId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionItemId")
+                    b.Property<Guid?>("SubscriptionItemId")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Subtotal")
@@ -1552,7 +1482,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TaxCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("TaxInclusive")
@@ -1562,10 +1491,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UnitOfMeasure")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -1607,7 +1535,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UnitOfMeasure")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -1653,7 +1580,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Brand")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("ExpiryMonth")
@@ -1663,7 +1589,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Last4")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -1686,7 +1611,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Token")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -1702,11 +1626,10 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AccountId")
+                    b.Property<Guid?>("AccountId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("ArTransactionsId")
@@ -1715,20 +1638,19 @@ namespace Repository.Migrations
                     b.Property<decimal?>("Balance")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("BillToId")
+                    b.Property<Guid?>("BillToId")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("BillingDocumentSettingsId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CreatedById")
+                    b.Property<Guid?>("CreatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CreatedTime")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Currency")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("CustomFieldsId")
@@ -1738,7 +1660,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("DocumentDate")
@@ -1748,7 +1669,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("InvoiceNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("Paid")
@@ -1761,20 +1681,18 @@ namespace Repository.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PaymentTerms")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PostedById")
+                    b.Property<Guid?>("PostedById")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SoldToId")
+                    b.Property<Guid?>("SoldToId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("StateTransitionsId")
@@ -1792,7 +1710,7 @@ namespace Repository.Migrations
                     b.Property<bool?>("TransferToAccounting")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -1889,32 +1807,27 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RevenueRecognitionRuleName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ServiceEnd")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ServiceStart")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Sku")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionId")
+                    b.Property<Guid?>("SubscriptionId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SubscriptionItemId")
+                    b.Property<Guid?>("SubscriptionItemId")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Tax")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TaxCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("TaxInclusive")
@@ -1924,10 +1837,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UnitOfMeasure")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -1982,11 +1894,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Reason")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -2012,15 +1922,12 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BranchCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -2272,7 +2179,6 @@ namespace Repository.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -2287,15 +2193,12 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BankCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BranchCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -2395,31 +2298,28 @@ namespace Repository.Migrations
                     b.Property<Guid?>("PayoutId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("ReferenceId")
+                    b.Property<Guid?>("ReferenceId")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SecondReferenceId")
+                    b.Property<Guid?>("SecondReferenceId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("StateTransitionsId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("StatementDescriptor")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("StatementDescriptorPhone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UpdatedById")
+                    b.Property<Guid?>("UpdatedById")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedTime")
@@ -2880,7 +2780,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PaymentNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("StateId")
@@ -2904,18 +2803,16 @@ namespace Repository.Migrations
                     b.Property<decimal?>("Amount")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("BillingDocumentId")
+                    b.Property<Guid?>("BillingDocumentId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BillingDocumentType")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("PaymentId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -2934,11 +2831,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PreapprovalKey")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -3069,7 +2964,7 @@ namespace Repository.Migrations
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PrepaidUOM")
+                    b.Property<Guid?>("PrepaidUOM")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
@@ -3099,11 +2994,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TransactionDate")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("ValidityPeriodId")
@@ -3141,7 +3034,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CreditOption")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("Quantity")
@@ -3151,10 +3043,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UnitOfMeasure")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("ValidityPeriod")
+                    b.Property<Guid?>("ValidityPeriod")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -3638,41 +3529,33 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AlignmentBehavior")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DurationInterval")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("DurationIntervalCount")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Formula")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Interval")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("IntervalCount")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("On")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RatingGroup")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RecurringOn")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Timing")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("Usage")
@@ -3874,7 +3757,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RefundNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("StateId")
@@ -3934,11 +3816,9 @@ namespace Repository.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ResumeAt")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ResumeDate")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -3971,11 +3851,10 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("BusinessIdentificationCode")
+                    b.Property<Guid?>("BusinessIdentificationCode")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IBAN")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("MandateId")
@@ -4075,11 +3954,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CanceledTime")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PostedTime")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -4121,7 +3998,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Currency")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("CurrentTermId")
@@ -4161,7 +4037,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OrderNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PaymentTerms")
@@ -4239,7 +4114,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UniqueToken")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -4256,7 +4130,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CancelAt")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CancelDate")
@@ -4346,39 +4219,33 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("StartEvent")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("SubscriptionAddPlanId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("SubscriptionItemNumber")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("SubscriptionPlanId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TaxCode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("TaxInclusive")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("TiersMode")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("UnitAmount")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UnitOfMeasure")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("UpdatedById")
@@ -4416,15 +4283,12 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PauseAt")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PauseDate")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PauseInterval")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("PauseIntervalCount")
@@ -4725,7 +4589,6 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -4769,11 +4632,9 @@ namespace Repository.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Failed")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Succeeded")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -4870,7 +4731,7 @@ namespace Repository.Migrations
                     b.Property<Guid?>("PrepaidBalancesId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PrepaidUOM")
+                    b.Property<Guid?>("PrepaidUOM")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal?>("RemainingBalance")
@@ -5071,15 +4932,11 @@ namespace Repository.Migrations
 
                     b.HasOne("ZIP2GO.Repository.Models.Subscription", "Subscription")
                         .WithMany()
-                        .HasForeignKey("SubscriptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionId");
 
                     b.HasOne("ZIP2GO.Repository.Models.SubscriptionItem", "SubscriptionItem")
                         .WithMany()
-                        .HasForeignKey("SubscriptionItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionItemId");
 
                     b.Navigation("BillingDocument");
 
@@ -5172,9 +5029,7 @@ namespace Repository.Migrations
                 {
                     b.HasOne("ZIP2GO.Repository.Models.Account", "Account")
                         .WithMany("CreditMemos")
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AccountId");
 
                     b.HasOne("ZIP2GO.Repository.Models.ArTransactions", null)
                         .WithMany("CreditMemos")
@@ -5182,9 +5037,7 @@ namespace Repository.Migrations
 
                     b.HasOne("ZIP2GO.Repository.Models.Contact", "BillTo")
                         .WithMany()
-                        .HasForeignKey("BillToId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BillToId");
 
                     b.HasOne("ZIP2GO.Repository.Models.CreditMemo", null)
                         .WithMany("AppliedTo")
@@ -5223,9 +5076,7 @@ namespace Repository.Migrations
                 {
                     b.HasOne("ZIP2GO.Repository.Models.BillingDocument", "BillingDocument")
                         .WithMany()
-                        .HasForeignKey("BillingDocumentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BillingDocumentId");
 
                     b.Navigation("BillingDocument");
                 });
@@ -5234,9 +5085,7 @@ namespace Repository.Migrations
                 {
                     b.HasOne("ZIP2GO.Repository.Models.CreditMemo", "CreditMemo")
                         .WithMany("Items")
-                        .HasForeignKey("CreditMemoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CreditMemoId");
 
                     b.HasOne("ZIP2GO.Repository.Models.CustomFields", "CustomFields")
                         .WithMany()
@@ -5252,15 +5101,11 @@ namespace Repository.Migrations
 
                     b.HasOne("ZIP2GO.Repository.Models.Subscription", "Subscription")
                         .WithMany()
-                        .HasForeignKey("SubscriptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionId");
 
                     b.HasOne("ZIP2GO.Repository.Models.SubscriptionItem", "SubscriptionItem")
                         .WithMany()
-                        .HasForeignKey("SubscriptionItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionItemId");
 
                     b.Navigation("CreditMemo");
 
@@ -5330,21 +5175,15 @@ namespace Repository.Migrations
 
                     b.HasOne("ZIP2GO.Repository.Models.DebitMemo", "DebitMemo")
                         .WithMany("Items")
-                        .HasForeignKey("DebitMemoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DebitMemoId");
 
                     b.HasOne("ZIP2GO.Repository.Models.Subscription", "Subscription")
                         .WithMany()
-                        .HasForeignKey("SubscriptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionId");
 
                     b.HasOne("ZIP2GO.Repository.Models.SubscriptionItem", "SubscriptionItem")
                         .WithMany()
-                        .HasForeignKey("SubscriptionItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionItemId");
 
                     b.Navigation("CustomFields");
 
@@ -5383,9 +5222,7 @@ namespace Repository.Migrations
                 {
                     b.HasOne("ZIP2GO.Repository.Models.Account", "Account")
                         .WithMany("Invoices")
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AccountId");
 
                     b.HasOne("ZIP2GO.Repository.Models.ArTransactions", null)
                         .WithMany("Invoices")
@@ -5393,9 +5230,7 @@ namespace Repository.Migrations
 
                     b.HasOne("ZIP2GO.Repository.Models.Contact", "BillTo")
                         .WithMany()
-                        .HasForeignKey("BillToId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BillToId");
 
                     b.HasOne("ZIP2GO.Repository.Models.BillingDocumentSettings", "BillingDocumentSettings")
                         .WithMany()
@@ -5417,9 +5252,7 @@ namespace Repository.Migrations
 
                     b.HasOne("ZIP2GO.Repository.Models.Contact", "SoldTo")
                         .WithMany()
-                        .HasForeignKey("SoldToId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SoldToId");
 
                     b.HasOne("ZIP2GO.Repository.Models.StateTransitions", "StateTransitions")
                         .WithMany()
@@ -5462,15 +5295,11 @@ namespace Repository.Migrations
 
                     b.HasOne("ZIP2GO.Repository.Models.Subscription", "Subscription")
                         .WithMany("InvoiceItems")
-                        .HasForeignKey("SubscriptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionId");
 
                     b.HasOne("ZIP2GO.Repository.Models.SubscriptionItem", "SubscriptionItem")
                         .WithMany()
-                        .HasForeignKey("SubscriptionItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionItemId");
 
                     b.Navigation("CustomFields");
 
@@ -5817,9 +5646,7 @@ namespace Repository.Migrations
                 {
                     b.HasOne("ZIP2GO.Repository.Models.BillingDocument", "BillingDocument")
                         .WithMany()
-                        .HasForeignKey("BillingDocumentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BillingDocumentId");
 
                     b.HasOne("ZIP2GO.Repository.Models.Payment", null)
                         .WithMany("AppliedTo")

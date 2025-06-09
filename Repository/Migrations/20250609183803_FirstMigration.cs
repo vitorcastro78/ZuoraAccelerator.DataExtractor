@@ -75,10 +75,10 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Brand = table.Column<string>(type: "TEXT", nullable: false),
+                    Brand = table.Column<string>(type: "TEXT", nullable: true),
                     ExpiryMonth = table.Column<decimal>(type: "TEXT", nullable: true),
                     ExpiryYear = table.Column<decimal>(type: "TEXT", nullable: true),
-                    Last4 = table.Column<string>(type: "TEXT", nullable: false)
+                    Last4 = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -136,7 +136,7 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     ConversionRate = table.Column<decimal>(type: "TEXT", nullable: true),
-                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: false)
+                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -173,8 +173,8 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Reason = table.Column<string>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false)
+                    Reason = table.Column<string>(type: "TEXT", nullable: true),
+                    State = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -201,7 +201,7 @@ namespace Repository.Migrations
                     CreditUnusedUnits = table.Column<bool>(type: "INTEGER", nullable: true),
                     IncludedUnits = table.Column<decimal>(type: "TEXT", nullable: true),
                     IntervalCount = table.Column<int>(type: "INTEGER", nullable: true),
-                    Type = table.Column<string>(type: "TEXT", nullable: false)
+                    Type = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -225,8 +225,8 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Email = table.Column<string>(type: "TEXT", nullable: false),
-                    PreapprovalKey = table.Column<string>(type: "TEXT", nullable: false)
+                    Email = table.Column<string>(type: "TEXT", nullable: true),
+                    PreapprovalKey = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -265,7 +265,7 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     EndDate = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    PrepaidUOM = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PrepaidUOM = table.Column<Guid>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
                     StartDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     TotalBalance = table.Column<decimal>(type: "TEXT", nullable: true)
@@ -280,11 +280,11 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CreditOption = table.Column<string>(type: "TEXT", nullable: false),
+                    CreditOption = table.Column<string>(type: "TEXT", nullable: true),
                     Quantity = table.Column<decimal>(type: "TEXT", nullable: true),
                     TotalQuantity = table.Column<decimal>(type: "TEXT", nullable: true),
-                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: false),
-                    ValidityPeriod = table.Column<Guid>(type: "TEXT", nullable: false)
+                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: true),
+                    ValidityPeriod = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -296,16 +296,16 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AlignmentBehavior = table.Column<string>(type: "TEXT", nullable: false),
-                    DurationInterval = table.Column<string>(type: "TEXT", nullable: false),
+                    AlignmentBehavior = table.Column<string>(type: "TEXT", nullable: true),
+                    DurationInterval = table.Column<string>(type: "TEXT", nullable: true),
                     DurationIntervalCount = table.Column<int>(type: "INTEGER", nullable: true),
-                    Formula = table.Column<string>(type: "TEXT", nullable: false),
-                    Interval = table.Column<string>(type: "TEXT", nullable: false),
+                    Formula = table.Column<string>(type: "TEXT", nullable: true),
+                    Interval = table.Column<string>(type: "TEXT", nullable: true),
                     IntervalCount = table.Column<int>(type: "INTEGER", nullable: true),
-                    On = table.Column<string>(type: "TEXT", nullable: false),
-                    RatingGroup = table.Column<string>(type: "TEXT", nullable: false),
-                    RecurringOn = table.Column<string>(type: "TEXT", nullable: false),
-                    Timing = table.Column<string>(type: "TEXT", nullable: false),
+                    On = table.Column<string>(type: "TEXT", nullable: true),
+                    RatingGroup = table.Column<string>(type: "TEXT", nullable: true),
+                    RecurringOn = table.Column<string>(type: "TEXT", nullable: true),
+                    Timing = table.Column<string>(type: "TEXT", nullable: true),
                     Usage = table.Column<bool>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -331,8 +331,8 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CanceledTime = table.Column<string>(type: "TEXT", nullable: false),
-                    PostedTime = table.Column<string>(type: "TEXT", nullable: false)
+                    CanceledTime = table.Column<string>(type: "TEXT", nullable: true),
+                    PostedTime = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -344,7 +344,7 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CancelAt = table.Column<string>(type: "TEXT", nullable: false),
+                    CancelAt = table.Column<string>(type: "TEXT", nullable: true),
                     CancelDate = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
@@ -403,7 +403,7 @@ namespace Repository.Migrations
                     Interval = table.Column<string>(type: "TEXT", nullable: true),
                     IntervalCount = table.Column<int>(type: "INTEGER", nullable: true),
                     StartDate = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Type = table.Column<string>(type: "TEXT", nullable: false)
+                    Type = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -415,8 +415,8 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Failed = table.Column<string>(type: "TEXT", nullable: false),
-                    Succeeded = table.Column<string>(type: "TEXT", nullable: false)
+                    Failed = table.Column<string>(type: "TEXT", nullable: true),
+                    Succeeded = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -429,19 +429,14 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     AddressId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Email = table.Column<string>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Phone = table.Column<string>(type: "TEXT", nullable: false)
+                    Email = table.Column<string>(type: "TEXT", nullable: true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Phone = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BillingDetails", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BillingDetails_AddressFieldDefinitions_AddressId",
-                        column: x => x.AddressId,
-                        principalTable: "AddressFieldDefinitions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+
                 });
 
             migrationBuilder.CreateTable(
@@ -450,22 +445,17 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomerAcceptanceId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    NetworkTransactionId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Reason = table.Column<string>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", nullable: false),
+                    NetworkTransactionId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Reason = table.Column<string>(type: "TEXT", nullable: true),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
+                    Type = table.Column<string>(type: "TEXT", nullable: true),
                     Verified = table.Column<bool>(type: "INTEGER", nullable: true),
                     Verify = table.Column<bool>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CardMandate", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CardMandate_CustomerAcceptanceMandate_CustomerAcceptanceId",
-                        column: x => x.CustomerAcceptanceId,
-                        principalTable: "CustomerAcceptanceMandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+
                 });
 
             migrationBuilder.CreateTable(
@@ -475,18 +465,13 @@ namespace Repository.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     ExtendTerm = table.Column<bool>(type: "INTEGER", nullable: true),
-                    ResumeAt = table.Column<string>(type: "TEXT", nullable: false),
-                    ResumeDate = table.Column<string>(type: "TEXT", nullable: false)
+                    ResumeAt = table.Column<string>(type: "TEXT", nullable: true),
+                    ResumeDate = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ResumeSubscription", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ResumeSubscription_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+
                 });
 
             migrationBuilder.CreateTable(
@@ -496,17 +481,12 @@ namespace Repository.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     PlanId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    UniqueToken = table.Column<string>(type: "TEXT", nullable: false)
+                    UniqueToken = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SubscriptionAddPlan", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionAddPlan_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -538,21 +518,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contact", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Contact_Address_AddressId",
-                        column: x => x.AddressId,
-                        principalTable: "Address",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Contact_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Contact_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -580,16 +546,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Product", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Product_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Product_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                  
                 });
 
             migrationBuilder.CreateTable(
@@ -597,22 +554,16 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BankAbaCode = table.Column<string>(type: "TEXT", nullable: false),
-                    BankAccountName = table.Column<string>(type: "TEXT", nullable: false),
-                    BankAccountNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    BankAccountType = table.Column<string>(type: "TEXT", nullable: false),
-                    BankName = table.Column<string>(type: "TEXT", nullable: false),
+                    BankAbaCode = table.Column<string>(type: "TEXT", nullable: true),
+                    BankAccountName = table.Column<string>(type: "TEXT", nullable: true),
+                    BankAccountNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    BankAccountType = table.Column<string>(type: "TEXT", nullable: true),
+                    BankName = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AchDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AchDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -620,19 +571,13 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    BranchCode = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    BranchCode = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AuBecsDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AuBecsDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -640,20 +585,14 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    BranchCode = table.Column<string>(type: "TEXT", nullable: false),
-                    IdentityNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    BranchCode = table.Column<string>(type: "TEXT", nullable: true),
+                    IdentityNumber = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AutogiroDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AutogiroDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -661,19 +600,13 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    BankCode = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    BankCode = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BacsDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BacsDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -681,20 +614,14 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    BankCode = table.Column<string>(type: "TEXT", nullable: false),
-                    IdentityNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    BankCode = table.Column<string>(type: "TEXT", nullable: true),
+                    IdentityNumber = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BetalingsDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BetalingsDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -704,24 +631,12 @@ namespace Repository.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CardId = table.Column<Guid>(type: "TEXT", nullable: false),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SecondToken = table.Column<string>(type: "TEXT", nullable: false),
-                    Token = table.Column<string>(type: "TEXT", nullable: false)
+                    SecondToken = table.Column<string>(type: "TEXT", nullable: true),
+                    Token = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CcRef", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CcRef_CcRefCard_CardId",
-                        column: x => x.CardId,
-                        principalTable: "CcRefCard",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CcRef_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -729,21 +644,16 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Brand = table.Column<string>(type: "TEXT", nullable: false),
+                    Brand = table.Column<string>(type: "TEXT", nullable: true),
                     ExpiryMonth = table.Column<decimal>(type: "TEXT", nullable: true),
                     ExpiryYear = table.Column<decimal>(type: "TEXT", nullable: true),
-                    Last4 = table.Column<string>(type: "TEXT", nullable: false),
+                    Last4 = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_GetCardList", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_GetCardList_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+
                 });
 
             migrationBuilder.CreateTable(
@@ -751,20 +661,15 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    BankCode = table.Column<string>(type: "TEXT", nullable: false),
-                    BranchCode = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    BankCode = table.Column<string>(type: "TEXT", nullable: true),
+                    BranchCode = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NzBecsDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_NzBecsDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+
                 });
 
             migrationBuilder.CreateTable(
@@ -772,20 +677,15 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    BankCode = table.Column<string>(type: "TEXT", nullable: false),
-                    BranchCode = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    BankCode = table.Column<string>(type: "TEXT", nullable: true),
+                    BranchCode = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PadDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PadDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+               
                 });
 
             migrationBuilder.CreateTable(
@@ -793,19 +693,14 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BusinessIdentificationCode = table.Column<Guid>(type: "TEXT", nullable: false),
-                    IBAN = table.Column<string>(type: "TEXT", nullable: false),
+                    BusinessIdentificationCode = table.Column<Guid>(type: "TEXT", nullable: true),
+                    IBAN = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SepaDebit", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SepaDebit_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+       
                 });
 
             migrationBuilder.CreateTable(
@@ -820,18 +715,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SubscriptionTerm", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionTerm_Term_CurrentTermId",
-                        column: x => x.CurrentTermId,
-                        principalTable: "Term",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionTerm_Term_RenewalTermId",
-                        column: x => x.RenewalTermId,
-                        principalTable: "Term",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -840,24 +724,14 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Amount = table.Column<string>(type: "TEXT", nullable: false),
-                    PaymentNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    PaymentNumber = table.Column<string>(type: "TEXT", nullable: true),
                     StateId = table.Column<Guid>(type: "TEXT", nullable: false),
                     ArTransactionsId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentTransaction", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PaymentTransaction_ArTransaction_ArTransactionsId",
-                        column: x => x.ArTransactionsId,
-                        principalTable: "ArTransaction",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentTransaction_TransactionsState_StateId",
-                        column: x => x.StateId,
-                        principalTable: "TransactionsState",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -866,24 +740,14 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     InvoiceNumbers = table.Column<string>(type: "TEXT", nullable: false),
-                    RefundNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    RefundNumber = table.Column<string>(type: "TEXT", nullable: true),
                     StateId = table.Column<Guid>(type: "TEXT", nullable: false),
                     ArTransactionsId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RefundTransaction", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RefundTransaction_ArTransaction_ArTransactionsId",
-                        column: x => x.ArTransactionsId,
-                        principalTable: "ArTransaction",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_RefundTransaction_TransactionsState_StateId",
-                        column: x => x.StateId,
-                        principalTable: "TransactionsState",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -891,23 +755,18 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Brand = table.Column<string>(type: "TEXT", nullable: false),
-                    CardNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    Brand = table.Column<string>(type: "TEXT", nullable: true),
+                    CardNumber = table.Column<string>(type: "TEXT", nullable: true),
                     ExpiryMonth = table.Column<decimal>(type: "TEXT", nullable: true),
                     ExpiryYear = table.Column<decimal>(type: "TEXT", nullable: true),
-                    Last4 = table.Column<string>(type: "TEXT", nullable: false),
+                    Last4 = table.Column<string>(type: "TEXT", nullable: true),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SecurityCode = table.Column<string>(type: "TEXT", nullable: false)
+                    SecurityCode = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Card", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Card_CardMandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "CardMandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                  
                 });
 
             migrationBuilder.CreateTable(
@@ -916,27 +775,16 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    PauseAt = table.Column<string>(type: "TEXT", nullable: false),
-                    PauseDate = table.Column<string>(type: "TEXT", nullable: false),
-                    PauseInterval = table.Column<string>(type: "TEXT", nullable: false),
+                    PauseAt = table.Column<string>(type: "TEXT", nullable: true),
+                    PauseDate = table.Column<string>(type: "TEXT", nullable: true),
+                    PauseInterval = table.Column<string>(type: "TEXT", nullable: true),
                     PauseIntervalCount = table.Column<decimal>(type: "TEXT", nullable: true),
                     ResumeBehaviorId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SubscriptionPause", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionPause_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionPause_ResumeSubscription_ResumeBehaviorId",
-                        column: x => x.ResumeBehaviorId,
-                        principalTable: "ResumeSubscription",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                 
                 });
 
             migrationBuilder.CreateTable(
@@ -969,21 +817,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Plan", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Plan_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Plan_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Plan_Product_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Product",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1010,21 +844,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductPlan", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductPlan_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPlan_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPlan_Product_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Product",
-                        principalColumn: "Id");
+               
                 });
 
             migrationBuilder.CreateTable(
@@ -1037,12 +857,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SubscriptionRenew", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionRenew_SubscriptionTerm_TermsId",
-                        column: x => x.TermsId,
-                        principalTable: "SubscriptionTerm",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1052,24 +867,13 @@ namespace Repository.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CardId = table.Column<Guid>(type: "TEXT", nullable: false),
                     MandateId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    PaymentId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Token = table.Column<string>(type: "TEXT", nullable: false)
+                    PaymentId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Token = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApplePay", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ApplePay_Card_CardId",
-                        column: x => x.CardId,
-                        principalTable: "Card",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ApplePay_Mandate_MandateId",
-                        column: x => x.MandateId,
-                        principalTable: "Mandate",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                  
                 });
 
             migrationBuilder.CreateTable(
@@ -1078,17 +882,12 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     CardId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Token = table.Column<string>(type: "TEXT", nullable: false)
+                    Token = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_GooglePay", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_GooglePay_Card_CardId",
-                        column: x => x.CardId,
-                        principalTable: "Card",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1141,61 +940,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Price", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Price_Amounts_AmountsId",
-                        column: x => x.AmountsId,
-                        principalTable: "Amounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Amounts_DiscountAmountsId",
-                        column: x => x.DiscountAmountsId,
-                        principalTable: "Amounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Amounts_UnitAmountsId",
-                        column: x => x.UnitAmountsId,
-                        principalTable: "Amounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Drawdown_DrawdownId",
-                        column: x => x.DrawdownId,
-                        principalTable: "Drawdown",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Overage_OverageId",
-                        column: x => x.OverageId,
-                        principalTable: "Overage",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Plan_PlanId",
-                        column: x => x.PlanId,
-                        principalTable: "Plan",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Prepayment_PrepaymentId",
-                        column: x => x.PrepaymentId,
-                        principalTable: "Prepayment",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Recurring_RecurringId",
-                        column: x => x.RecurringId,
-                        principalTable: "Recurring",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Price_Revenue_RevenueId",
-                        column: x => x.RevenueId,
-                        principalTable: "Revenue",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -1249,62 +994,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductPrice", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Amounts_AmountsId",
-                        column: x => x.AmountsId,
-                        principalTable: "Amounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Amounts_DiscountAmountsId",
-                        column: x => x.DiscountAmountsId,
-                        principalTable: "Amounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Amounts_UnitAmountsId",
-                        column: x => x.UnitAmountsId,
-                        principalTable: "Amounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Drawdown_DrawdownId",
-                        column: x => x.DrawdownId,
-                        principalTable: "Drawdown",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Overage_OverageId",
-                        column: x => x.OverageId,
-                        principalTable: "Overage",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Prepayment_PrepaymentId",
-                        column: x => x.PrepaymentId,
-                        principalTable: "Prepayment",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_ProductPlan_ProductPlanId",
-                        column: x => x.ProductPlanId,
-                        principalTable: "ProductPlan",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Recurring_RecurringId",
-                        column: x => x.RecurringId,
-                        principalTable: "Recurring",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductPrice_Revenue_RevenueId",
-                        column: x => x.RevenueId,
-                        principalTable: "Revenue",
-                        principalColumn: "Id");
+                  
                 });
 
             migrationBuilder.CreateTable(
@@ -1320,21 +1010,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tier", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Tier_Money_AmountsId",
-                        column: x => x.AmountsId,
-                        principalTable: "Money",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Tier_Money_UnitAmountsId",
-                        column: x => x.UnitAmountsId,
-                        principalTable: "Money",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Tier_Price_PriceId",
-                        column: x => x.PriceId,
-                        principalTable: "Price",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1350,23 +1026,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductTier", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductTier_Money_AmountsId",
-                        column: x => x.AmountsId,
-                        principalTable: "Money",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductTier_Money_UnitAmountsId",
-                        column: x => x.UnitAmountsId,
-                        principalTable: "Money",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductTier_ProductPrice_ProductPriceId",
-                        column: x => x.ProductPriceId,
-                        principalTable: "ProductPrice",
-                        principalColumn: "Id");
+                 
                 });
 
             migrationBuilder.CreateTable(
@@ -1407,26 +1067,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Account", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Account_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Account_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Account_TaxCertificate_TaxCertificateId",
-                        column: x => x.TaxCertificateId,
-                        principalTable: "TaxCertificate",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Account_TaxIdentifier_TaxIdentifierId",
-                        column: x => x.TaxIdentifierId,
-                        principalTable: "TaxIdentifier",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1467,21 +1108,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BillingDocument", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BillingDocument_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillingDocument_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillingDocument_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -1513,26 +1140,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BillTo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BillTo_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillTo_Address_AddressId",
-                        column: x => x.AddressId,
-                        principalTable: "Address",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillTo_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillTo_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                 
                 });
 
             migrationBuilder.CreateTable(
@@ -1540,31 +1148,31 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
                     AmountRefunded = table.Column<decimal>(type: "TEXT", nullable: true),
                     Balance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    BillToId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    BillToId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    CreditMemoNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    Currency = table.Column<string>(type: "TEXT", nullable: false),
+                    CreditMemoNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    Currency = table.Column<string>(type: "TEXT", nullable: true),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomObjectsId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
                     DocumentDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     ExcludeFromAutoApplyRules = table.Column<bool>(type: "INTEGER", nullable: true),
-                    InvoiceId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    PostedById = table.Column<Guid>(type: "TEXT", nullable: false),
-                    ReasonCode = table.Column<string>(type: "TEXT", nullable: false),
+                    InvoiceId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    PostedById = table.Column<Guid>(type: "TEXT", nullable: true),
+                    ReasonCode = table.Column<string>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
                     StateTransitionsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Subtotal = table.Column<decimal>(type: "TEXT", nullable: true),
                     Tax = table.Column<decimal>(type: "TEXT", nullable: true),
                     Total = table.Column<decimal>(type: "TEXT", nullable: true),
                     TransferToAccounting = table.Column<bool>(type: "INTEGER", nullable: true),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     ArTransactionsId = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreditMemoId = table.Column<Guid>(type: "TEXT", nullable: true)
@@ -1572,46 +1180,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CreditMemo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CreditMemo_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemo_ArTransaction_ArTransactionsId",
-                        column: x => x.ArTransactionsId,
-                        principalTable: "ArTransaction",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_CreditMemo_Contact_BillToId",
-                        column: x => x.BillToId,
-                        principalTable: "Contact",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemo_CreditMemo_CreditMemoId",
-                        column: x => x.CreditMemoId,
-                        principalTable: "CreditMemo",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_CreditMemo_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemo_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemo_StateTransitions_StateTransitionsId",
-                        column: x => x.StateTransitionsId,
-                        principalTable: "StateTransitions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1635,21 +1204,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Order", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Order_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Order_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Order_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1701,101 +1256,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentMethod", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_AchDebit_AchDebitId",
-                        column: x => x.AchDebitId,
-                        principalTable: "AchDebit",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_ApplePay_ApplePayId",
-                        column: x => x.ApplePayId,
-                        principalTable: "ApplePay",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_AuBecsDebit_AuBecsDebitId",
-                        column: x => x.AuBecsDebitId,
-                        principalTable: "AuBecsDebit",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_AutogiroDebit_AutogiroDebitId",
-                        column: x => x.AutogiroDebitId,
-                        principalTable: "AutogiroDebit",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_BacsDebit_BacsDebitId",
-                        column: x => x.BacsDebitId,
-                        principalTable: "BacsDebit",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_BetalingsDebit_BetalingsDebitId",
-                        column: x => x.BetalingsDebitId,
-                        principalTable: "BetalingsDebit",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_BillingDetails_BillingDetailsId",
-                        column: x => x.BillingDetailsId,
-                        principalTable: "BillingDetails",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_CcRef_CcRefId",
-                        column: x => x.CcRefId,
-                        principalTable: "CcRef",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_GetCardList_CardId",
-                        column: x => x.CardId,
-                        principalTable: "GetCardList",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_GooglePay_GooglePayId",
-                        column: x => x.GooglePayId,
-                        principalTable: "GooglePay",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_NzBecsDebit_NzBecsDebitId",
-                        column: x => x.NzBecsDebitId,
-                        principalTable: "NzBecsDebit",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_PadDebit_PadDebitId",
-                        column: x => x.PadDebitId,
-                        principalTable: "PadDebit",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_PaypalAdaptive_PaypalAdaptiveId",
-                        column: x => x.PaypalAdaptiveId,
-                        principalTable: "PaypalAdaptive",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_PaypalExpressNative_PaypalExpressNativeId",
-                        column: x => x.PaypalExpressNativeId,
-                        principalTable: "PaypalExpressNative",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_PaypalExpress_PaypalExpressId",
-                        column: x => x.PaypalExpressId,
-                        principalTable: "PaypalExpress",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentMethod_SepaDebit_SepaDebitId",
-                        column: x => x.SepaDebitId,
-                        principalTable: "SepaDebit",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -1827,26 +1288,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SoldTo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SoldTo_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SoldTo_Address_AddressId",
-                        column: x => x.AddressId,
-                        principalTable: "Address",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SoldTo_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SoldTo_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1876,21 +1318,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usage", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Usage_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Usage_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Usage_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -1905,11 +1333,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BillingDocumentStateTransitions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentStateTransitions_BillingDocument_BillingDocumentId",
-                        column: x => x.BillingDocumentId,
-                        principalTable: "BillingDocument",
-                        principalColumn: "Id");
+
                 });
 
             migrationBuilder.CreateTable(
@@ -1918,18 +1342,13 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Amount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    BillingDocumentId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BillingDocumentType = table.Column<string>(type: "TEXT", nullable: false)
+                    BillingDocumentId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    BillingDocumentType = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CreditMemoAppliedTo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CreditMemoAppliedTo_BillingDocument_BillingDocumentId",
-                        column: x => x.BillingDocumentId,
-                        principalTable: "BillingDocument",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+
                 });
 
             migrationBuilder.CreateTable(
@@ -1969,21 +1388,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentSchedule", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PaymentSchedule_BillingDocument_BillingDocumentId",
-                        column: x => x.BillingDocumentId,
-                        principalTable: "BillingDocument",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentSchedule_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentSchedule_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -1992,21 +1397,17 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     AdditionalEmail = table.Column<string>(type: "TEXT", nullable: false),
-                    CreditMemoTemplateId = table.Column<string>(type: "TEXT", nullable: false),
-                    DebitMemoTemplateId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CreditMemoTemplateId = table.Column<string>(type: "TEXT", nullable: true),
+                    DebitMemoTemplateId = table.Column<Guid>(type: "TEXT", nullable: true),
                     EmailDocuments = table.Column<bool>(type: "INTEGER", nullable: true),
-                    InvoiceTemplateId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    InvoiceTemplateId = table.Column<Guid>(type: "TEXT", nullable: true),
                     PrintDocuments = table.Column<bool>(type: "INTEGER", nullable: true),
                     CreditMemoId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BillingDocumentSetting", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentSetting_CreditMemo_CreditMemoId",
-                        column: x => x.CreditMemoId,
-                        principalTable: "CreditMemo",
-                        principalColumn: "Id");
+                
                 });
 
             migrationBuilder.CreateTable(
@@ -2068,21 +1469,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OrderLineItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_OrderLineItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_OrderLineItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_OrderLineItem_Order_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Order",
-                        principalColumn: "Id");
+                  
                 });
 
             migrationBuilder.CreateTable(
@@ -2116,61 +1503,21 @@ namespace Repository.Migrations
                     PaymentMethodId = table.Column<Guid>(type: "TEXT", nullable: true),
                     PaymentNumber = table.Column<string>(type: "TEXT", nullable: true),
                     PayoutId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    ReferenceId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ReferenceId = table.Column<Guid>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    SecondReferenceId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
-                    StatementDescriptor = table.Column<string>(type: "TEXT", nullable: false),
-                    StatementDescriptorPhone = table.Column<string>(type: "TEXT", nullable: false),
+                    SecondReferenceId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
+                    StatementDescriptor = table.Column<string>(type: "TEXT", nullable: true),
+                    StatementDescriptorPhone = table.Column<string>(type: "TEXT", nullable: true),
                     StateTransitionsId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     PaymentTransactionsId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Payment", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Payment_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Payment_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Payment_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Payment_GatewayOptions_GatewayOptionsId",
-                        column: x => x.GatewayOptionsId,
-                        principalTable: "GatewayOptions",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Payment_GatewayStateTransitions_GatewayStateTransitionsId",
-                        column: x => x.GatewayStateTransitionsId,
-                        principalTable: "GatewayStateTransitions",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Payment_PaymentMethod_PaymentMethodId",
-                        column: x => x.PaymentMethodId,
-                        principalTable: "PaymentMethod",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Payment_PaymentStateTransitions_StateTransitionsId",
-                        column: x => x.StateTransitionsId,
-                        principalTable: "PaymentStateTransitions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Payment_PaymentTransaction_PaymentTransactionsId",
-                        column: x => x.PaymentTransactionsId,
-                        principalTable: "PaymentTransaction",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -2217,41 +1564,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Refund", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Refund_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Refund_CreditMemo_CreditMemoId",
-                        column: x => x.CreditMemoId,
-                        principalTable: "CreditMemo",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Refund_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Refund_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Refund_GatewayOptions_GatewayOptionsId",
-                        column: x => x.GatewayOptionsId,
-                        principalTable: "GatewayOptions",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Refund_PaymentMethod_PaymentMethodId",
-                        column: x => x.PaymentMethodId,
-                        principalTable: "PaymentMethod",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Refund_RefundTransaction_RefundTransactionsId",
-                        column: x => x.RefundTransactionsId,
-                        principalTable: "RefundTransaction",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -2266,17 +1579,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentOption", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PaymentOption_Detail_DetailId",
-                        column: x => x.DetailId,
-                        principalTable: "Detail",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PaymentOption_PaymentSchedule_PaymentScheduleId",
-                        column: x => x.PaymentScheduleId,
-                        principalTable: "PaymentSchedule",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -2305,53 +1608,23 @@ namespace Repository.Migrations
                     Paid = table.Column<bool>(type: "INTEGER", nullable: true),
                     PastDue = table.Column<bool>(type: "INTEGER", nullable: true),
                     Pay = table.Column<bool>(type: "INTEGER", nullable: true),
-                    PaymentTerms = table.Column<string>(type: "TEXT", nullable: false),
-                    PostedById = table.Column<Guid>(type: "TEXT", nullable: false),
-                    ReasonCode = table.Column<string>(type: "TEXT", nullable: false),
+                    PaymentTerms = table.Column<string>(type: "TEXT", nullable: true),
+                    PostedById = table.Column<Guid>(type: "TEXT", nullable: true),
+                    ReasonCode = table.Column<string>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
                     StateTransitionsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Subtotal = table.Column<decimal>(type: "TEXT", nullable: true),
                     Tax = table.Column<decimal>(type: "TEXT", nullable: true),
                     Total = table.Column<decimal>(type: "TEXT", nullable: true),
                     TransferToAccounting = table.Column<bool>(type: "INTEGER", nullable: true),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DebitMemo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_DebitMemo_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_DebitMemo_BillingDocumentSetting_BillingDocumentSettingsId",
-                        column: x => x.BillingDocumentSettingsId,
-                        principalTable: "BillingDocumentSetting",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_DebitMemo_Contact_BillToId",
-                        column: x => x.BillToId,
-                        principalTable: "Contact",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_DebitMemo_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_DebitMemo_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_DebitMemo_StateTransitions_StateTransitionsId",
-                        column: x => x.StateTransitionsId,
-                        principalTable: "StateTransitions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -2359,87 +1632,41 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    AccountNumber = table.Column<string>(type: "TEXT", nullable: true),
                     Balance = table.Column<decimal>(type: "TEXT", nullable: true),
                     BillingDocumentSettingsId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BillToId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    BillToId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Currency = table.Column<string>(type: "TEXT", nullable: false),
+                    Currency = table.Column<string>(type: "TEXT", nullable: true),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomObjectsId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
                     DocumentDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     DueDate = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    InvoiceNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    InvoiceNumber = table.Column<string>(type: "TEXT", nullable: true),
                     Paid = table.Column<bool>(type: "INTEGER", nullable: true),
                     PastDue = table.Column<bool>(type: "INTEGER", nullable: true),
                     Pay = table.Column<bool>(type: "INTEGER", nullable: true),
-                    PaymentTerms = table.Column<string>(type: "TEXT", nullable: false),
-                    PostedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PaymentTerms = table.Column<string>(type: "TEXT", nullable: true),
+                    PostedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    SoldToId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
+                    SoldToId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
                     StateTransitionsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Subtotal = table.Column<decimal>(type: "TEXT", nullable: true),
                     Tax = table.Column<decimal>(type: "TEXT", nullable: true),
                     Total = table.Column<decimal>(type: "TEXT", nullable: true),
                     TransferToAccounting = table.Column<bool>(type: "INTEGER", nullable: true),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     ArTransactionsId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Invoice", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Invoice_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Invoice_ArTransaction_ArTransactionsId",
-                        column: x => x.ArTransactionsId,
-                        principalTable: "ArTransaction",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Invoice_BillingDocumentSetting_BillingDocumentSettingsId",
-                        column: x => x.BillingDocumentSettingsId,
-                        principalTable: "BillingDocumentSetting",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Invoice_Contact_BillToId",
-                        column: x => x.BillToId,
-                        principalTable: "Contact",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Invoice_Contact_SoldToId",
-                        column: x => x.SoldToId,
-                        principalTable: "Contact",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Invoice_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Invoice_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Invoice_StateTransitions_StateTransitionsId",
-                        column: x => x.StateTransitionsId,
-                        principalTable: "StateTransitions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -2456,7 +1683,7 @@ namespace Repository.Migrations
                     ContractEffective = table.Column<DateTime>(type: "TEXT", nullable: true),
                     CreatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Currency = table.Column<string>(type: "TEXT", nullable: false),
+                    Currency = table.Column<string>(type: "TEXT", nullable: true),
                     CurrentTermId = table.Column<Guid>(type: "TEXT", nullable: true),
                     CustomerAcceptance = table.Column<DateTime>(type: "TEXT", nullable: true),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: true),
@@ -2468,7 +1695,7 @@ namespace Repository.Migrations
                     InvoiceSeparately = table.Column<bool>(type: "INTEGER", nullable: true),
                     LastBookingDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     LatestVersion = table.Column<bool>(type: "INTEGER", nullable: true),
-                    OrderNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    OrderNumber = table.Column<string>(type: "TEXT", nullable: true),
                     PaymentTerms = table.Column<string>(type: "TEXT", nullable: true),
                     PrepaidBalanceId = table.Column<Guid>(type: "TEXT", nullable: true),
                     RenewalTermId = table.Column<Guid>(type: "TEXT", nullable: true),
@@ -2485,66 +1712,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Subscription", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Subscription_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_Account_InvoiceOwnerAccountId",
-                        column: x => x.InvoiceOwnerAccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_BillingDocumentSetting_BillingDocumentSettingsId",
-                        column: x => x.BillingDocumentSettingsId,
-                        principalTable: "BillingDocumentSetting",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_Contact_BillToId",
-                        column: x => x.BillToId,
-                        principalTable: "Contact",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_Contact_SoldToId",
-                        column: x => x.SoldToId,
-                        principalTable: "Contact",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_Order_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Order",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_PrepaidBalance_PrepaidBalanceId",
-                        column: x => x.PrepaidBalanceId,
-                        principalTable: "PrepaidBalance",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_Term_CurrentTermId",
-                        column: x => x.CurrentTermId,
-                        principalTable: "Term",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_Term_InitialTermId",
-                        column: x => x.InitialTermId,
-                        principalTable: "Term",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Subscription_Term_RenewalTermId",
-                        column: x => x.RenewalTermId,
-                        principalTable: "Term",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -2553,25 +1721,15 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Amount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    BillingDocumentId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BillingDocumentType = table.Column<string>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
+                    BillingDocumentId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    BillingDocumentType = table.Column<string>(type: "TEXT", nullable: true),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
                     PaymentId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentsAppliedTo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PaymentsAppliedTo_BillingDocument_BillingDocumentId",
-                        column: x => x.BillingDocumentId,
-                        principalTable: "BillingDocument",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PaymentsAppliedTo_Payment_PaymentId",
-                        column: x => x.PaymentId,
-                        principalTable: "Payment",
-                        principalColumn: "Id");
+                
                 });
 
             migrationBuilder.CreateTable(
@@ -2608,31 +1766,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentScheduleItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PaymentScheduleItem_BillingDocument_BillingDocumentId",
-                        column: x => x.BillingDocumentId,
-                        principalTable: "BillingDocument",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentScheduleItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentScheduleItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentScheduleItem_PaymentSchedule_PaymentScheduleId",
-                        column: x => x.PaymentScheduleId,
-                        principalTable: "PaymentSchedule",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PaymentScheduleItem_Payment_PaymentId",
-                        column: x => x.PaymentId,
-                        principalTable: "Payment",
-                        principalColumn: "Id");
+                
                 });
 
             migrationBuilder.CreateTable(
@@ -2649,21 +1783,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RefundsAppliedTo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RefundsAppliedTo_BillingDocument_BillingDocumentId",
-                        column: x => x.BillingDocumentId,
-                        principalTable: "BillingDocument",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_RefundsAppliedTo_Payment_PaymentId",
-                        column: x => x.PaymentId,
-                        principalTable: "Payment",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_RefundsAppliedTo_Refund_RefundId",
-                        column: x => x.RefundId,
-                        principalTable: "Refund",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -2678,11 +1798,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RefundStateTransitions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RefundStateTransitions_Refund_RefundId",
-                        column: x => x.RefundId,
-                        principalTable: "Refund",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -2695,11 +1811,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PrepaidBalances", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PrepaidBalances_Subscription_SubscriptionId",
-                        column: x => x.SubscriptionId,
-                        principalTable: "Subscription",
-                        principalColumn: "Id");
+  
                 });
 
             migrationBuilder.CreateTable(
@@ -2721,31 +1833,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SubscriptionPlan", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionPlan_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionPlan_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionPlan_Plan_PlanId",
-                        column: x => x.PlanId,
-                        principalTable: "Plan",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionPlan_Product_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Product",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionPlan_Subscription_SubscriptionId",
-                        column: x => x.SubscriptionId,
-                        principalTable: "Subscription",
-                        principalColumn: "Id");
+                  
                 });
 
             migrationBuilder.CreateTable(
@@ -2758,11 +1846,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentScheduleItemPayments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PaymentScheduleItemPayments_PaymentScheduleItem_PaymentScheduleItemId",
-                        column: x => x.PaymentScheduleItemId,
-                        principalTable: "PaymentScheduleItem",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -2778,11 +1862,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RefundAppliedToItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RefundAppliedToItem_RefundsAppliedTo_RefundsAppliedToId",
-                        column: x => x.RefundsAppliedToId,
-                        principalTable: "RefundsAppliedTo",
-                        principalColumn: "Id");
+                   
                 });
 
             migrationBuilder.CreateTable(
@@ -2793,7 +1873,7 @@ namespace Repository.Migrations
                     EndDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     OverageRatedAmount = table.Column<decimal>(type: "TEXT", nullable: true),
                     OverageRatedQuantity = table.Column<decimal>(type: "TEXT", nullable: true),
-                    PrepaidUOM = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PrepaidUOM = table.Column<Guid>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
                     StartDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     TotalBalance = table.Column<decimal>(type: "TEXT", nullable: true),
@@ -2802,11 +1882,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ValidityPeriod", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ValidityPeriod_PrepaidBalances_PrepaidBalancesId",
-                        column: x => x.PrepaidBalancesId,
-                        principalTable: "PrepaidBalances",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -2838,15 +1914,15 @@ namespace Repository.Migrations
                     Quantity = table.Column<decimal>(type: "TEXT", nullable: true),
                     RecurringId = table.Column<Guid>(type: "TEXT", nullable: false),
                     StartDate = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    StartEvent = table.Column<string>(type: "TEXT", nullable: false),
-                    State = table.Column<string>(type: "TEXT", nullable: false),
-                    SubscriptionItemNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    StartEvent = table.Column<string>(type: "TEXT", nullable: true),
+                    State = table.Column<string>(type: "TEXT", nullable: true),
+                    SubscriptionItemNumber = table.Column<string>(type: "TEXT", nullable: true),
                     SubscriptionPlanId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    TaxCode = table.Column<string>(type: "TEXT", nullable: false),
+                    TaxCode = table.Column<string>(type: "TEXT", nullable: true),
                     TaxInclusive = table.Column<bool>(type: "INTEGER", nullable: true),
-                    TiersMode = table.Column<string>(type: "TEXT", nullable: false),
+                    TiersMode = table.Column<string>(type: "TEXT", nullable: true),
                     UnitAmount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: false),
+                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: true),
                     UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     SubscriptionAddPlanId = table.Column<Guid>(type: "TEXT", nullable: true)
@@ -2854,42 +1930,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SubscriptionItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionItem_Overage_OverageId",
-                        column: x => x.OverageId,
-                        principalTable: "Overage",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionItem_Price_PriceId",
-                        column: x => x.PriceId,
-                        principalTable: "Price",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionItem_Recurring_RecurringId",
-                        column: x => x.RecurringId,
-                        principalTable: "Recurring",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubscriptionItem_SubscriptionAddPlan_SubscriptionAddPlanId",
-                        column: x => x.SubscriptionAddPlanId,
-                        principalTable: "SubscriptionAddPlan",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SubscriptionItem_SubscriptionPlan_SubscriptionPlanId",
-                        column: x => x.SubscriptionPlanId,
-                        principalTable: "SubscriptionPlan",
-                        principalColumn: "Id");
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -2898,24 +1939,15 @@ namespace Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Quantity = table.Column<decimal>(type: "TEXT", nullable: true),
-                    TransactionDate = table.Column<string>(type: "TEXT", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", nullable: false),
+                    TransactionDate = table.Column<string>(type: "TEXT", nullable: true),
+                    Type = table.Column<string>(type: "TEXT", nullable: true),
                     PrepaidBalanceId = table.Column<Guid>(type: "TEXT", nullable: true),
                     ValidityPeriodId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PrepaidBalanceTransaction", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PrepaidBalanceTransaction_PrepaidBalance_PrepaidBalanceId",
-                        column: x => x.PrepaidBalanceId,
-                        principalTable: "PrepaidBalance",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_PrepaidBalanceTransaction_ValidityPeriod_ValidityPeriodId",
-                        column: x => x.ValidityPeriodId,
-                        principalTable: "ValidityPeriod",
-                        principalColumn: "Id");
+                
                 });
 
             migrationBuilder.CreateTable(
@@ -2951,54 +1983,23 @@ namespace Repository.Migrations
                     ServiceEnd = table.Column<string>(type: "TEXT", nullable: true),
                     ServiceStart = table.Column<string>(type: "TEXT", nullable: true),
                     Sku = table.Column<string>(type: "TEXT", nullable: true),
-                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Subtotal = table.Column<decimal>(type: "TEXT", nullable: true),
                     Tax = table.Column<decimal>(type: "TEXT", nullable: true),
-                    TaxCode = table.Column<string>(type: "TEXT", nullable: false),
+                    TaxCode = table.Column<string>(type: "TEXT", nullable: true),
                     TaxInclusive = table.Column<bool>(type: "INTEGER", nullable: true),
-                    Type = table.Column<string>(type: "TEXT", nullable: false),
+                    Type = table.Column<string>(type: "TEXT", nullable: true),
                     UnitAmount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: false),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: true),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     PaymentsAppliedToId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BillingDocumentItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentItem_BillingDocument_BillingDocumentId",
-                        column: x => x.BillingDocumentId,
-                        principalTable: "BillingDocument",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentItem_PaymentsAppliedTo_PaymentsAppliedToId",
-                        column: x => x.PaymentsAppliedToId,
-                        principalTable: "PaymentsAppliedTo",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentItem_SubscriptionItem_SubscriptionItemId",
-                        column: x => x.SubscriptionItemId,
-                        principalTable: "SubscriptionItem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_BillingDocumentItem_Subscription_SubscriptionId",
-                        column: x => x.SubscriptionId,
-                        principalTable: "Subscription",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -3006,75 +2007,46 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountingCode = table.Column<string>(type: "TEXT", nullable: false),
-                    AccountsReceivableAccount = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountingCode = table.Column<string>(type: "TEXT", nullable: true),
+                    AccountsReceivableAccount = table.Column<string>(type: "TEXT", nullable: true),
                     Amount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    AppliedToItemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    AppliedToItemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    CreditMemoId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CreditMemoId = table.Column<Guid>(type: "TEXT", nullable: true),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomObjectsId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    DeferredRevenueAccount = table.Column<string>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    DeferredRevenueAccount = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
                     DiscountItem = table.Column<bool>(type: "INTEGER", nullable: true),
                     DocumentItemDate = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    InvoiceItemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    OnAccountAccount = table.Column<string>(type: "TEXT", nullable: false),
-                    PriceId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    PurchaseOrderNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    InvoiceItemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    OnAccountAccount = table.Column<string>(type: "TEXT", nullable: true),
+                    PriceId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    PurchaseOrderNumber = table.Column<string>(type: "TEXT", nullable: true),
                     Quantity = table.Column<decimal>(type: "TEXT", nullable: true),
-                    RecognizedRevenueAccount = table.Column<string>(type: "TEXT", nullable: false),
+                    RecognizedRevenueAccount = table.Column<string>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    RevenueRecognitionRuleName = table.Column<string>(type: "TEXT", nullable: false),
-                    ServiceEnd = table.Column<string>(type: "TEXT", nullable: false),
-                    ServiceStart = table.Column<string>(type: "TEXT", nullable: false),
-                    Sku = table.Column<string>(type: "TEXT", nullable: false),
-                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    RevenueRecognitionRuleName = table.Column<string>(type: "TEXT", nullable: true),
+                    ServiceEnd = table.Column<string>(type: "TEXT", nullable: true),
+                    ServiceStart = table.Column<string>(type: "TEXT", nullable: true),
+                    Sku = table.Column<string>(type: "TEXT", nullable: true),
+                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Subtotal = table.Column<decimal>(type: "TEXT", nullable: true),
                     Tax = table.Column<decimal>(type: "TEXT", nullable: true),
-                    TaxCode = table.Column<string>(type: "TEXT", nullable: false),
+                    TaxCode = table.Column<string>(type: "TEXT", nullable: true),
                     TaxInclusive = table.Column<bool>(type: "INTEGER", nullable: true),
                     UnitAmount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: false),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: true),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CreditMemoItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CreditMemoItem_CreditMemo_CreditMemoId",
-                        column: x => x.CreditMemoId,
-                        principalTable: "CreditMemo",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemoItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemoItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemoItem_SubscriptionItem_SubscriptionItemId",
-                        column: x => x.SubscriptionItemId,
-                        principalTable: "SubscriptionItem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CreditMemoItem_Subscription_SubscriptionId",
-                        column: x => x.SubscriptionId,
-                        principalTable: "Subscription",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -3082,75 +2054,46 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    AccountingCode = table.Column<string>(type: "TEXT", nullable: false),
-                    AccountsReceivableAccount = table.Column<string>(type: "TEXT", nullable: false),
+                    AccountingCode = table.Column<string>(type: "TEXT", nullable: true),
+                    AccountsReceivableAccount = table.Column<string>(type: "TEXT", nullable: true),
                     Amount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    AppliedToItemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    AppliedToItemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    CreatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
                     CustomFieldsId = table.Column<Guid>(type: "TEXT", nullable: false),
                     CustomObjectsId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    DebitMemoId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    DeferredRevenueAccount = table.Column<string>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    DebitMemoId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    DeferredRevenueAccount = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
                     DiscountItem = table.Column<bool>(type: "INTEGER", nullable: true),
                     DocumentItemDate = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    InvoiceItemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    OnAccountAccount = table.Column<string>(type: "TEXT", nullable: false),
-                    PriceId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    PurchaseOrderNumber = table.Column<string>(type: "TEXT", nullable: false),
+                    InvoiceItemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    OnAccountAccount = table.Column<string>(type: "TEXT", nullable: true),
+                    PriceId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    PurchaseOrderNumber = table.Column<string>(type: "TEXT", nullable: true),
                     Quantity = table.Column<decimal>(type: "TEXT", nullable: true),
-                    RecognizedRevenueAccount = table.Column<string>(type: "TEXT", nullable: false),
+                    RecognizedRevenueAccount = table.Column<string>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    RevenueRecognitionRuleName = table.Column<string>(type: "TEXT", nullable: false),
-                    ServiceEnd = table.Column<string>(type: "TEXT", nullable: false),
-                    ServiceStart = table.Column<string>(type: "TEXT", nullable: false),
-                    Sku = table.Column<string>(type: "TEXT", nullable: false),
-                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    RevenueRecognitionRuleName = table.Column<string>(type: "TEXT", nullable: true),
+                    ServiceEnd = table.Column<string>(type: "TEXT", nullable: true),
+                    ServiceStart = table.Column<string>(type: "TEXT", nullable: true),
+                    Sku = table.Column<string>(type: "TEXT", nullable: true),
+                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Subtotal = table.Column<decimal>(type: "TEXT", nullable: true),
                     Tax = table.Column<decimal>(type: "TEXT", nullable: true),
-                    TaxCode = table.Column<string>(type: "TEXT", nullable: false),
+                    TaxCode = table.Column<string>(type: "TEXT", nullable: true),
                     TaxInclusive = table.Column<bool>(type: "INTEGER", nullable: true),
                     UnitAmount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: false),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: true),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DebitMemoItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_DebitMemoItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DebitMemoItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DebitMemoItem_DebitMemo_DebitMemoId",
-                        column: x => x.DebitMemoId,
-                        principalTable: "DebitMemo",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DebitMemoItem_SubscriptionItem_SubscriptionItemId",
-                        column: x => x.SubscriptionItemId,
-                        principalTable: "SubscriptionItem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DebitMemoItem_Subscription_SubscriptionId",
-                        column: x => x.SubscriptionId,
-                        principalTable: "Subscription",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+               
                 });
 
             migrationBuilder.CreateTable(
@@ -3179,55 +2122,24 @@ namespace Repository.Migrations
                     Quantity = table.Column<decimal>(type: "TEXT", nullable: true),
                     RecognizedRevenueAccount = table.Column<string>(type: "TEXT", nullable: true),
                     RemainingBalance = table.Column<decimal>(type: "TEXT", nullable: true),
-                    RevenueRecognitionRuleName = table.Column<string>(type: "TEXT", nullable: false),
-                    ServiceEnd = table.Column<string>(type: "TEXT", nullable: false),
-                    ServiceStart = table.Column<string>(type: "TEXT", nullable: false),
-                    Sku = table.Column<string>(type: "TEXT", nullable: false),
-                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    RevenueRecognitionRuleName = table.Column<string>(type: "TEXT", nullable: true),
+                    ServiceEnd = table.Column<string>(type: "TEXT", nullable: true),
+                    ServiceStart = table.Column<string>(type: "TEXT", nullable: true),
+                    Sku = table.Column<string>(type: "TEXT", nullable: true),
+                    SubscriptionId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    SubscriptionItemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Tax = table.Column<decimal>(type: "TEXT", nullable: true),
-                    TaxCode = table.Column<string>(type: "TEXT", nullable: false),
+                    TaxCode = table.Column<string>(type: "TEXT", nullable: true),
                     TaxInclusive = table.Column<bool>(type: "INTEGER", nullable: true),
                     UnitAmount = table.Column<decimal>(type: "TEXT", nullable: true),
-                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: false),
-                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UnitOfMeasure = table.Column<string>(type: "TEXT", nullable: true),
+                    UpdatedById = table.Column<Guid>(type: "TEXT", nullable: true),
                     UpdatedTime = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_InvoiceItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_InvoiceItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_InvoiceItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_InvoiceItem_Invoice_InvoiceId",
-                        column: x => x.InvoiceId,
-                        principalTable: "Invoice",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_InvoiceItem_OrderLineItem_LineItemId",
-                        column: x => x.LineItemId,
-                        principalTable: "OrderLineItem",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_InvoiceItem_SubscriptionItem_SubscriptionItemId",
-                        column: x => x.SubscriptionItemId,
-                        principalTable: "SubscriptionItem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_InvoiceItem_Subscription_SubscriptionId",
-                        column: x => x.SubscriptionId,
-                        principalTable: "Subscription",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -3243,11 +2155,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ItemTier", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ItemTier_SubscriptionItem_SubscriptionItemId",
-                        column: x => x.SubscriptionItemId,
-                        principalTable: "SubscriptionItem",
-                        principalColumn: "Id");
+          
                 });
 
             migrationBuilder.CreateTable(
@@ -3289,36 +2197,7 @@ namespace Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TaxationItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TaxationItem_BillingDocumentItem_BillingDocumentItemId",
-                        column: x => x.BillingDocumentItemId,
-                        principalTable: "BillingDocumentItem",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TaxationItem_CreditMemoItem_CreditMemoItemId",
-                        column: x => x.CreditMemoItemId,
-                        principalTable: "CreditMemoItem",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TaxationItem_CustomFields_CustomFieldsId",
-                        column: x => x.CustomFieldsId,
-                        principalTable: "CustomFields",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TaxationItem_CustomObject_CustomObjectsId",
-                        column: x => x.CustomObjectsId,
-                        principalTable: "CustomObject",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TaxationItem_DebitMemoItem_DebitMemoItemId",
-                        column: x => x.DebitMemoItemId,
-                        principalTable: "DebitMemoItem",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TaxationItem_InvoiceItem_InvoiceItemId",
-                        column: x => x.InvoiceItemId,
-                        principalTable: "InvoiceItem",
-                        principalColumn: "Id");
+                  
                 });
 
             migrationBuilder.CreateIndex(

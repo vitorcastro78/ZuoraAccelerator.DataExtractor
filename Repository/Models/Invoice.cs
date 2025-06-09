@@ -282,59 +282,5 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_time")]
         public DateTime? UpdatedTime { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string? ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Invoice {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  UpdatedById: ").Append(UpdatedById).Append("\n");
-            sb.Append("  UpdatedTime: ").Append(UpdatedTime).Append("\n");
-            sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  CreatedTime: ").Append(CreatedTime).Append("\n");
-            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
-            sb.Append("  CustomObjects: ").Append(CustomObjects).Append("\n");
-            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  DueDate: ").Append(DueDate).Append("\n");
-            sb.Append("  DocumentDate: ").Append(DocumentDate).Append("\n");
-            sb.Append("  TransferToAccounting: ").Append(TransferToAccounting).Append("\n");
-            sb.Append("  Pay: ").Append(Pay).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  InvoiceNumber: ").Append(InvoiceNumber).Append("\n");
-            sb.Append("  StateTransitions: ").Append(StateTransitions).Append("\n");
-            sb.Append("  PostedById: ").Append(PostedById).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Account: ").Append(Account).Append("\n");
-            sb.Append("  Items: ").Append(Items).Append("\n");
-            sb.Append("  Total: ").Append(Total).Append("\n");
-            sb.Append("  Subtotal: ").Append(Subtotal).Append("\n");
-            sb.Append("  Tax: ").Append(Tax).Append("\n");
-            sb.Append("  Balance: ").Append(Balance).Append("\n");
-            sb.Append("  RemainingBalance: ").Append(RemainingBalance).Append("\n");
-            sb.Append("  Paid: ").Append(Paid).Append("\n");
-            sb.Append("  PastDue: ").Append(PastDue).Append("\n");
-            sb.Append("  BillToId: ").Append(BillToId).Append("\n");
-            sb.Append("  PaymentTerms: ").Append(PaymentTerms).Append("\n");
-            sb.Append("  BillTo: ").Append(BillTo).Append("\n");
-            sb.Append("  BillingDocumentSettings: ").Append(BillingDocumentSettings).Append("\n");
-            sb.Append("  SoldToId: ").Append(SoldToId).Append("\n");
-            sb.Append("  SoldTo: ").Append(SoldTo).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
     }
 }

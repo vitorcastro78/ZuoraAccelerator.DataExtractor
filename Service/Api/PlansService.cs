@@ -27,11 +27,7 @@ namespace Service
         {
             _apiClient = apiClient;
             expand = new Expands().PlanExpand;
-            filter = new List<string>
-                {
-                    "enabled.EQ:true",
-                    "subscriptions.state.EQ:active",
-                };
+          
         }
 
 

@@ -42,57 +42,56 @@ namespace DataExtractor.WorkServices.HostedService
         {
             string zuoraTrackId = new Guid().ToString();
             bool async = true;
-            _logger.LogInformation("Accounts Table loading start.");
+
             using (var scope = _services.CreateScope())
             {
                 var service = scope.ServiceProvider.GetRequiredService<IAccountsService>();
          
                 service.FillAccountsTable(zuoraTrackId, async);
             }
-            _logger.LogInformation("Accounts Table loading finished.");
 
-            _logger.LogInformation("Subscriptions Table loading start.");
             using (var scope = _services.CreateScope())
             {
                 var service = scope.ServiceProvider.GetRequiredService<ISubscriptionsService>();
               
                 service.FillSubscriptionsTable(zuoraTrackId, async);
             }
-            _logger.LogInformation("Subscriptions Table loading finished.");
 
-            _logger.LogInformation("Products Table loading start.");
             using (var scope = _services.CreateScope())
             {
                 var service = scope.ServiceProvider.GetRequiredService<IProductsService>();
 
                 service.FillProductsTable(zuoraTrackId, async);
             }
-            _logger.LogInformation("Products Table loading finished.");
 
-            _logger.LogInformation("Invoices Table loading start.");
+            using (var scope = _services.CreateScope())
+            {
+                var service = scope.ServiceProvider.GetRequiredService<IPricesService>();
+
+                service.FillPricesTable(zuoraTrackId, async);
+            }
+           
             using (var scope = _services.CreateScope())
             {
                 var service = scope.ServiceProvider.GetRequiredService<IInvoicesService>();
 
                 service.FillInvoicesTable(zuoraTrackId, async);
             }
-            _logger.LogInformation("Plan Table loading started.");
+          
             using (var scope = _services.CreateScope())
             {
                 var service = scope.ServiceProvider.GetRequiredService<IPlansService>();
 
                 service.FillPlansTable(zuoraTrackId, async);
             }
-            _logger.LogInformation("Plan Table loading finished.");
 
-            _logger.LogInformation("Plan Table loading started.");
             using (var scope = _services.CreateScope())
             {
                 var service = scope.ServiceProvider.GetRequiredService<ISubscriptionPlansService>();
 
                 service.FillSubscriptionPlansTabled();
             }
-            _logger.LogInformation("Plan Table loading finished.");
+
         }
 
 

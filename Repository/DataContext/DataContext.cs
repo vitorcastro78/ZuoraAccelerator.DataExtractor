@@ -51,6 +51,16 @@ namespace Repository.DataContext
 
         public DbSet<Product> Product{ get; set; }
 
+        public DbSet<Plan> Plan { get; set; }
+
+        public DbSet<Price> Price { get; set; }
+
+        public DbSet<ProductPlan> ProductPlan { get; set; }
+
+        public DbSet<ProductPrice> ProductPrice { get; set; }
+
+        public DbSet<ProductTier> ProductTier { get; set; }
+
         public DbSet<Refund> Refund{ get; set; }
 
         public DbSet<RefundTransactions> RefundTransaction{ get; set; }
@@ -83,9 +93,16 @@ namespace Repository.DataContext
 
         public DbSet<Usage> Usage{ get; set; }
 
+        public DbSet<BillTo> BillTo { get; set; }
+
+        public DbSet<SoldTo> SoldTo { get; set; }
+
+
         public AppDataContext(DbContextOptions<AppDataContext> options) : base(options)
         {
         }
+
+       
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
