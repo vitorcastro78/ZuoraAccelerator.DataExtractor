@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace Service.Models
 {
@@ -19,12 +20,12 @@ namespace Service.Models
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// Identifier of an invoice or a debit memo.
+        /// Identifier of the billing document.
         /// </summary>
-        /// <value>Identifier of an invoice or a debit memo.</value>
+        /// <value>Identifier of the billing document.</value>
         [DataMember(Name = "billing_document_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_id")]
-        public string BillingDocumentId { get; set; }
+        public Guid BillingDocumentId { get; set; }
 
         /// <summary>
         /// The related billing document item.
@@ -35,28 +36,28 @@ namespace Service.Models
         public AllOfpaymentAppliedToBillingItemResponseBillingDocumentItem BillingDocumentItem { get; set; }
 
         /// <summary>
-        /// Identifier of an invoice or a debit memo item.
+        /// Identifier of the billing document item.
         /// </summary>
-        /// <value>Identifier of an invoice or a debit memo item.</value>
+        /// <value>Identifier of the billing document item.</value>
         [DataMember(Name = "billing_document_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_item_id")]
-        public string BillingDocumentItemId { get; set; }
+        public Guid BillingDocumentItemId { get; set; }
 
         /// <summary>
-        /// Identifier of the payment application item.
+        /// Unique identifier for the object.
         /// </summary>
-        /// <value>Identifier of the payment application item.</value>
+        /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
-        /// Identifier of a taxation item.
+        /// Identifier of the taxation item.
         /// </summary>
-        /// <value>Identifier of a taxation item.</value>
+        /// <value>Identifier of the taxation item.</value>
         [DataMember(Name = "taxation_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxation_item_id")]
-        public string TaxationItemId { get; set; }
+        public Guid TaxationItemId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

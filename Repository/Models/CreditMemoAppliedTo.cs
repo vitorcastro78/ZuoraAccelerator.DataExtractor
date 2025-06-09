@@ -32,7 +32,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of an invoice or a debit memo.</value>
         [DataMember(Name = "billing_document_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_id")]
-        public string BillingDocumentId { get; set; }
+        public Guid BillingDocumentId { get; set; }
 
         /// <summary>
         /// The type of billing document. Can be one of the debit memo or invoice.
@@ -63,17 +63,6 @@ namespace ZIP2GO.Repository.Models
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>string presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class CreditMemoAppliedToResponse {\n");
-            sb.Append("  BillingDocumentId: ").Append(BillingDocumentId).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  BillingDocument: ").Append(BillingDocument).Append("\n");
-            sb.Append("  BillingDocumentType: ").Append(BillingDocumentType).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+       
     }
 }

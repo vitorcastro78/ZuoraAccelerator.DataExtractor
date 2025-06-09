@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>A customer account identifier.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets AchDebit
@@ -73,7 +73,7 @@ namespace Service.Models
         /// </summary>
         [DataMember(Name = "bank_identification_number")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bank_identification_number")]
-        public string BankIdentificationNumber { get; set; }
+        public Guid BankIdentificationNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets BetalingsDebit
@@ -109,7 +109,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -148,7 +148,7 @@ namespace Service.Models
         /// </summary>
         [DataMember(Name = "device_session_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "device_session_id")]
-        public string DeviceSessionId { get; set; }
+        public Guid DeviceSessionId { get; set; }
 
         /// <summary>
         /// Gets or Sets ExistingMandate
@@ -302,7 +302,7 @@ namespace Service.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

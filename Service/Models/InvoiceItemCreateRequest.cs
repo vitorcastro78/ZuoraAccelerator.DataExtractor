@@ -86,7 +86,7 @@ namespace Service.Models
         /// <value>The identifier of the price this invoice item is associated with.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public string PriceId { get; set; }
+        public Guid PriceId { get; set; }
 
         /// <summary>
         /// The purchase order number associated with this invoice item.

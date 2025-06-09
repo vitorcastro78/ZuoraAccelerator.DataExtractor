@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace Service.Models
 {
@@ -32,7 +33,7 @@ namespace Service.Models
         /// <value>Identifier of a network transaction.</value>
         [DataMember(Name = "network_transaction_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "network_transaction_id")]
-        public string NetworkTransactionId { get; set; }
+        public Guid NetworkTransactionId { get; set; }
 
         /// <summary>
         /// Reason for the mandate.

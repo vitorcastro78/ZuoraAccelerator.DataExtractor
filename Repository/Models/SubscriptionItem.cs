@@ -64,7 +64,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -174,7 +174,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the price.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public string PriceId { get; set; }
+        public Guid PriceId { get; set; }
 
         /// <summary>
         /// The date until when charges are processed. When billing takes place in arrears, such as usage-based prices, this field value is the the same as the `ChargedThroughDate` value. This date is the earliest date when a charge can be amended.
@@ -190,7 +190,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the product with which this subscription is associated.</value>
         [DataMember(Name = "product_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "product_id")]
-        public string ProductId { get; set; }
+        public Guid ProductId { get; set; }
 
         /// <summary>
         /// Quantity of the product to which your customers subscribe.
@@ -307,7 +307,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

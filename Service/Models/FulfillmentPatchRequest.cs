@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace Service.Models
 {
@@ -39,7 +40,7 @@ namespace Service.Models
         /// <value>An external identifier for the fulfillment.</value>
         [DataMember(Name = "external_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "external_id")]
-        public string ExternalId { get; set; }
+        public Guid ExternalId { get; set; }
 
         /// <summary>
         /// The date of the fulfillment.
@@ -71,7 +72,7 @@ namespace Service.Models
         /// <value>The unique identifier of the associated order line item.</value>
         [DataMember(Name = "order_line_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_line_item_id")]
-        public string OrderLineItemId { get; set; }
+        public Guid OrderLineItemId { get; set; }
 
         /// <summary>
         /// The number of units of this item.

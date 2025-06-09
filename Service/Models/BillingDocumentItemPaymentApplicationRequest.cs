@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>Identifier of an invoice item or a debit memo item.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// The identifier of a taxation item.
@@ -32,7 +32,7 @@ namespace Service.Models
         /// <value>The identifier of a taxation item.</value>
         [DataMember(Name = "taxation_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxation_item_id")]
-        public string TaxationItemId { get; set; }
+        public Guid TaxationItemId { get; set; }
 
         /// <summary>
         /// Get the JSON string presentation of the object

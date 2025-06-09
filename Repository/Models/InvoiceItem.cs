@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -55,7 +56,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -135,7 +136,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the invoice associated with this invoice item.</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public string InvoiceId { get; set; }
+        public Guid InvoiceId { get; set; }
 
         /// <summary>
         /// The order line item associated with this invoice item. EXPANDABLE
@@ -159,7 +160,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the price this invoice item is associated with.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public string PriceId { get; set; }
+        public Guid PriceId { get; set; }
 
         /// <summary>
         /// The purchase order number associated with this invoice item.
@@ -239,7 +240,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier of the subscription associated with the invoice item.</value>
         [DataMember(Name = "subscription_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_id")]
-        public string SubscriptionId { get; set; }
+        public Guid SubscriptionId { get; set; }
 
         /// <summary>
         /// The expandable subscription item associated with this billing document item.
@@ -255,7 +256,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The identifier the subscription item associated with this invoice item.</value>
         [DataMember(Name = "subscription_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_item_id")]
-        public string SubscriptionItemId { get; set; }
+        public Guid SubscriptionItemId { get; set; }
 
         /// <summary>
         /// The amount of tax applied to the invoice item.
@@ -310,7 +311,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

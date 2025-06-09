@@ -31,7 +31,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The id of the subscription plan to be updated. It can be the latest version or any history version id.</value>
         [DataMember(Name = "plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plan_id")]
-        public string PlanId { get; set; }
+        public Guid PlanId { get; set; }
 
         /// <summary>
         /// Identifier of the plan to be removed. Only provide one of `previous_plan_id` or `subscription_plan_id` in your request, not both.
@@ -39,7 +39,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the plan to be removed. Only provide one of `previous_plan_id` or `subscription_plan_id` in your request, not both.</value>
         [DataMember(Name = "previous_plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "previous_plan_id")]
-        public string PreviousPlanId { get; set; }
+        public Guid PreviousPlanId { get; set; }
 
         /// <summary>
         /// Identifier of the subscription plan.

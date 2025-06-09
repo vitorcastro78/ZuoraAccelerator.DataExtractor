@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace ZIP2GO.Repository.Models
 {
@@ -64,7 +65,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -184,7 +185,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The unique identifier for the order associated with this order line item.</value>
         [DataMember(Name = "order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_id")]
-        public string OrderId { get; set; }
+        public Guid OrderId { get; set; }
 
         /// <summary>
         /// The date when the subscription item is created through an order. This field is to standardize the booking date information to increase audit ability and traceability of data between Zuora Billing and Zuora Revenue. It is mapped as the booking date for a sales order line in Zuora Revenue.
@@ -240,7 +241,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the price.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public string PriceId { get; set; }
+        public Guid PriceId { get; set; }
 
         /// <summary>
         /// The product code for the order line item.
@@ -415,7 +416,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

@@ -63,7 +63,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who created the object</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -196,7 +196,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Specify the ID of a plan to which this price is associated.</value>
         [DataMember(Name = "plan_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plan_id")]
-        public string PlanId { get; set; }
+        public Guid PlanId { get; set; }
 
         /// <summary>
         /// Specify the number of a plan to which this price is associated. This field is required if plan_id is not supplied
@@ -335,7 +335,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Unique identifier of the Zuora user who last updated the object</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

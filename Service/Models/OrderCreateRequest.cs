@@ -19,12 +19,12 @@ namespace Service.Models
         public AllOforderCreateRequestAccountData AccountData { get; set; }
 
         /// <summary>
-        /// Identifier of the account.
+        /// Identifier of the account that owns the order.
         /// </summary>
-        /// <value>Identifier of the account.</value>
+        /// <value>Identifier of the account that owns the order.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account. It can be user-supplied.

@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace Service.Models
 {
@@ -32,7 +33,7 @@ namespace Service.Models
         /// <value>Identifier of an invoice or a debit memo.</value>
         [DataMember(Name = "billing_document_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "billing_document_id")]
-        public string BillingDocumentId { get; set; }
+        public Guid BillingDocumentId { get; set; }
 
         /// <summary>
         /// The type of billing document. Can be one of the debit memo or invoice.

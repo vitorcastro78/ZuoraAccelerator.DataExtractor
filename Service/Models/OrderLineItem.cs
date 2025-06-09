@@ -59,12 +59,12 @@ namespace Service.Models
         public string ContractLiabilityAccount { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who created the object
+        /// Identifier of the user who created the order line item.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who created the object</value>
+        /// <value>Identifier of the user who created the order line item.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -136,7 +136,7 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// List of invoice items. EXPANDABLE
@@ -179,12 +179,12 @@ namespace Service.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// The unique identifier for the order associated with this order line item.
+        /// Identifier of the order that this line item belongs to.
         /// </summary>
-        /// <value>The unique identifier for the order associated with this order line item.</value>
+        /// <value>Identifier of the order that this line item belongs to.</value>
         [DataMember(Name = "order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "order_id")]
-        public string OrderId { get; set; }
+        public Guid OrderId { get; set; }
 
         /// <summary>
         /// The date when the subscription item is created through an order. This field is to standardize the booking date information to increase audit ability and traceability of data between Zuora Billing and Zuora Revenue. It is mapped as the booking date for a sales order line in Zuora Revenue.
@@ -195,20 +195,20 @@ namespace Service.Models
         public DateTime? OriginalOrderDate { get; set; }
 
         /// <summary>
-        /// The unique identifier of the original sales order for a return order line item.
+        /// Identifier of the original order.
         /// </summary>
-        /// <value>The unique identifier of the original sales order for a return order line item.</value>
+        /// <value>Identifier of the original order.</value>
         [DataMember(Name = "original_order_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_id")]
-        public string OriginalOrderId { get; set; }
+        public Guid OriginalOrderId { get; set; }
 
         /// <summary>
-        /// The unique identifier of the original sales order line item for a return order line item.
+        /// Identifier of the original order line item.
         /// </summary>
-        /// <value>The unique identifier of the original sales order line item for a return order line item.</value>
+        /// <value>Identifier of the original order line item.</value>
         [DataMember(Name = "original_order_line_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_order_line_item_id")]
-        public string OriginalOrderLineItemId { get; set; }
+        public Guid OriginalOrderLineItemId { get; set; }
 
         /// <summary>
         /// The number of the original sales order line item for a return order line item.
@@ -227,20 +227,20 @@ namespace Service.Models
         public string OriginalOrderNumber { get; set; }
 
         /// <summary>
-        /// The unique identifier of a contact belonging to the billing account of the order line item that was the original sold to contact when the order line item was created.
+        /// Identifier of the original sold-to contact.
         /// </summary>
-        /// <value>The unique identifier of a contact belonging to the billing account of the order line item that was the original sold to contact when the order line item was created. </value>
+        /// <value>Identifier of the original sold-to contact.</value>
         [DataMember(Name = "original_sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "original_sold_to_id")]
-        public string OriginalSoldToId { get; set; }
+        public Guid OriginalSoldToId { get; set; }
 
         /// <summary>
-        /// Identifier of the price.
+        /// Identifier of the price associated with this line item.
         /// </summary>
-        /// <value>Identifier of the price.</value>
+        /// <value>Identifier of the price associated with this line item.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public string PriceId { get; set; }
+        public Guid PriceId { get; set; }
 
         /// <summary>
         /// The product code for the order line item.
@@ -314,12 +314,12 @@ namespace Service.Models
         public OrderLineItemRevenue Revenue { get; set; }
 
         /// <summary>
-        /// The unique identifier of a contact belonging to the billing account of the order line item. Use this field to assign and existing contact as the sold to contact of an order line item.
+        /// Identifier of the sold-to contact.
         /// </summary>
-        /// <value>The unique identifier of a contact belonging to the billing account of the order line item. Use this field to assign and existing contact as the sold to contact of an order line item.</value>
+        /// <value>Identifier of the sold-to contact.</value>
         [DataMember(Name = "sold_to_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sold_to_id")]
-        public string SoldToId { get; set; }
+        public Guid SoldToId { get; set; }
 
         /// <summary>
         /// The date a transaction starts. The default value of this field is the order date.
@@ -410,12 +410,12 @@ namespace Service.Models
         public string UnitOfMeasure { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who last updated the object
+        /// Identifier of the user who last updated the order line item.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who last updated the object</value>
+        /// <value>Identifier of the user who last updated the order line item.</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

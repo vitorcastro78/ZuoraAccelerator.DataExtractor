@@ -16,7 +16,7 @@ namespace Service.Models
         /// <value>Identifier of the account that owns the credit memo.     **Either this field or `account_number` is required when creating credit memos from a price(charge in the v1 API).**</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account that owns the credit memo.    **Either this field or `account_id` is required when creating credit memos from a price(charge in the v1 API).**
@@ -79,7 +79,7 @@ namespace Service.Models
         /// <value>The identifier of the invoice billing document from which this credit memo is created.      **Required when creating credit memos from an invoice.**</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public string InvoiceId { get; set; }
+        public Guid InvoiceId { get; set; }
 
         /// <summary>
         /// Information of all credit memo items.

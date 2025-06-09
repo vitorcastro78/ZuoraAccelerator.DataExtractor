@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System;
 
 namespace Service.Models
 {
@@ -16,7 +17,7 @@ namespace Service.Models
         /// <value>Identifier of the action.</value>
         [DataMember(Name = "action_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "action_id")]
-        public string ActionId { get; set; }
+        public Guid ActionId { get; set; }
 
         /// <summary>
         /// Specify this field to add subscription plans to existing subscriptions.

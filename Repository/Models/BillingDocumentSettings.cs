@@ -52,7 +52,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Identifier of the invoice template associated with this customer.</value>
         [DataMember(Name = "invoice_template_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_template_id")]
-        public string InvoiceTemplateId { get; set; }
+        public Guid InvoiceTemplateId { get; set; }
 
         /// <summary>
         /// Whether the customer wants to receive printed invoices.

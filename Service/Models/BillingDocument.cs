@@ -24,7 +24,7 @@ namespace Service.Models
         /// <value>Identifier of the account that owns the billing document.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Human-readable identifier of the account that owns the billing document.
@@ -67,12 +67,12 @@ namespace Service.Models
         public string BillingDocumentNumber { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who created the object
+        /// Identifier of the user who created the billing document.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who created the object</value>
+        /// <value>Identifier of the user who created the billing document.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -136,15 +136,15 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
-        /// The identifier of the invoice billing document from which this credit memo or debit memo billing document is created. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.
+        /// Identifier of the invoice associated with this billing document.
         /// </summary>
-        /// <value>The identifier of the invoice billing document from which this credit memo or debit memo billing document is created. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.</value>
+        /// <value>Identifier of the invoice associated with this billing document.</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public string InvoiceId { get; set; }
+        public Guid InvoiceId { get; set; }
 
         /// <summary>
         /// List of billing document items.
@@ -179,12 +179,12 @@ namespace Service.Models
         public bool? Pay { get; set; }
 
         /// <summary>
-        /// Identifier of the Zuora user who posted the billing document.
+        /// Identifier of the user who posted the billing document.
         /// </summary>
-        /// <value>Identifier of the Zuora user who posted the billing document.</value>
+        /// <value>Identifier of the user who posted the billing document.</value>
         [DataMember(Name = "posted_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posted_by_id")]
-        public string PostedById { get; set; }
+        public Guid PostedById { get; set; }
 
         /// <summary>
         /// Reason for issuing this billing document. This field is applicable only if the `type` field is set to `credit_memo` or `debit_memo`.
@@ -258,12 +258,12 @@ namespace Service.Models
         public string Type { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who last updated the object
+        /// Identifier of the user who last updated the billing document.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who last updated the object</value>
+        /// <value>Identifier of the user who last updated the billing document.</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

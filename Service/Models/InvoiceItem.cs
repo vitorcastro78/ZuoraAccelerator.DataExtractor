@@ -34,12 +34,12 @@ namespace Service.Models
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// Identifier of an invoice item or a debit memo item that this discount item or credit memo item is applied to.
+        /// Identifier of the item that this item is applied to.
         /// </summary>
-        /// <value>Identifier of an invoice item or a debit memo item that this discount item or credit memo item is applied to.</value>
+        /// <value>Identifier of the item that this item is applied to.</value>
         [DataMember(Name = "applied_to_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applied_to_item_id")]
-        public string AppliedToItemId { get; set; }
+        public Guid AppliedToItemId { get; set; }
 
         /// <summary>
         /// The booking reference for this invoice item.
@@ -50,12 +50,12 @@ namespace Service.Models
         public string BookingReference { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who created the object
+        /// Identifier of the user who created the invoice item.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who created the object</value>
+        /// <value>Identifier of the user who created the invoice item.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -119,7 +119,7 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// The invoice the item belongs to. EXPANDABLE
@@ -130,12 +130,12 @@ namespace Service.Models
         public AllOfinvoiceItemInvoice Invoice { get; set; }
 
         /// <summary>
-        /// The identifier of the invoice associated with this invoice item.
+        /// Identifier of the invoice that this item belongs to.
         /// </summary>
-        /// <value>The identifier of the invoice associated with this invoice item.</value>
+        /// <value>Identifier of the invoice that this item belongs to.</value>
         [DataMember(Name = "invoice_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_id")]
-        public string InvoiceId { get; set; }
+        public Guid InvoiceId { get; set; }
 
         /// <summary>
         /// The order line item associated with this invoice item. EXPANDABLE
@@ -154,12 +154,12 @@ namespace Service.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// The identifier of the price this invoice item is associated with.
+        /// Identifier of the price associated with this item.
         /// </summary>
-        /// <value>The identifier of the price this invoice item is associated with.</value>
+        /// <value>Identifier of the price associated with this item.</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public string PriceId { get; set; }
+        public Guid PriceId { get; set; }
 
         /// <summary>
         /// The purchase order number associated with this invoice item.
@@ -234,12 +234,12 @@ namespace Service.Models
         public AllOfinvoiceItemSubscription Subscription { get; set; }
 
         /// <summary>
-        /// The identifier of the subscription associated with the invoice item.
+        /// Identifier of the subscription associated with this item.
         /// </summary>
-        /// <value>The identifier of the subscription associated with the invoice item.</value>
+        /// <value>Identifier of the subscription associated with this item.</value>
         [DataMember(Name = "subscription_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_id")]
-        public string SubscriptionId { get; set; }
+        public Guid SubscriptionId { get; set; }
 
         /// <summary>
         /// The expandable subscription item associated with this billing document item.
@@ -250,12 +250,12 @@ namespace Service.Models
         public AllOfinvoiceItemSubscriptionItem SubscriptionItem { get; set; }
 
         /// <summary>
-        /// The identifier the subscription item associated with this invoice item.
+        /// Identifier of the subscription item associated with this item.
         /// </summary>
-        /// <value>The identifier the subscription item associated with this invoice item.</value>
+        /// <value>Identifier of the subscription item associated with this item.</value>
         [DataMember(Name = "subscription_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscription_item_id")]
-        public string SubscriptionItemId { get; set; }
+        public Guid SubscriptionItemId { get; set; }
 
         /// <summary>
         /// The amount of tax applied to the invoice item.
@@ -305,12 +305,12 @@ namespace Service.Models
         public string UnitOfMeasure { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who last updated the object
+        /// Identifier of the user who last updated the invoice item.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who last updated the object</value>
+        /// <value>Identifier of the user who last updated the invoice item.</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

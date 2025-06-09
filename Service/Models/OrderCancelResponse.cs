@@ -19,12 +19,12 @@ namespace Service.Models
         public AllOforderCancelResponseAccount Account { get; set; }
 
         /// <summary>
-        /// Identifier of the account associated with this subscription.
+        /// Identifier of the account that owns the order.
         /// </summary>
-        /// <value>Identifier of the account associated with this subscription.</value>
+        /// <value>Identifier of the account that owns the order.</value>
         [DataMember(Name = "account_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account_id")]
-        public string AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Gets or Sets ArTransactions
@@ -42,12 +42,12 @@ namespace Service.Models
         public string Category { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who created the object
+        /// Identifier of the user who created the order.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who created the object</value>
+        /// <value>Identifier of the user who created the order.</value>
         [DataMember(Name = "created_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "created_by_id")]
-        public string CreatedById { get; set; }
+        public Guid CreatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was created in ISO 8601 UTC format.
@@ -87,7 +87,7 @@ namespace Service.Models
         /// <value>Unique identifier for the object.</value>
         [DataMember(Name = "id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or Sets LineItems
@@ -129,12 +129,12 @@ namespace Service.Models
         public List<PostSubscriptionOrderResponse> Subscriptions { get; set; }
 
         /// <summary>
-        /// Unique identifier of the Zuora user who last updated the object
+        /// Identifier of the user who last updated the order.
         /// </summary>
-        /// <value>Unique identifier of the Zuora user who last updated the object</value>
+        /// <value>Identifier of the user who last updated the order.</value>
         [DataMember(Name = "updated_by_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_by_id")]
-        public string UpdatedById { get; set; }
+        public Guid UpdatedById { get; set; }
 
         /// <summary>
         /// The date and time when the object was last updated in ISO 8601 UTC format.

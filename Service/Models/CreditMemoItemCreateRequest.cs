@@ -55,7 +55,7 @@ namespace Service.Models
         /// <value>The identifier of the invoice item associated with this credit memo item.    **Required when creating credit memos from an invoice.**</value>
         [DataMember(Name = "invoice_item_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "invoice_item_id")]
-        public string InvoiceItemId { get; set; }
+        public Guid InvoiceItemId { get; set; }
 
         /// <summary>
         /// Name of the billing document item displayed to customers on the billing document.      **Required when creating credit memos from an invoice**
@@ -79,7 +79,7 @@ namespace Service.Models
         /// <value>The identifier of the price this credit memo item is associated with.    Required when creating credit memos from a price(charge in the v1 API).</value>
         [DataMember(Name = "price_id")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "price_id")]
-        public string PriceId { get; set; }
+        public Guid PriceId { get; set; }
 
         /// <summary>
         /// The purchase order number associated with this billing document item.
