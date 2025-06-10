@@ -41,7 +41,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.</value>
         [DataMember(Name = "custom_fields")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_fields")]
-        public CustomFields CustomFields { get; set; }
+        public CustomFields? CustomFields { get; set; }
 
         /// <summary>
         /// The custom objects associated with a Zuora standard object.
@@ -49,7 +49,7 @@ namespace ZIP2GO.Repository.Models
         /// <value>The custom objects associated with a Zuora standard object.</value>
         [DataMember(Name = "custom_objects")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "custom_objects")]
-        public CustomObject CustomObjects { get; set; }
+        public CustomObject? CustomObjects { get; set; }
 
         /// <summary>
         /// An arbitrary string attached to the object. Often useful for displaying to users.
@@ -99,13 +99,13 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id")]
         public Guid? Id { get; set; }
 
-        /// <summary>
-        /// The fulfillment location of the fulfillment.
-        /// </summary>
-        /// <value>The fulfillment location of the fulfillment.</value>
-        [DataMember(Name = "location")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location")]
-        public Dictionary<string, Object> Location { get; set; }
+        ///// <summary>
+        ///// The fulfillment location of the fulfillment.
+        ///// </summary>
+        ///// <value>The fulfillment location of the fulfillment.</value>
+        //[DataMember(Name = "location")]
+        //[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "location")]
+        //public Location Location { get; set; }
 
         /// <summary>
         /// The unique identifier of the associated order line item.
@@ -128,7 +128,7 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "revenue")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "revenue")]
-        public Revenue Revenue { get; set; }
+        public Revenue? Revenue { get; set; }
 
         /// <summary>
         /// The status of the invoice.
@@ -178,46 +178,6 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "updated_time")]
         public DateTime? UpdatedTime { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string? ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Fulfillment {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  UpdatedById: ").Append(UpdatedById).Append("\n");
-            sb.Append("  UpdatedTime: ").Append(UpdatedTime).Append("\n");
-            sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
-            sb.Append("  CreatedTime: ").Append(CreatedTime).Append("\n");
-            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
-            sb.Append("  CustomObjects: ").Append(CustomObjects).Append("\n");
-            sb.Append("  OrderLineItemId: ").Append(OrderLineItemId).Append("\n");
-            sb.Append("  FulfillmentNumber: ").Append(FulfillmentNumber).Append("\n");
-            sb.Append("  FulfillmentDate: ").Append(FulfillmentDate).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  TargetDate: ").Append(TargetDate).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  TrackingNumber: ").Append(TrackingNumber).Append("\n");
-            sb.Append("  Carrier: ").Append(Carrier).Append("\n");
-            sb.Append("  FulfillmentSystem: ").Append(FulfillmentSystem).Append("\n");
-            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
-            sb.Append("  Revenue: ").Append(Revenue).Append("\n");
-            sb.Append("  Location: ").Append(Location).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+       
     }
 }

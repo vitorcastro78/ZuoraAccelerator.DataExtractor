@@ -4,6 +4,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Repository.DataContext;
 using RestSharp;
 using System.Net.Http.Headers;
@@ -625,6 +626,8 @@ namespace Service.Client
             {
                 foreach (var item in resultData.Data)
                 {
+                    dynamic mapped = null;
+                    dynamic result = null;
                     var propriedadeDbSet = _context.GetType()
                             .GetProperties()
                             .FirstOrDefault(p => p.Name.Equals(item.GetType().Name, StringComparison.OrdinalIgnoreCase) && 
@@ -634,106 +637,444 @@ namespace Service.Client
                     switch (item.GetType().Name)
                     {
                         case "Account":
-                            var mapped = ObjectMapper.MapTo<Account>(item);
-                            _context.Account.Add(mapped);
+
+                            mapped = ObjectMapper.MapTo<Account>(item);
+                            result = _context.Account.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Account.Update(result);
+                            }
+                            else
+                            {
+                                _context.Account.Add(mapped);
+                            }
+
                             break;
                         case "Address":
-                            var addressMapped = ObjectMapper.MapTo<Address>(item);
-                            _context.Address.Add(addressMapped);
+
+                            mapped = ObjectMapper.MapTo<Address>(item);
+                            result = _context.Address.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Address.Update(result);
+                            }
+                            else
+                            {
+                                _context.Address.Add(mapped);
+                            }
+
                             break;
                         case "BillingDocumentItem":
-                            var billingDocumentItemMapped = ObjectMapper.MapTo<BillingDocumentItem>(item);
-                            _context.BillingDocumentItem.Add(billingDocumentItemMapped);
+
+                            mapped = ObjectMapper.MapTo<BillingDocumentItem>(item);
+                            result = _context.BillingDocumentItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.BillingDocumentItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.BillingDocumentItem.Add(mapped);
+                            }
+
                             break;
                         case "BillingDocument":
-                            var billingDocumentMapped = ObjectMapper.MapTo<BillingDocument>(item);
-                            _context.BillingDocument.Add(billingDocumentMapped);
+                            mapped = ObjectMapper.MapTo<BillingDocument>(item);
+                            result = _context.BillingDocument.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.BillingDocument.Update(result);
+                            }
+                            else
+                            {
+                                _context.BillingDocument.Add(mapped);
+                            }
                             break;
                         case "Invoice":
-                            var invoiceMapped = ObjectMapper.MapTo<Invoice>(item);
-                            _context.Invoice.Add(invoiceMapped);
+                            mapped = ObjectMapper.MapTo<Invoice>(item);
+                            result = _context.Invoice.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Invoice.Update(result);
+                            }
+                            else
+                            {
+                                _context.Invoice.Add(mapped);
+                            }
                             break;
                         case "InvoiceItem":
-                            var invoiceItemMapped = ObjectMapper.MapTo<InvoiceItem>(item);
-                            _context.InvoiceItem.Add(invoiceItemMapped);
+                            mapped = ObjectMapper.MapTo<InvoiceItem>(item);
+                            result = _context.InvoiceItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.InvoiceItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.InvoiceItem.Add(mapped);
+                            }
                             break;
                         case "CreditMemo":
-                            var creditMemoMapped = ObjectMapper.MapTo<CreditMemo>(item);
-                            _context.CreditMemo.Add(creditMemoMapped);
+                            mapped = ObjectMapper.MapTo<CreditMemo>(item);
+                            result = _context.CreditMemo.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.CreditMemo.Update(result);
+                            }
+                            else
+                            {
+                                _context.CreditMemo.Add(mapped);
+                            }
                             break;
                         case "CreditMemoItem":
-                            var creditMemoItemMapped = ObjectMapper.MapTo<CreditMemoItem>(item);
-                            _context.CreditMemoItem.Add(creditMemoItemMapped);
+                            mapped = ObjectMapper.MapTo<CreditMemoItem>(item);
+                            result = _context.CreditMemoItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.CreditMemoItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.CreditMemoItem.Add(mapped);
+                            }
                             break;
                         case "DebitMemo":
-                            var debitMemoMapped = ObjectMapper.MapTo<DebitMemo>(item);
-                            _context.DebitMemo.Add(debitMemoMapped);
+                            mapped = ObjectMapper.MapTo<DebitMemo>(item);
+                            result = _context.DebitMemo.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.DebitMemo.Update(result);
+                            }
+                            else
+                            {
+                                _context.DebitMemo.Add(mapped);
+                            }
                             break;
                         case "Payment":
-                            var paymentMapped = ObjectMapper.MapTo<Payment>(item);
-                            _context.Payment.Add(paymentMapped);
+                            mapped = ObjectMapper.MapTo<Payment>(item);
+                            result = _context.Payment.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Payment.Update(result);
+                            }
+                            else
+                            {
+                                _context.Payment.Add(mapped);
+                            }
                             break;
                         case "PaymentMethod":
-                            var paymentMethodMapped = ObjectMapper.MapTo<PaymentMethod>(item);
-                            _context.PaymentMethod.Add(paymentMethodMapped);
+                            mapped = ObjectMapper.MapTo<PaymentMethod>(item);
+                            result = _context.PaymentMethod.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.PaymentMethod.Update(result);
+                            }
+                            else
+                            {
+                                _context.PaymentMethod.Add(mapped);
+                            }
                             break;
                         case "Refund":
-                            var refundMapped = ObjectMapper.MapTo<Refund>(item);
-                            _context.Refund.Add(refundMapped);
+                            mapped = ObjectMapper.MapTo<CreditMemoItem>(item);
+                            result = _context.CreditMemoItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.CreditMemoItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.CreditMemoItem.Add(mapped);
+                            }
                             break;
                         case "Subscription":
-                            var subscriptionMapped = ObjectMapper.MapTo<Subscription>(item);
-                            _context.Subscription.Add(subscriptionMapped);
+                            mapped = ObjectMapper.MapTo<Subscription>(item);
+                            result = _context.Subscription.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Subscription.Update(result);
+                            }
+                            else
+                            {
+                                _context.Subscription.Add(mapped);
+                            }
                             break;
                         case "SubscriptionAddPlan":
-                            var subscriptionAddPlanMapped = ObjectMapper.MapTo<SubscriptionAddPlan>(item);
-                            _context.SubscriptionAddPlan.Add(subscriptionAddPlanMapped);
+                            mapped = ObjectMapper.MapTo<SubscriptionAddPlan>(item);
+                            result = _context.SubscriptionAddPlan.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionAddPlan.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionAddPlan.Add(mapped);
+                            }
                             break;
                         case "SubscriptionCancel":
-                            var subscriptionCancelMapped = ObjectMapper.MapTo<SubscriptionCancel>(item);
-                            _context.SubscriptionCancel.Add(subscriptionCancelMapped);
+                            mapped = ObjectMapper.MapTo<SubscriptionCancel>(item);
+                            result = _context.SubscriptionCancel.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionCancel.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionCancel.Add(mapped);
+                            }
                             break;
                         case "SubscriptionItem":
-                            var subscriptionItemMapped = ObjectMapper.MapTo<SubscriptionItem>(item);
-                            _context.SubscriptionItem.Add(subscriptionItemMapped);
+                            mapped = ObjectMapper.MapTo<SubscriptionItem>(item);
+                            result = _context.SubscriptionItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionItem.Add(mapped);
+                            }
                             break;
                         case "SubscriptionPause":
-                            var subscriptionPauseMapped = ObjectMapper.MapTo<SubscriptionPause>(item);
-                            _context.SubscriptionPause.Add(subscriptionPauseMapped);
+                            mapped = ObjectMapper.MapTo<SubscriptionPause>(item);
+                            result = _context.SubscriptionPause.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionPause.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionPause.Add(mapped);
+                            }
                             break;
                         case "SubscriptionPlan":
-                            var subscriptionPlanMapped = ObjectMapper.MapTo<SubscriptionPlan>(item);
-                            _context.SubscriptionPlan.Add(subscriptionPlanMapped);
+                            mapped = ObjectMapper.MapTo<SubscriptionPlan>(item);
+                            result = _context.SubscriptionPlan.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionPlan.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionPlan.Add(mapped);
+                            }
                             break;
                         case "SubscriptionRemovePlan":
-                            var SubscriptionRemovePlan = ObjectMapper.MapTo<SubscriptionRemovePlan>(item);
-                            _context.SubscriptionRemovePlan.Add(SubscriptionRemovePlan);
+                            mapped = ObjectMapper.MapTo<SubscriptionRemovePlan>(item);
+                            result = _context.SubscriptionRemovePlan.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionRemovePlan.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionRemovePlan.Add(mapped);
+                            }
                             break;
                         case "SubscriptionRenew":
-                            var subscriptionRenewMapped = ObjectMapper.MapTo<SubscriptionRenew>(item);
-                            _context.SubscriptionRenew.Add(subscriptionRenewMapped);
+                            mapped = ObjectMapper.MapTo<SubscriptionRenew>(item);
+                            result = _context.SubscriptionRenew.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionRenew.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionRenew.Add(mapped);
+                            }
                             break;
                         case "SubscriptionTerm":
-                            var subscriptionTermMapped = ObjectMapper.MapTo<SubscriptionTerm>(item);
-                            _context.SubscriptionTerm.Add(subscriptionTermMapped);
+                            mapped = ObjectMapper.MapTo<SubscriptionTerm>(item);
+                            result = _context.SubscriptionTerm.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.SubscriptionTerm.Update(result);
+                            }
+                            else
+                            {
+                                _context.SubscriptionTerm.Add(mapped);
+                            }
                             break;
                         case "TaxCertificate":
-                            var taxCertificatemMapped = ObjectMapper.MapTo<TaxCertificate>(item);
-                            _context.TaxCertificate.Add(taxCertificatemMapped);
+                            mapped = ObjectMapper.MapTo<TaxCertificate>(item);
+                            result = _context.TaxCertificate.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.TaxCertificate.Update(result);
+                            }
+                            else
+                            {
+                                _context.TaxCertificate.Add(mapped);
+                            }
                             break;
                         case "TaxIdentifier":
-                            var taxIdentifierMapped = ObjectMapper.MapTo<TaxIdentifier>(item);
-                            _context.TaxIdentifier.Add(taxIdentifierMapped);
+                            mapped = ObjectMapper.MapTo<TaxIdentifier>(item);
+                            result = _context.TaxIdentifier.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.TaxIdentifier.Update(result);
+                            }
+                            else
+                            {
+                                _context.TaxIdentifier.Add(mapped);
+                            }
                             break;
                         case "TaxationItem":
-                            var taxationItemMapped = ObjectMapper.MapTo<TaxationItem>(item);
-                            _context.TaxationItem.Add(taxationItemMapped);
+                            mapped = ObjectMapper.MapTo<TaxationItem>(item);
+                            result = _context.TaxationItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.TaxationItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.TaxationItem.Add(mapped);
+                            }
                             break;
-                        case "Contact":
-                            var contactMapped = ObjectMapper.MapTo<Contact>(item);
-                            _context.Contact.Add(contactMapped);
+                        case "Product":
+                            mapped = ObjectMapper.MapTo<Product>(item);
+                            result = _context.Product.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Product.Update(result);
+                            }
+                            else
+                            {
+                                _context.Product.Add(mapped);
+                            }
+                            break;
+                        case "Plan":
+                            mapped = ObjectMapper.MapTo<Plan>(item);
+                            result = _context.Plan.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Plan.Update(result);
+                            }
+                            else
+                            {
+                                _context.Plan.Add(mapped);
+                            }
+                            break;
+                        case "Price":
+                            mapped = ObjectMapper.MapTo<Price>(item);
+                            result = _context.Price.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Price.Update(result);
+                            }
+                            else
+                            {
+                                _context.Price.Add(mapped);
+                            }
                             break;
 
+                        case "ProductPrice":
+                            mapped = ObjectMapper.MapTo<ProductPrice>(item);
+                            result = _context.ProductPrice.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.ProductPrice.Update(result);
+                            }
+                            else
+                            {
+                                _context.ProductPrice.Add(mapped);
+                            }
+                            break;
+                        case "ProductPlan":
+                            mapped = ObjectMapper.MapTo<ProductPlan>(item);
+                            result = _context.ProductPlan.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.ProductPlan.Update(result);
+                            }
+                            else
+                            {
+                                _context.ProductPlan.Add(mapped);
+                            }
+                            break;
+                        case "ProductTier":
+                            mapped = ObjectMapper.MapTo<ProductTier>(item);
+                            result = _context.ProductTier.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.ProductTier.Update(result);
+                            }
+                            else
+                            {
+                                _context.ProductTier.Add(mapped);
+                            }
+                            break;
+
+                        case "Tier":
+                            mapped = ObjectMapper.MapTo<Tier>(item);
+                            result = _context.Tier.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Tier.Update(result);
+                            }
+                            else
+                            {
+                                _context.Tier.Add(mapped);
+                            }
+                            break;
+
+                        case "Order":
+                            mapped = ObjectMapper.MapTo<Order>(item);
+                            result = _context.Order.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.Order.Update(result);
+                            }
+                            else
+                            {
+                                _context.Order.Add(mapped);
+                            }
+                            break;
+
+                        case "DebitMemoItem":
+                            mapped = ObjectMapper.MapTo<DebitMemoItem>(item);
+                            result = _context.DebitMemoItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.DebitMemoItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.DebitMemoItem.Add(mapped);
+                            }
+                            break;
                         default:
                             break;
                     }
@@ -744,7 +1085,7 @@ namespace Service.Client
             }
             else
             {
-               Console.WriteLine($"No data found for {resultData.GetType().Name}");
+                Console.WriteLine($"No data found for {resultData.GetType().Name}");
             }
             counter = Counter;
         }
@@ -818,6 +1159,18 @@ namespace Service.Client
             {
                 if (destinationProperties.TryGetValue(sourceProp.Name, out var destProp))
                 {
+                    if (sourceProp.Name.Contains("Id"))
+                    {
+                        // If the property is an ID, we can skip the mapping if the value is null
+                        var value = sourceProp.GetValue(source);
+                        var guidId = new Guid();
+                        if (value != null && Guid.TryParse(value.ToString(), out guidId))
+                        {
+                            //var convertedValue = ConvertValue(value, destProp.PropertyType);
+                            destProp.SetValue(destination, guidId);
+                        }
+                    }
+
                     if (IsCompatibleType(sourceProp.PropertyType, destProp.PropertyType))
                     {
                         var value = sourceProp.GetValue(source);

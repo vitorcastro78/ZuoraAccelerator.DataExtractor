@@ -19,13 +19,13 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collect_payment")]
         public bool? CollectPayment { get; set; }
 
-        /// <summary>
-        /// The complete JSON Object representing the encrypted payment token payload returned in the response from the Apple Pay session.
-        /// </summary>
-        /// <value>The complete JSON Object representing the encrypted payment token payload returned in the response from the Apple Pay session.</value>
-        [DataMember(Name = "customer_token")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customer_token")]
-        public Dictionary<string, Object> CustomerToken { get; set; }
+        ///// <summary>
+        ///// The complete JSON Object representing the encrypted payment token payload returned in the response from the Apple Pay session.
+        ///// </summary>
+        ///// <value>The complete JSON Object representing the encrypted payment token payload returned in the response from the Apple Pay session.</value>
+        //[DataMember(Name = "customer_token")]
+        //[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customer_token")]
+        //public CustomerToken? CustomerToken { get; set; }
 
         /// <summary>
         /// The Merchant ID that was configured for use with Apple Pay in the Apple iOS Developer Center.
@@ -48,32 +48,8 @@ namespace ZIP2GO.Repository.Models
         /// </summary>
         [DataMember(Name = "mandate")]
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mandate")]
-        public Mandate Mandate { get; set; }
+        public Mandate? Mandate { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string? ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class ApplePayCreate {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CustomerToken: ").Append(CustomerToken).Append("\n");
-            sb.Append("  CollectPayment: ").Append(CollectPayment).Append("\n");
-            sb.Append("  InvoiceId: ").Append(InvoiceId).Append("\n");
-            sb.Append("  Mandate: ").Append(Mandate).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+       
     }
 }

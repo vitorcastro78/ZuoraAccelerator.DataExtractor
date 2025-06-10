@@ -10,34 +10,13 @@ namespace Service.Models
     [DataContract]
     public class GooglePayCreate
     {
-        /// <summary>
-        /// The complete JSON Object representing the encrypted payment token payload returned in the response from the Google Pay session.
-        /// </summary>
-        /// <value>The complete JSON Object representing the encrypted payment token payload returned in the response from the Google Pay session.</value>
-        [DataMember(Name = "customer_token")]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customer_token")]
-        public Dictionary<string, Object> CustomerToken { get; set; }
+        ///// <summary>
+        ///// The complete JSON Object representing the encrypted payment token payload returned in the response from the Google Pay session.
+        ///// </summary>
+        ///// <value>The complete JSON Object representing the encrypted payment token payload returned in the response from the Google Pay session.</value>
+        //[DataMember(Name = "customer_token")]
+        //[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customer_token")]
+        //public CustomerToken CustomerToken { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>string presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class GooglePayCreate {\n");
-            sb.Append("  CustomerToken: ").Append(CustomerToken).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
     }
 }

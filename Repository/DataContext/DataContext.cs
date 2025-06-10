@@ -98,62 +98,62 @@ namespace Repository.DataContext
         public DbSet<SoldTo> SoldTo { get; set; }
 
         // Novos DbSets adicionados
-        public DbSet<AddressFieldDefinitions> AddressFieldDefinitions { get; set; }
+        //public DbSet<AddressFieldDefinitions> AddressFieldDefinitions { get; set; }
         public DbSet<Amounts> Amounts { get; set; }
-        public DbSet<ApplePay> ApplePay { get; set; }
-        public DbSet<ApplePayCreate> ApplePayCreate { get; set; }
-        public DbSet<AchDebit> AchDebit { get; set; }
-        public DbSet<AchDebitUpdate> AchDebitUpdate { get; set; }
-        public DbSet<BillRun> BillRun { get; set; }
-        public DbSet<BillRunPreview> BillRunPreview { get; set; }
-        public DbSet<CardMandate> CardMandate { get; set; }
-        public DbSet<CustomFields> CustomFields { get; set; }
-        public DbSet<Detail> Detail { get; set; }
-        public DbSet<Error> Error { get; set; }
+        //public DbSet<ApplePay> ApplePay { get; set; }
+        //public DbSet<ApplePayCreate> ApplePayCreate { get; set; }
+        //public DbSet<AchDebit> AchDebit { get; set; }
+        //public DbSet<AchDebitUpdate> AchDebitUpdate { get; set; }
+        //public DbSet<BillRun> BillRun { get; set; }
+        //public DbSet<BillRunPreview> BillRunPreview { get; set; }
+        //public DbSet<CardMandate> CardMandate { get; set; }
+        //public DbSet<CustomFields> CustomFields { get; set; }
+        //public DbSet<Detail> Detail { get; set; }
+        //public DbSet<Error> Error { get; set; }
         public DbSet<Fulfillment> Fulfillment { get; set; }
         public DbSet<FulfillmentItem> FulfillmentItem { get; set; }
-        public DbSet<FulfillmentProcessingOption> FulfillmentProcessingOption { get; set; }
-        public DbSet<GetByIdQueryParams> GetByIdQueryParams { get; set; }
-        public DbSet<Headers> Headers { get; set; }
+        //public DbSet<FulfillmentProcessingOption> FulfillmentProcessingOption { get; set; }
+        //public DbSet<GetByIdQueryParams> GetByIdQueryParams { get; set; }
+        //public DbSet<Headers> Headers { get; set; }
         public DbSet<Money> Money { get; set; }
-        public DbSet<OrderAction> OrderAction { get; set; }
-        public DbSet<PadDebit> PadDebit { get; set; }
-        public DbSet<PaymentRun> PaymentRun { get; set; }
-        public DbSet<PaymentRunSummary> PaymentRunSummary { get; set; }
-        public DbSet<PaymentSchedule> PaymentSchedule { get; set; }
-        public DbSet<PaymentScheduleItemLink> PaymentScheduleItemLink { get; set; }
-        public DbSet<PaymentScheduleItemPatch> PaymentScheduleItemPatch { get; set; }
-        public DbSet<PaymentScheduleItemPayments> PaymentScheduleItemPayments { get; set; }
-        public DbSet<PaymentScheduleItemPaymentOption> PaymentScheduleItemPaymentOption { get; set; }
-        public DbSet<PaymentScheduleItemRetry> PaymentScheduleItemRetry { get; set; }
-        public DbSet<PaymentScheduleItemRetryBulk> PaymentScheduleItemRetryBulk { get; set; }
-        public DbSet<PaymentScheduleItemUnlink> PaymentScheduleItemUnlink { get; set; }
-        public DbSet<PaypalExpress> PaypalExpress { get; set; }
-        public DbSet<PaypalExpressNative> PaypalExpressNative { get; set; }
-        public DbSet<PrepaidBalance> PrepaidBalance { get; set; }
-        public DbSet<Prepayment> Prepayment { get; set; }
-        public DbSet<ProcessingOptions> ProcessingOptions { get; set; }
-        public DbSet<QueryRun> QueryRun { get; set; }
-        public DbSet<QueryRunFile> QueryRunFile { get; set; }
-        public DbSet<RefundAppliedToItem> RefundAppliedToItem { get; set; }
-        public DbSet<RefundsAppliedTo> RefundsAppliedTo { get; set; }
-        public DbSet<RefundStateTransitions> RefundStateTransitions { get; set; }
-        public DbSet<ResumeSubscription> ResumeSubscription { get; set; }
-        public DbSet<Revenue> Revenue { get; set; }
-        public DbSet<SepaDebit> SepaDebit { get; set; }
-        public DbSet<StartOn> StartOn { get; set; }
-        public DbSet<StateTransitions> StateTransitions { get; set; }
-        public DbSet<SubscriptionItemDrawdownField> SubscriptionItemDrawdownField { get; set; }
-        public DbSet<SubscriptionItemPrepaymentField> SubscriptionItemPrepaymentField { get; set; }
-        public DbSet<SubscriptionReplacePlan> SubscriptionReplacePlan { get; set; }
-        public DbSet<SubscriptionUpdatePlanPatchResponse> SubscriptionUpdatePlanPatchResponse { get; set; }
-        public DbSet<SubscriptionVersion> SubscriptionVersion { get; set; }
-        public DbSet<SubscriptionVersionOrder> SubscriptionVersionOrder { get; set; }
+        //public DbSet<OrderAction> OrderAction { get; set; }
+        //public DbSet<PadDebit> PadDebit { get; set; }
+        //public DbSet<PaymentRun> PaymentRun { get; set; }
+        //public DbSet<PaymentRunSummary> PaymentRunSummary { get; set; }
+        //public DbSet<PaymentSchedule> PaymentSchedule { get; set; }
+        //public DbSet<PaymentScheduleItemLink> PaymentScheduleItemLink { get; set; }
+        //public DbSet<PaymentScheduleItemPatch> PaymentScheduleItemPatch { get; set; }
+        //public DbSet<PaymentScheduleItemPayments> PaymentScheduleItemPayments { get; set; }
+        //public DbSet<PaymentScheduleItemPaymentOption> PaymentScheduleItemPaymentOption { get; set; }
+        //public DbSet<PaymentScheduleItemRetry> PaymentScheduleItemRetry { get; set; }
+        //public DbSet<PaymentScheduleItemRetryBulk> PaymentScheduleItemRetryBulk { get; set; }
+        //public DbSet<PaymentScheduleItemUnlink> PaymentScheduleItemUnlink { get; set; }
+        //public DbSet<PaypalExpress> PaypalExpress { get; set; }
+        //public DbSet<PaypalExpressNative> PaypalExpressNative { get; set; }
+        //public DbSet<PrepaidBalance> PrepaidBalance { get; set; }
+        //public DbSet<Prepayment> Prepayment { get; set; }
+        //public DbSet<ProcessingOptions> ProcessingOptions { get; set; }
+        //public DbSet<QueryRun> QueryRun { get; set; }
+        //public DbSet<QueryRunFile> QueryRunFile { get; set; }
+        //public DbSet<RefundAppliedToItem> RefundAppliedToItem { get; set; }
+        //public DbSet<RefundsAppliedTo> RefundsAppliedTo { get; set; }
+        //public DbSet<RefundStateTransitions> RefundStateTransitions { get; set; }
+        //public DbSet<ResumeSubscription> ResumeSubscription { get; set; }
+        //public DbSet<Revenue> Revenue { get; set; }
+        //public DbSet<SepaDebit> SepaDebit { get; set; }
+        //public DbSet<StartOn> StartOn { get; set; }
+        //public DbSet<StateTransitions> StateTransitions { get; set; }
+        //public DbSet<SubscriptionItemDrawdownField> SubscriptionItemDrawdownField { get; set; }
+        //public DbSet<SubscriptionItemPrepaymentField> SubscriptionItemPrepaymentField { get; set; }
+        //public DbSet<SubscriptionReplacePlan> SubscriptionReplacePlan { get; set; }
+        //public DbSet<SubscriptionUpdatePlanPatchResponse> SubscriptionUpdatePlanPatchResponse { get; set; }
+        //public DbSet<SubscriptionVersion> SubscriptionVersion { get; set; }
+        //public DbSet<SubscriptionVersionOrder> SubscriptionVersionOrder { get; set; }
         public DbSet<Tier> Tier { get; set; }
-        public DbSet<ValidityPeriod> ValidityPeriod { get; set; }
-        public DbSet<WorkflowRun> WorkflowRun { get; set; }
-        public DbSet<WriteOff> WriteOff { get; set; }
-        public DbSet<WriteOffState> WriteOffState { get; set; }
+        //public DbSet<ValidityPeriod> ValidityPeriod { get; set; }
+        //public DbSet<WorkflowRun> WorkflowRun { get; set; }
+        //public DbSet<WriteOff> WriteOff { get; set; }
+        //public DbSet<WriteOffState> WriteOffState { get; set; }
 
         public AppDataContext(DbContextOptions<AppDataContext> options) : base(options)
         {
