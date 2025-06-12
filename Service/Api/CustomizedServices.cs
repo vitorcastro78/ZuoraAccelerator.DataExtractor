@@ -41,7 +41,7 @@ namespace Service.Api
                 };
 
             var path = $"v2/subscriptions";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -68,7 +68,7 @@ namespace Service.Api
                 };
 
             var path = $"v2/invoices";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();

@@ -51,7 +51,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateBillRunPreview");
 
             var path =$"v2/bill_run_previews";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -99,7 +99,7 @@ namespace Service
             if (billRunPreviewId == null) throw new ApiException(400, "Missing required parameter 'billRunPreviewId' when calling GetBillRunPreview");
 
             var path =$"v2/bill_run_previews/{billRunPreviewId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "bill_run_preview_id" + "}", _apiClient.ParameterToString(billRunPreviewId));
 
             var queryParams = new Dictionary<string, string>();

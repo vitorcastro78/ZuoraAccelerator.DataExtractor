@@ -60,7 +60,7 @@ namespace Service
             if (subscriptionPlanId == null) throw new ApiException(400, "Missing required parameter 'subscriptionPlanId' when calling GetSubscriptionPlan");
 
             var path = $"v2/subscription_plans/{subscriptionPlanId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "subscription_plan_id" + "}", _apiClient.ParameterToString(subscriptionPlanId));
 
             var queryParams = new Dictionary<string, string>();
@@ -98,7 +98,7 @@ namespace Service
         public SubscriptionPlanListResponse GetSubscriptionPlans(string zuoraTrackId, bool? async)
         {
             var path = $"v2/subscription_plans";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -130,7 +130,7 @@ namespace Service
         public void FillSubscriptionPlansTabled()
         {
             var path = $"v2/subscription_plans";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             string postBody = null;

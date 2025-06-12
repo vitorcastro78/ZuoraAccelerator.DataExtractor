@@ -59,7 +59,7 @@ namespace Service
             if (paymentId == null) throw new ApiException(400, "Missing required parameter 'paymentId' when calling ApplyPayment");
 
             var path =$"v2/payments/{paymentId}/apply";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentId" + "}", _apiClient.ParameterToString(paymentId));
 
             var queryParams = new Dictionary<string, string>();
@@ -112,7 +112,7 @@ namespace Service
             if (paymentId == null) throw new ApiException(400, "Missing required parameter 'paymentId' when calling CancelPayment");
 
             var path =$"v2/payments/{paymentId}/cancel";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentId" + "}", _apiClient.ParameterToString(paymentId));
 
             var queryParams = new Dictionary<string, string>();
@@ -163,7 +163,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreatePayment");
 
             var path =$"v2/payments";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -216,7 +216,7 @@ namespace Service
             if (paymentId == null) throw new ApiException(400, "Missing required parameter 'paymentId' when calling GetPayment");
 
             var path =$"v2/payments/{paymentId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentId" + "}", _apiClient.ParameterToString(paymentId));
 
             var queryParams = new Dictionary<string, string>();
@@ -263,7 +263,7 @@ namespace Service
         public PaymentListResponse GetPayments(string zuoraTrackId, bool? async)
         {
             var path =$"v2/payments";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -318,7 +318,7 @@ namespace Service
             if (paymentId == null) throw new ApiException(400, "Missing required parameter 'paymentId' when calling UnapplyPayment");
 
             var path =$"v2/payments/{paymentId}/unapply";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentId" + "}", _apiClient.ParameterToString(paymentId));
 
             var queryParams = new Dictionary<string, string>();
@@ -374,7 +374,7 @@ namespace Service
             if (paymentId == null) throw new ApiException(400, "Missing required parameter 'paymentId' when calling UpdatePayment");
 
             var path =$"v2/payments/{paymentId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentId" + "}", _apiClient.ParameterToString(paymentId));
 
             var queryParams = new Dictionary<string, string>();

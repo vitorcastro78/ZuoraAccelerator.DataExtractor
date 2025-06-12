@@ -58,7 +58,7 @@ namespace Service
         public SubscriptionItemListResponse GetSubscriptionItems(string zuoraTrackId, bool? async)
         {
             var path =$"v2/subscription_items";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();

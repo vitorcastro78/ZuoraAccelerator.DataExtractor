@@ -17,6 +17,105 @@ using ZIP2GO.Repository.Models;
 
 namespace Service.Client
 {
+    public static class ObjectMapper
+    {
+        public static T MapTo<T>(object source) where T : new()
+        {
+            if (source == null) return default(T);
+
+            var destination = new T();
+            MapValues(source, destination);
+            return destination;
+        }
+
+        public static void MapTo<T>(object source, T destination)
+        {
+            if (source == null || destination == null) return;
+            MapValues(source, destination);
+        }
+
+        private static object ConvertValue(object value, Type targetType)
+        {
+            if (value == null) return null;
+
+            var targetUnderlyingType = Nullable.GetUnderlyingType(targetType) ?? targetType;
+
+            if (targetUnderlyingType == value.GetType())
+                return value;
+
+            try
+            {
+                return Convert.ChangeType(value, targetUnderlyingType);
+            }
+            catch
+            {
+                return value;
+            }
+        }
+
+        private static bool IsCompatibleType(Type sourceType, Type targetType)
+        {
+            if (sourceType == targetType) return true;
+            if (targetType.IsAssignableFrom(sourceType)) return true;
+
+            // Verificar tipos nullable
+            var targetUnderlyingType = Nullable.GetUnderlyingType(targetType);
+            var sourceUnderlyingType = Nullable.GetUnderlyingType(sourceType);
+
+            if (targetUnderlyingType != null && sourceUnderlyingType != null)
+                return targetUnderlyingType == sourceUnderlyingType;
+
+            if (targetUnderlyingType != null)
+                return targetUnderlyingType == sourceType;
+
+            if (sourceUnderlyingType != null)
+                return sourceUnderlyingType == targetType;
+
+            return false;
+        }
+
+        private static void MapValues(object source, object destination)
+        {
+            var sourceType = source.GetType();
+            var destinationType = destination.GetType();
+
+            var sourceProperties = sourceType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(p => p.CanRead);
+
+            var destinationProperties = destinationType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(p => p.CanWrite)
+                .ToDictionary(p => p.Name, p => p);
+
+            foreach (var sourceProp in sourceProperties)
+            {
+                if (destinationProperties.TryGetValue(sourceProp.Name, out var destProp))
+                {
+                    if (sourceProp.Name.Contains("Id"))
+                    {
+                        // If the property is an ID, we can skip the mapping if the value is null
+                        var value = sourceProp.GetValue(source);
+                        var guidId = new Guid();
+                        if (value != null && Guid.TryParse(value.ToString(), out guidId))
+                        {
+                            //var convertedValue = ConvertValue(value, destProp.PropertyType);
+                            destProp.SetValue(destination, guidId);
+                        }
+                    }
+
+                    if (IsCompatibleType(sourceProp.PropertyType, destProp.PropertyType))
+                    {
+                        var value = sourceProp.GetValue(source);
+                        if (value != null)
+                        {
+                            var convertedValue = ConvertValue(value, destProp.PropertyType);
+                            destProp.SetValue(destination, convertedValue);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// API client is mainly responible for making the HTTP call to the API backend.
     /// </summary>
@@ -66,9 +165,9 @@ namespace Service.Client
             }
         }
 
-        public int Counter { get; set; }
-
         public string BasePath { get; set; }
+
+        public int Counter { get; set; }
 
         public Dictionary<string, string> DefaultHeader
         {
@@ -76,6 +175,38 @@ namespace Service.Client
         }
 
         public RestClient RestClient { get; set; }
+
+        /// <summary>
+        /// Add cursor parameter to the query string.
+        /// </summary>
+        /// <param name="paramtrs"></param>
+        /// <returns></returns>
+        public string AddCursorParameter(Dictionary<string, string> paramtrs)
+        {
+            var parameters = new List<string>();
+            if (paramtrs.Where(f => f.Key.Contains("cursor")).Any())
+            {
+                parameters = paramtrs
+                .Where(f => f.Key.Contains("cursor"))
+                .Select(f => f.Value)
+                .FirstOrDefault()
+                .Split(",")
+                .ToList();
+            }
+
+            //expand%5B%5D=account.bill_to&expand%5B%5D=account.sold_to&expand%5B%5D=subscription_plans.subscription_items
+            var expand = new StringBuilder();
+
+            if (parameters == null || parameters.Count == 0)
+                return string.Empty;
+
+            foreach (var item in parameters)
+            {
+                expand.Append($"cursor={item}");
+            }
+
+            return expand.ToString();
+        }
 
         public void AddDefaultHeader(string key, string value)
         {
@@ -189,38 +320,6 @@ namespace Service.Client
         }
 
         /// <summary>
-        /// Add cursor parameter to the query string.
-        /// </summary>
-        /// <param name="paramtrs"></param>
-        /// <returns></returns>
-        public string AddCursorParameter(Dictionary<string, string> paramtrs)
-        {
-            var parameters = new List<string>();
-            if (paramtrs.Where(f => f.Key.Contains("cursor")).Any())
-            {
-                parameters = paramtrs
-                .Where(f => f.Key.Contains("cursor"))
-                .Select(f => f.Value)
-                .FirstOrDefault()
-                .Split(",")
-                .ToList();
-            }
-
-            //expand%5B%5D=account.bill_to&expand%5B%5D=account.sold_to&expand%5B%5D=subscription_plans.subscription_items
-            var expand = new StringBuilder();
-
-            if (parameters == null || parameters.Count == 0)
-                return string.Empty;
-
-            foreach (var item in parameters)
-            {
-                expand.Append($"cursor={item}");
-            }
-
-            return expand.ToString();
-        }
-
-        /// <summary>
         /// Encode string in base64 format.
         /// </summary>
         /// <param name="text">string to be encoded.</param>
@@ -229,42 +328,6 @@ namespace Service.Client
         {
             var textByte = System.Text.Encoding.UTF8.GetBytes(text);
             return System.Convert.ToBase64String(textByte);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="queryParams"></param>
-        /// <returns></returns>
-        private string BuildParameters(Dictionary<string, string> queryParams)
-        {
-            string path = string.Empty;
-
-            if (queryParams.Any())
-            {
-                path += "?";
-            }
-            if (queryParams.Where(f => f.Key.Contains("expand")).Any())
-            {
-                path += AddExpandParameter(queryParams);
-            }
-            if (queryParams.Where(f => f.Key.Contains("filter")).Any())
-            {
-                path += "&";
-                path += AddFilterParameter(queryParams);
-            }
-            if (queryParams.Where(f => f.Key.Contains("page_size")).Any())
-            {
-                path += "&";
-                path += AddPageSizeParameter(queryParams);
-            }
-            if (queryParams.Where(f => f.Key.Contains("cursor")).Any())
-            {
-                path += "&";
-                path += AddCursorParameter(queryParams);
-            }
-
-            return path;
         }
 
         public RestResponse CallApi<T>(string pathRoute, RestSharp.Method method, Dictionary<string, string>? queryParams, string postBody, bool? async = true)
@@ -319,17 +382,6 @@ namespace Service.Client
         }
 
         /// <summary>
-        /// Dynamically cast the object into target type.
-        /// </summary>
-        /// <param name="fromObject">Object to be casted</param>
-        /// <param name="toObject">Target type</param>
-        /// <returns>Casted object</returns>
-        private Object ConvertType(Object fromObject, Type toObject)
-        {
-            return Convert.ChangeType(fromObject, toObject);
-        }
-
-        /// <summary>
         /// Deserialize the JSON strireturn _apiClient.ExecuteRequest<ProductListResponse>(path, queryParams, postBody);ng into a proper object.
         /// </summary>
         /// <param name="content">HTTP body (e.g. string, JSON).</param>
@@ -373,8 +425,6 @@ namespace Service.Client
 
             // at this point, it must be a model (json)
 
-
-
             try
             {
                 return JsonConvert.DeserializeObject(content, type);
@@ -386,15 +436,53 @@ namespace Service.Client
         }
 
         /// <summary>
-        /// Escape string (url-encoded).
+        /// Execute a request to the API and fill the persistent table with the response data.
         /// </summary>
-        /// <param name="str">string to be escaped.</param>
-        /// <returns>Escaped string.</returns>
-        private string EscapeString(string str)
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path"></param>
+        /// <param name="queryParams"></param>
+        /// <param name="postBody"></param>
+        /// <param name="NoResponse"></param>
+        /// <exception cref="ApiException"></exception>
+        private void ExecuteRequest<T>(string path, Dictionary<string, string> queryParams, string postBody, bool NoResponse)
         {
-            return HttpUtility.UrlEncode(str);
+            queryParams.Add("page_size", ParameterToString(95));
+
+            var response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
+            var responseObject = (dynamic)Deserialize(response.Content, typeof(T));
+
+            if (response.IsSuccessful && !string.IsNullOrEmpty(responseObject.NextPage))
+            {
+                queryParams.Add("cursor", ParameterToString(responseObject.NextPage));
+                int counter = 0;
+                while (!string.IsNullOrEmpty(responseObject.NextPage))
+                {
+                    // query parameter
+                    queryParams["cursor"] = responseObject.NextPage;
+                    response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
+                    var contentResponse = (dynamic)Deserialize(response.Content, typeof(T));
+                    FillCache(contentResponse, out counter);
+                    responseObject.NextPage = contentResponse.NextPage;
+                }
+
+                Counter += counter;
+
+                _logger.LogInformation($"Total items processed: {Counter} for {typeof(T).Name}");
+            }
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException((int)response.StatusCode, "Error calling GetAccounts: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException((int)response.StatusCode, "Error calling GetAccounts: " + response.ErrorMessage, response.ErrorMessage);
         }
 
+        /// <summary>
+        /// Fill the persistent table with the response data from the API.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="path"></param>
+        /// <param name="queryParams"></param>
+        /// <param name="postBody"></param>
+        /// <exception cref="ApiException"></exception>
         public void FillPersistentTable<T>(string path, Dictionary<string, string> queryParams, string postBody)
         {
             queryParams.Add("page_size", ParameterToString(95));
@@ -428,88 +516,11 @@ namespace Service.Client
                 throw new ApiException((int)response.StatusCode, $"Error calling {path}: " + response.ErrorMessage, response.ErrorMessage);
         }
 
-        public T ExecuteRequest<T>(string path, Dictionary<string, string> queryParams, string postBody)
-        {
-            queryParams.Add("page_size", ParameterToString(95));
-
-            var response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
-            var responseObject = (dynamic)Deserialize(response.Content, typeof(T));
-
-            if (response.IsSuccessful && !string.IsNullOrEmpty(responseObject.NextPage))
-            {
-                queryParams.Add("cursor", ParameterToString(responseObject.NextPage));
-                int counter = 0;
-                while (!string.IsNullOrEmpty(responseObject.NextPage))
-                {
-                    // query parameter
-                    queryParams["cursor"] = responseObject.NextPage;
-                    response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
-                    var contentResponse = (dynamic)Deserialize(response.Content, typeof(T));
-                    responseObject.Data.AddRange(contentResponse.Data);
-                    responseObject.NextPage = contentResponse.NextPage;
-                    FillCache(contentResponse, out counter);
-
-                }
-
-                Counter += counter;
-
-                _logger.LogInformation($"Total items processed: {Counter} for {typeof(T).Name}");
-            }
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException((int)response.StatusCode, $"Error calling {path}: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException((int)response.StatusCode, $"Error calling {path}: " + response.ErrorMessage, response.ErrorMessage);
-
-            return responseObject;
-        }
-
-        public void ExecuteRequest<T>(string path, Dictionary<string, string> queryParams, string postBody, bool NoResponse)
-        {
-            queryParams.Add("page_size", ParameterToString(95));
-
-            var response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
-            var responseObject = (dynamic)Deserialize(response.Content, typeof(T));
-
-            if (response.IsSuccessful && !string.IsNullOrEmpty(responseObject.NextPage))
-            {
-                queryParams.Add("cursor", ParameterToString(responseObject.NextPage));
-                int counter = 0;
-                while (!string.IsNullOrEmpty(responseObject.NextPage))
-                {
-                    // query parameter
-                    queryParams["cursor"] = responseObject.NextPage;
-                    response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
-                    var contentResponse = (dynamic)Deserialize(response.Content, typeof(T));
-                    FillCache(contentResponse, out counter);
-                    responseObject.NextPage = contentResponse.NextPage;
-                }
-
-                Counter += counter;
-
-                _logger.LogInformation($"Total items processed: {Counter} for {typeof(T).Name}");
-            }
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException((int)response.StatusCode, "Error calling GetAccounts: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException((int)response.StatusCode, "Error calling GetAccounts: " + response.ErrorMessage, response.ErrorMessage);
-        }
-
         /// <summary>
-        /// Get the API key with prefix.
+        /// Get the Zuora token for authentication.
         /// </summary>
-        /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
-        /// <returns>API key with prefix.</returns>
-        public string GetApiKeyWithPrefix(string apiKeyIdentifier)
-        {
-            var apiKeyValue = "";
-            Configuration.ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
-            var apiKeyPrefix = "";
-            if (Configuration.ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out apiKeyPrefix))
-                return apiKeyPrefix + " " + apiKeyValue;
-            else
-                return apiKeyValue;
-        }
-
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public string GetToken()
         {
             var token = new ZuoraToken();
@@ -534,7 +545,6 @@ namespace Service.Client
             httpClient.BaseAddress = new Uri(_options.BaseUrl);
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
 
             var result = httpClient.PostAsync($"{_options.BaseUrl}oauth/token", new FormUrlEncodedContent(nameValueCollection)).Result;
             if (!result.IsSuccessStatusCode)
@@ -595,31 +605,62 @@ namespace Service.Client
         }
 
         /// <summary>
-        /// Update parameters based on authentication.
+        ///
         /// </summary>
-        /// <param name="queryParams">Query parameters.</param>
-        /// <param name="headerParams">Header parameters.</param>
-        /// <param name="authSettings">Authentication settings.</param>
-        public void UpdateParamsForAuth(Dictionary<string, string> queryParams, Dictionary<string, string> headerParams, string[] authSettings)
+        /// <param name="queryParams"></param>
+        /// <returns></returns>
+        private string BuildParameters(Dictionary<string, string> queryParams)
         {
-            if (authSettings == null || authSettings.Length == 0)
-                return;
+            string path = string.Empty;
 
-            foreach (string auth in authSettings)
+            if (queryParams.Any())
             {
-                // determine which one to use
-                switch (auth)
-                {
-                    case "bearerAuth":
-
-                        break;
-
-                    default:
-                        //TODO show warning about security definition not found
-                        break;
-                }
+                path += "?";
             }
+            if (queryParams.Where(f => f.Key.Contains("expand")).Any())
+            {
+                path += AddExpandParameter(queryParams);
+            }
+            if (queryParams.Where(f => f.Key.Contains("filter")).Any())
+            {
+                path += "&";
+                path += AddFilterParameter(queryParams);
+            }
+            if (queryParams.Where(f => f.Key.Contains("page_size")).Any())
+            {
+                path += "&";
+                path += AddPageSizeParameter(queryParams);
+            }
+            if (queryParams.Where(f => f.Key.Contains("cursor")).Any())
+            {
+                path += "&";
+                path += AddCursorParameter(queryParams);
+            }
+
+            return path;
         }
+
+        /// <summary>
+        /// Dynamically cast the object into target type.
+        /// </summary>
+        /// <param name="fromObject">Object to be casted</param>
+        /// <param name="toObject">Target type</param>
+        /// <returns>Casted object</returns>
+        private Object ConvertType(Object fromObject, Type toObject)
+        {
+            return Convert.ChangeType(fromObject, toObject);
+        }
+
+        /// <summary>
+        /// Escape string (url-encoded).
+        /// </summary>
+        /// <param name="str">string to be escaped.</param>
+        /// <returns>Escaped string.</returns>
+        private string EscapeString(string str)
+        {
+            return HttpUtility.UrlEncode(str);
+        }
+
         private void FillCache(dynamic resultData, out int counter)
         {
             if (resultData.Data != null)
@@ -630,7 +671,7 @@ namespace Service.Client
                     dynamic result = null;
                     var propriedadeDbSet = _context.GetType()
                             .GetProperties()
-                            .FirstOrDefault(p => p.Name.Equals(item.GetType().Name, StringComparison.OrdinalIgnoreCase) && 
+                            .FirstOrDefault(p => p.Name.Equals(item.GetType().Name, StringComparison.OrdinalIgnoreCase) &&
                             p.PropertyType.IsGenericType &&
                             p.PropertyType.GetGenericTypeDefinition() == typeof(DbSet<>));
 
@@ -651,6 +692,7 @@ namespace Service.Client
                             }
 
                             break;
+
                         case "Address":
 
                             mapped = ObjectMapper.MapTo<Address>(item);
@@ -666,6 +708,7 @@ namespace Service.Client
                             }
 
                             break;
+
                         case "BillingDocumentItem":
 
                             mapped = ObjectMapper.MapTo<BillingDocumentItem>(item);
@@ -681,6 +724,7 @@ namespace Service.Client
                             }
 
                             break;
+
                         case "BillingDocument":
                             mapped = ObjectMapper.MapTo<BillingDocument>(item);
                             result = _context.BillingDocument.Find(mapped.Id);
@@ -694,6 +738,7 @@ namespace Service.Client
                                 _context.BillingDocument.Add(mapped);
                             }
                             break;
+
                         case "Invoice":
                             mapped = ObjectMapper.MapTo<Invoice>(item);
                             result = _context.Invoice.Find(mapped.Id);
@@ -707,6 +752,7 @@ namespace Service.Client
                                 _context.Invoice.Add(mapped);
                             }
                             break;
+
                         case "InvoiceItem":
                             mapped = ObjectMapper.MapTo<InvoiceItem>(item);
                             result = _context.InvoiceItem.Find(mapped.Id);
@@ -720,6 +766,7 @@ namespace Service.Client
                                 _context.InvoiceItem.Add(mapped);
                             }
                             break;
+
                         case "CreditMemo":
                             mapped = ObjectMapper.MapTo<CreditMemo>(item);
                             result = _context.CreditMemo.Find(mapped.Id);
@@ -733,6 +780,7 @@ namespace Service.Client
                                 _context.CreditMemo.Add(mapped);
                             }
                             break;
+
                         case "CreditMemoItem":
                             mapped = ObjectMapper.MapTo<CreditMemoItem>(item);
                             result = _context.CreditMemoItem.Find(mapped.Id);
@@ -746,6 +794,7 @@ namespace Service.Client
                                 _context.CreditMemoItem.Add(mapped);
                             }
                             break;
+
                         case "DebitMemo":
                             mapped = ObjectMapper.MapTo<DebitMemo>(item);
                             result = _context.DebitMemo.Find(mapped.Id);
@@ -759,6 +808,7 @@ namespace Service.Client
                                 _context.DebitMemo.Add(mapped);
                             }
                             break;
+
                         case "Payment":
                             mapped = ObjectMapper.MapTo<Payment>(item);
                             result = _context.Payment.Find(mapped.Id);
@@ -772,6 +822,7 @@ namespace Service.Client
                                 _context.Payment.Add(mapped);
                             }
                             break;
+
                         case "PaymentMethod":
                             mapped = ObjectMapper.MapTo<PaymentMethod>(item);
                             result = _context.PaymentMethod.Find(mapped.Id);
@@ -785,6 +836,7 @@ namespace Service.Client
                                 _context.PaymentMethod.Add(mapped);
                             }
                             break;
+
                         case "Refund":
                             mapped = ObjectMapper.MapTo<CreditMemoItem>(item);
                             result = _context.CreditMemoItem.Find(mapped.Id);
@@ -798,6 +850,7 @@ namespace Service.Client
                                 _context.CreditMemoItem.Add(mapped);
                             }
                             break;
+
                         case "Subscription":
                             mapped = ObjectMapper.MapTo<Subscription>(item);
                             result = _context.Subscription.Find(mapped.Id);
@@ -811,6 +864,7 @@ namespace Service.Client
                                 _context.Subscription.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionAddPlan":
                             mapped = ObjectMapper.MapTo<SubscriptionAddPlan>(item);
                             result = _context.SubscriptionAddPlan.Find(mapped.Id);
@@ -824,6 +878,7 @@ namespace Service.Client
                                 _context.SubscriptionAddPlan.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionCancel":
                             mapped = ObjectMapper.MapTo<SubscriptionCancel>(item);
                             result = _context.SubscriptionCancel.Find(mapped.Id);
@@ -837,6 +892,7 @@ namespace Service.Client
                                 _context.SubscriptionCancel.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionItem":
                             mapped = ObjectMapper.MapTo<SubscriptionItem>(item);
                             result = _context.SubscriptionItem.Find(mapped.Id);
@@ -850,6 +906,7 @@ namespace Service.Client
                                 _context.SubscriptionItem.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionPause":
                             mapped = ObjectMapper.MapTo<SubscriptionPause>(item);
                             result = _context.SubscriptionPause.Find(mapped.Id);
@@ -863,6 +920,7 @@ namespace Service.Client
                                 _context.SubscriptionPause.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionPlan":
                             mapped = ObjectMapper.MapTo<SubscriptionPlan>(item);
                             result = _context.SubscriptionPlan.Find(mapped.Id);
@@ -876,6 +934,7 @@ namespace Service.Client
                                 _context.SubscriptionPlan.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionRemovePlan":
                             mapped = ObjectMapper.MapTo<SubscriptionRemovePlan>(item);
                             result = _context.SubscriptionRemovePlan.Find(mapped.Id);
@@ -889,6 +948,7 @@ namespace Service.Client
                                 _context.SubscriptionRemovePlan.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionRenew":
                             mapped = ObjectMapper.MapTo<SubscriptionRenew>(item);
                             result = _context.SubscriptionRenew.Find(mapped.Id);
@@ -902,6 +962,7 @@ namespace Service.Client
                                 _context.SubscriptionRenew.Add(mapped);
                             }
                             break;
+
                         case "SubscriptionTerm":
                             mapped = ObjectMapper.MapTo<SubscriptionTerm>(item);
                             result = _context.SubscriptionTerm.Find(mapped.Id);
@@ -915,6 +976,7 @@ namespace Service.Client
                                 _context.SubscriptionTerm.Add(mapped);
                             }
                             break;
+
                         case "TaxCertificate":
                             mapped = ObjectMapper.MapTo<TaxCertificate>(item);
                             result = _context.TaxCertificate.Find(mapped.Id);
@@ -928,6 +990,7 @@ namespace Service.Client
                                 _context.TaxCertificate.Add(mapped);
                             }
                             break;
+
                         case "TaxIdentifier":
                             mapped = ObjectMapper.MapTo<TaxIdentifier>(item);
                             result = _context.TaxIdentifier.Find(mapped.Id);
@@ -941,6 +1004,7 @@ namespace Service.Client
                                 _context.TaxIdentifier.Add(mapped);
                             }
                             break;
+
                         case "TaxationItem":
                             mapped = ObjectMapper.MapTo<TaxationItem>(item);
                             result = _context.TaxationItem.Find(mapped.Id);
@@ -954,6 +1018,7 @@ namespace Service.Client
                                 _context.TaxationItem.Add(mapped);
                             }
                             break;
+
                         case "Product":
                             mapped = ObjectMapper.MapTo<Product>(item);
                             result = _context.Product.Find(mapped.Id);
@@ -967,6 +1032,7 @@ namespace Service.Client
                                 _context.Product.Add(mapped);
                             }
                             break;
+
                         case "Plan":
                             mapped = ObjectMapper.MapTo<Plan>(item);
                             result = _context.Plan.Find(mapped.Id);
@@ -980,6 +1046,7 @@ namespace Service.Client
                                 _context.Plan.Add(mapped);
                             }
                             break;
+
                         case "Price":
                             mapped = ObjectMapper.MapTo<Price>(item);
                             result = _context.Price.Find(mapped.Id);
@@ -1007,6 +1074,7 @@ namespace Service.Client
                                 _context.ProductPrice.Add(mapped);
                             }
                             break;
+
                         case "ProductPlan":
                             mapped = ObjectMapper.MapTo<ProductPlan>(item);
                             result = _context.ProductPlan.Find(mapped.Id);
@@ -1020,6 +1088,7 @@ namespace Service.Client
                                 _context.ProductPlan.Add(mapped);
                             }
                             break;
+
                         case "ProductTier":
                             mapped = ObjectMapper.MapTo<ProductTier>(item);
                             result = _context.ProductTier.Find(mapped.Id);
@@ -1075,6 +1144,7 @@ namespace Service.Client
                                 _context.DebitMemoItem.Add(mapped);
                             }
                             break;
+
                         default:
                             break;
                     }
@@ -1089,6 +1159,7 @@ namespace Service.Client
             }
             counter = Counter;
         }
+
         private string GetRoute(Uri url)
         {
             Uri uri = url;
@@ -1104,6 +1175,7 @@ namespace Service.Client
             }
             return routeWithoutId;
         }
+
         private object InserirEntidadeDinamica(string nomeTabela, object entidade)
         {
             var propriedadeDbSet = _context.GetType()
@@ -1123,106 +1195,5 @@ namespace Service.Client
 
             return entry;
         }
-
     }
-
-    public static class ObjectMapper
-    {
-        public static T MapTo<T>(object source) where T : new()
-        {
-            if (source == null) return default(T);
-
-            var destination = new T();
-            MapValues(source, destination);
-            return destination;
-        }
-
-        public static void MapTo<T>(object source, T destination)
-        {
-            if (source == null || destination == null) return;
-            MapValues(source, destination);
-        }
-
-        private static void MapValues(object source, object destination)
-        {
-            var sourceType = source.GetType();
-            var destinationType = destination.GetType();
-
-            var sourceProperties = sourceType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                .Where(p => p.CanRead);
-
-            var destinationProperties = destinationType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                .Where(p => p.CanWrite)
-                .ToDictionary(p => p.Name, p => p);
-
-            foreach (var sourceProp in sourceProperties)
-            {
-                if (destinationProperties.TryGetValue(sourceProp.Name, out var destProp))
-                {
-                    if (sourceProp.Name.Contains("Id"))
-                    {
-                        // If the property is an ID, we can skip the mapping if the value is null
-                        var value = sourceProp.GetValue(source);
-                        var guidId = new Guid();
-                        if (value != null && Guid.TryParse(value.ToString(), out guidId))
-                        {
-                            //var convertedValue = ConvertValue(value, destProp.PropertyType);
-                            destProp.SetValue(destination, guidId);
-                        }
-                    }
-
-                    if (IsCompatibleType(sourceProp.PropertyType, destProp.PropertyType))
-                    {
-                        var value = sourceProp.GetValue(source);
-                        if (value != null)
-                        {
-                            var convertedValue = ConvertValue(value, destProp.PropertyType);
-                            destProp.SetValue(destination, convertedValue);
-                        }
-                    }
-                }
-            }
-        }
-
-        private static bool IsCompatibleType(Type sourceType, Type targetType)
-        {
-            if (sourceType == targetType) return true;
-            if (targetType.IsAssignableFrom(sourceType)) return true;
-
-            // Verificar tipos nullable
-            var targetUnderlyingType = Nullable.GetUnderlyingType(targetType);
-            var sourceUnderlyingType = Nullable.GetUnderlyingType(sourceType);
-
-            if (targetUnderlyingType != null && sourceUnderlyingType != null)
-                return targetUnderlyingType == sourceUnderlyingType;
-
-            if (targetUnderlyingType != null)
-                return targetUnderlyingType == sourceType;
-
-            if (sourceUnderlyingType != null)
-                return sourceUnderlyingType == targetType;
-
-            return false;
-        }
-
-        private static object ConvertValue(object value, Type targetType)
-        {
-            if (value == null) return null;
-
-            var targetUnderlyingType = Nullable.GetUnderlyingType(targetType) ?? targetType;
-
-            if (targetUnderlyingType == value.GetType())
-                return value;
-
-            try
-            {
-                return Convert.ChangeType(value, targetUnderlyingType);
-            }
-            catch
-            {
-                return value;
-            }
-        }
-    }
-
 }

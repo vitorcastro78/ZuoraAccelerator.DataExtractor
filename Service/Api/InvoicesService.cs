@@ -42,7 +42,7 @@ namespace Service
         public void FillInvoicesItemsTable(string zuoraTrackId, bool async)
         {
             var path = $"v2/invoice_items";
-            path = path.Replace("{format}", "json");
+            
 
             filter = new List<string>
                 {
@@ -70,7 +70,7 @@ namespace Service
         public void FillInvoicesTable(string zuoraTrackId, bool async)
         {
             var path = $"v2/invoices";
-            path = path.Replace("{format}", "json");
+            
 
             filter = new List<string>
                 {

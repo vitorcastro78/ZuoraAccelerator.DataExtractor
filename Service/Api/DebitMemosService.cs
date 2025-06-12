@@ -46,7 +46,7 @@ namespace Service
         public DebitMemoItemListResponse GetDebitMemoItems(string zuoraTrackId, bool? async)
         {
             var path = $"v2/debit_memo_items";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -74,7 +74,7 @@ namespace Service
         public DebitMemoListResponse GetDebitMemos(string zuoraTrackId, bool? async)
         {
             var path = $"v2/debit_memos";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();

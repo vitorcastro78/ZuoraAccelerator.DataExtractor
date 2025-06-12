@@ -54,7 +54,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateTaxationItem");
 
             var path =$"v2/taxation_items";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -139,7 +139,7 @@ namespace Service
             if (taxationItemId == null) throw new ApiException(400, "Missing required parameter 'taxationItemId' when calling GetTaxationItem");
 
             var path =$"v2/taxation_items/{taxationItemId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "taxationItemId" + "}", _apiClient.ParameterToString(taxationItemId));
 
             var queryParams = new Dictionary<string, string>();
@@ -182,7 +182,7 @@ namespace Service
         public TaxationItemListResponse GetTaxationItems(string zuoraTrackId, bool? async)
         {
             var path =$"v2/taxation_items";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -234,7 +234,7 @@ namespace Service
             if (taxationItemId == null) throw new ApiException(400, "Missing required parameter 'taxationItemId' when calling UpdateTaxationItem");
 
             var path =$"v2/taxation_items/{taxationItemId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "taxationItemId" + "}", _apiClient.ParameterToString(taxationItemId));
 
             var queryParams = new Dictionary<string, string>();

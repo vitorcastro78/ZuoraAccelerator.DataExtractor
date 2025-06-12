@@ -62,7 +62,7 @@ namespace Service
             if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling ActivateOrder");
 
             var path =$"v2/orders/{orderId}/activate";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "orderId" + "}", _apiClient.ParameterToString(orderId));
 
             var queryParams = new Dictionary<string, string>();
@@ -118,7 +118,7 @@ namespace Service
             if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling CancelOrder");
 
             var path =$"v2/orders/{orderId}/cancel";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "orderId" + "}", _apiClient.ParameterToString(orderId));
 
             var queryParams = new Dictionary<string, string>();
@@ -173,7 +173,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateOrder");
 
             var path =$"v2/orders";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -215,7 +215,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateOrderPreview");
 
             var path =$"v2/orders/preview";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -259,7 +259,7 @@ namespace Service
             if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling DeleteOrder");
 
             var path =$"v2/orders/{orderId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "orderId" + "}", _apiClient.ParameterToString(orderId));
 
             var queryParams = new Dictionary<string, string>();
@@ -311,7 +311,7 @@ namespace Service
             if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling GetOrder");
 
             var path =$"v2/orders/{orderId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "orderId" + "}", _apiClient.ParameterToString(orderId));
 
             var queryParams = new Dictionary<string, string>();
@@ -361,7 +361,7 @@ namespace Service
         public OrderListResponse GetOrders( string zuoraTrackId, bool? async)
         {
             var path =$"v2/orders";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();

@@ -51,7 +51,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateContact");
 
             var path =$"v2/contacts";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -137,7 +137,7 @@ namespace Service
             if (contactId == null) throw new ApiException(400, "Missing required parameter 'contactId' when calling GetContact");
 
             var path =$"v2/contacts/{contactId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "contactId" + "}", _apiClient.ParameterToString(contactId));
 
             var queryParams = new Dictionary<string, string>();
@@ -180,7 +180,7 @@ namespace Service
         public ListContactResponse GetContacts(string zuoraTrackId, bool? async)
         {
             var path =$"v2/contacts";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -226,7 +226,7 @@ namespace Service
             if (contactId == null) throw new ApiException(400, "Missing required parameter 'contactId' when calling ScrubContact");
 
             var path =$"v2/contacts/{contactId}/scrub";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "contactId" + "}", _apiClient.ParameterToString(contactId));
 
             var queryParams = new Dictionary<string, string>();
@@ -277,7 +277,7 @@ namespace Service
             if (contactId == null) throw new ApiException(400, "Missing required parameter 'contactId' when calling UpdateContact");
 
             var path =$"v2/contacts/{contactId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "contactId" + "}", _apiClient.ParameterToString(contactId));
 
             var queryParams = new Dictionary<string, string>();

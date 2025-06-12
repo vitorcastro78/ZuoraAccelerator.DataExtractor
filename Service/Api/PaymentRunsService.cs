@@ -52,7 +52,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreatePaymentRuns");
 
             var path =$"v2/payment_runs";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -95,7 +95,7 @@ namespace Service
             if (paymentRunId == null) throw new ApiException(400, "Missing required parameter 'paymentRunId' when calling DeletePaymentRuns");
 
             var path =$"v2/payment_runs/{paymentRunId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentRunId" + "}", _apiClient.ParameterToString(paymentRunId));
 
             var queryParams = new Dictionary<string, string>();
@@ -142,7 +142,7 @@ namespace Service
             if (paymentRunId == null) throw new ApiException(400, "Missing required parameter 'paymentRunId' when calling GetPaymentRun");
 
             var path =$"v2/payment_runs/{paymentRunId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentRunId" + "}", _apiClient.ParameterToString(paymentRunId));
 
             var queryParams = new Dictionary<string, string>();
@@ -187,7 +187,7 @@ namespace Service
         public PaymentRunListResponse GetPaymentRuns(string zuoraTrackId, bool? async)
         {
             var path =$"v2/payment_runs";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -242,7 +242,7 @@ namespace Service
             if (paymentRunId == null) throw new ApiException(400, "Missing required parameter 'paymentRunId' when calling UpdatePaymentRuns");
 
             var path =$"v2/payment_runs/{paymentRunId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentRunId" + "}", _apiClient.ParameterToString(paymentRunId));
 
             var queryParams = new Dictionary<string, string>();

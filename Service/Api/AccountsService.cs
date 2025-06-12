@@ -43,7 +43,7 @@ namespace Service
         public void FillAccountsTable(string zuoraTrackId, bool? async)
         {
             var path = $"v2/accounts";
-            path = path.Replace("{format}", "json");
+            
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
             
