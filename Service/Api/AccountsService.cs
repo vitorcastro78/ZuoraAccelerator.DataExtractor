@@ -42,14 +42,13 @@ namespace Service
         /// <returns>ListAccountResponse</returns>
         public void FillAccountsTable(string zuoraTrackId, bool? async)
         {
-            var path = $"v2/accounts";
-            path = path.Replace("{format}", "json");
+            var path = $"v2/accounts";         
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
             
             
 
-            //if (expand != null) queryParams.Add("expand[]", _apiClient.ParameterToString(expand)); // query parameter
+            if (expand != null) queryParams.Add("expand[]", _apiClient.ParameterToString(expand)); // query parameter
             //if (filter != null) queryParams.Add("filter[]", _apiClient.ParameterToString(filter)); // query parameter
             if (zuoraTrackId != null) headerParams.Add("zuora-track-id", _apiClient.ParameterToString(zuoraTrackId)); // header parameter
             if (async != null) headerParams.Add("async", _apiClient.ParameterToString(async)); // header parameter

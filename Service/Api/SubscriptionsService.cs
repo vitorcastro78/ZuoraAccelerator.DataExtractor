@@ -45,7 +45,7 @@ namespace Service
         public void FillSubscriptionsTable(string zuoraTrackId, bool async)
         {
             var path = $"v2/subscriptions";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();

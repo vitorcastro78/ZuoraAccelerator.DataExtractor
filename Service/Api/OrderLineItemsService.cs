@@ -52,7 +52,7 @@ namespace Service
             if (orderLineItemId == null) throw new ApiException(400, "Missing required parameter 'orderLineItemId' when calling GetOrderLineItem");
 
             var path =$"v2/order_line_items/{orderLineItemId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "orderLineItemId" + "}", _apiClient.ParameterToString(orderLineItemId));
 
             var queryParams = new Dictionary<string, string>();
@@ -103,7 +103,7 @@ namespace Service
             if (orderLineItemId == null) throw new ApiException(400, "Missing required parameter 'orderLineItemId' when calling PatchOrderLineItem");
 
             var path =$"v2/order_line_items/{orderLineItemId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "orderLineItemId" + "}", _apiClient.ParameterToString(orderLineItemId));
 
             var queryParams = new Dictionary<string, string>();

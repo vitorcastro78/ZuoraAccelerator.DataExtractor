@@ -41,7 +41,7 @@ namespace Service
         public void GetPaymentMethods(string zuoraTrackId, bool? async)
         {
             var path =$"v2/payment_methods";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             string postBody = null;

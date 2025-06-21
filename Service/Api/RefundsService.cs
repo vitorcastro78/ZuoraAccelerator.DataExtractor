@@ -110,7 +110,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateRefund");
 
             var path =$"v2/refunds";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -154,7 +154,7 @@ namespace Service
             if (refundId == null) throw new ApiException(400, "Missing required parameter 'refundId' when calling DeleteRefund");
 
             var path =$"v2/refunds/{refundId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "refundId" + "}", _apiClient.ParameterToString(refundId));
 
             var queryParams = new Dictionary<string, string>();
@@ -204,7 +204,7 @@ namespace Service
             if (refundId == null) throw new ApiException(400, "Missing required parameter 'refundId' when calling GetRefund");
 
             var path =$"v2/refunds/{refundId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "refundId" + "}", _apiClient.ParameterToString(refundId));
 
             var queryParams = new Dictionary<string, string>();
@@ -252,7 +252,7 @@ namespace Service
         public RefundListResponse GetRefunds(string zuoraTrackId, bool? async)
         {
             var path =$"v2/refunds";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -306,7 +306,7 @@ namespace Service
             if (refundId == null) throw new ApiException(400, "Missing required parameter 'refundId' when calling UpdateRefund");
 
             var path =$"v2/refunds/{refundId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "refundId" + "}", _apiClient.ParameterToString(refundId));
 
             var queryParams = new Dictionary<string, string>();

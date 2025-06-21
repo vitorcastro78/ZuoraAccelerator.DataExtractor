@@ -54,7 +54,7 @@ namespace Service
             if (customObjectType == null) throw new ApiException(400, "Missing required parameter 'customObjectType' when calling CreateCustomObject");
 
             var path = $"v2/custom_objects/{customObjectType}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "customObjectType" + "}", _apiClient.ParameterToString(customObjectType));
 
             var queryParams = new Dictionary<string, string>();
@@ -102,7 +102,7 @@ namespace Service
             if (customObjectId == null) throw new ApiException(400, "Missing required parameter 'customObjectId' when calling DeleteCustomObject");
 
             var path = $"v2/custom_objects/{customObjectType}/{customObjectId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "customObjectType" + "}", _apiClient.ParameterToString(customObjectType));
             path = path.Replace("{" + "customObjectId" + "}", _apiClient.ParameterToString(customObjectId));
 
@@ -151,7 +151,7 @@ namespace Service
             if (customObjectId == null) throw new ApiException(400, "Missing required parameter 'customObjectId' when calling GetCustomObject");
 
             var path = $"v2/custom_objects/{customObjectType}/{customObjectId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "customObjectType" + "}", _apiClient.ParameterToString(customObjectType));
             path = path.Replace("{" + "customObjectId" + "}", _apiClient.ParameterToString(customObjectId));
 
@@ -202,7 +202,7 @@ namespace Service
             if (customObjectType == null) throw new ApiException(400, "Missing required parameter 'customObjectType' when calling GetCustomObjects");
 
             var path = $"v2/custom_objects/{customObjectType}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "customObjectType" + "}", _apiClient.ParameterToString(customObjectType));
 
             var queryParams = new Dictionary<string, string>();
@@ -260,7 +260,7 @@ namespace Service
             if (customObjectId == null) throw new ApiException(400, "Missing required parameter 'customObjectId' when calling UpdateCustomObject");
 
             var path = $"v2/custom_objects/{customObjectType}/{customObjectId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "customObjectType" + "}", _apiClient.ParameterToString(customObjectType));
             path = path.Replace("{" + "customObjectId" + "}", _apiClient.ParameterToString(customObjectId));
 

@@ -51,7 +51,7 @@ namespace Service
             if (queryRunId == null) throw new ApiException(400, "Missing required parameter 'queryRunId' when calling GetQueryRun");
 
             var path =$"v2/query_runs/{queryRunId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "queryRunId" + "}", _apiClient.ParameterToString(queryRunId));
 
             var queryParams = new Dictionary<string, string>();

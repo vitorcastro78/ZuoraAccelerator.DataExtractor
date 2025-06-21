@@ -179,5 +179,13 @@ namespace Service.Constants
             "subscriptions.subscription_plans.plan",
             "subscription_items",
         };
+
+        public List<string>? ContactExpand = new List<string>
+        {
+            "account",
+            "subscriptions",
+            "subscriptions.subscription_plans.plan",
+            "subscription_items",
+        };
     };
 }

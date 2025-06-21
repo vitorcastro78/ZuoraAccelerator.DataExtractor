@@ -44,7 +44,7 @@ namespace Service
         public CreditMemoItemListResponse GetCreditMemoItems(string zuoraTrackId, bool? async)
         {
             var path = $"v2/credit_memo_items";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -71,7 +71,7 @@ namespace Service
         public CreditMemoListResponse GetCreditMemos(string zuoraTrackId, bool? async)
         {
             var path = $"v2/credit_memos";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();

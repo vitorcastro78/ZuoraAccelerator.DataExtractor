@@ -50,7 +50,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateFulfillmentItem");
 
             var path =$"v2/fulfillments_items";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -97,7 +97,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateFulfillmentItems");
 
             var path =$"v2/fulfillments_items/bulk_create";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -142,7 +142,7 @@ namespace Service
             if (fulfillmentItemId == null) throw new ApiException(400, "Missing required parameter 'fulfillmentItemId' when calling DeleteFulfillmentItem");
 
             var path =$"v2/fulfillments_items/{fulfillmentItemId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "fulfillmentItemId" + "}", _apiClient.ParameterToString(fulfillmentItemId));
 
             var queryParams = new Dictionary<string, string>();
@@ -187,7 +187,7 @@ namespace Service
             if (fulfillmentItemId == null) throw new ApiException(400, "Missing required parameter 'fulfillmentItemId' when calling GetFulfillmentItem");
 
             var path =$"v2/fulfillments_items/{fulfillmentItemId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "fulfillmentItemId" + "}", _apiClient.ParameterToString(fulfillmentItemId));
 
             var queryParams = new Dictionary<string, string>();
@@ -231,7 +231,7 @@ namespace Service
         public FulfillmentItemListResponse GetFulfillmentItems(string zuoraTrackId, bool? async)
         {
             var path =$"v2/fulfillments_items";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -284,7 +284,7 @@ namespace Service
             if (fulfillmentItemId == null) throw new ApiException(400, "Missing required parameter 'fulfillmentItemId' when calling UpdateFulfillmentItem");
 
             var path =$"v2/fulfillments_items/{fulfillmentItemId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "fulfillmentItemId" + "}", _apiClient.ParameterToString(fulfillmentItemId));
 
             var queryParams = new Dictionary<string, string>();

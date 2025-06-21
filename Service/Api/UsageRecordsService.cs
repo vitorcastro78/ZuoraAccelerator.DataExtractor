@@ -53,7 +53,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateUsage");
 
             var path =$"v2/usage_records";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -96,7 +96,7 @@ namespace Service
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling DeleteUsage");
 
             var path =$"v2/usage_records/{id}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "id" + "}", _apiClient.ParameterToString(id));
 
             var queryParams = new Dictionary<string, string>();
@@ -144,7 +144,7 @@ namespace Service
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling GetUsage");
 
             var path =$"v2/usage_records/{id}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "id" + "}", _apiClient.ParameterToString(id));
 
             var queryParams = new Dictionary<string, string>();
@@ -180,7 +180,7 @@ namespace Service
         public ListUsageResponse GetUsageRecords(string zuoraTrackId, bool? async)
         {
             var path =$"v2/usage_records";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -231,7 +231,7 @@ namespace Service
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UpdateUsage");
 
             var path =$"v2/usage_records/{id}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "id" + "}", _apiClient.ParameterToString(id));
 
             var queryParams = new Dictionary<string, string>();

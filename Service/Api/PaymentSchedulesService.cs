@@ -54,7 +54,7 @@ namespace Service
             if (paymentScheduleId == null) throw new ApiException(400, "Missing required parameter 'paymentScheduleId' when calling CancelPaymentSchedule");
 
             var path =$"v2/payment_schedules/{paymentScheduleId}/cancel";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentScheduleId" + "}", _apiClient.ParameterToString(paymentScheduleId));
 
             var queryParams = new Dictionary<string, string>();
@@ -103,7 +103,7 @@ namespace Service
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreatePaymentSchedule");
 
             var path =$"v2/payment_schedules";
-            path = path.Replace("{format}", "json");
+            
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
@@ -151,7 +151,7 @@ namespace Service
             if (paymentScheduleId == null) throw new ApiException(400, "Missing required parameter 'paymentScheduleId' when calling GetPaymentSchedule");
 
             var path =$"v2/payment_schedules/{paymentScheduleId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentScheduleId" + "}", _apiClient.ParameterToString(paymentScheduleId));
 
             var queryParams = new Dictionary<string, string>();
@@ -202,7 +202,7 @@ namespace Service
             if (paymentScheduleId == null) throw new ApiException(400, "Missing required parameter 'paymentScheduleId' when calling UpdatePaymentSchedule");
 
             var path =$"v2/payment_schedules/{paymentScheduleId}";
-            path = path.Replace("{format}", "json");
+            
             path = path.Replace("{" + "paymentScheduleId" + "}", _apiClient.ParameterToString(paymentScheduleId));
 
             var queryParams = new Dictionary<string, string>();
