@@ -17,7 +17,8 @@ namespace DataExtractor.WorkServices
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
+            var connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -27,18 +28,24 @@ namespace DataExtractor.WorkServices
             builder.Services.AddMemoryCache();
 
             builder.Services.AddDbContext<AppDataContext>(options =>
-                options.UseSqlite("Data Source=.\\Database\\subscription.db"));
+                options.UseSqlServer(connection, sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure(
+                        maxRetryCount: 5,
+                        maxRetryDelay: TimeSpan.FromSeconds(30),
+                        errorNumbersToAdd: null);
+                }));
 
             var app = builder.Build();
 
-            // Get memory cache instance
-            var cache = app.Services.GetRequiredService<IMemoryCache>();
+            //// Get memory cache instance
+            //var cache = app.Services.GetRequiredService<IMemoryCache>();
 
-            //Set a value in cache
-            cache.Set("key", "value", new MemoryCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(10000)
-            });
+            ////Set a value in cache
+            //cache.Set("key", "value", new MemoryCacheEntryOptions
+            //{
+            //    AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(10000)
+            //});
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

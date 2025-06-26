@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Repository.DataContext;
 using RestSharp;
+using Service.Helper;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
@@ -404,7 +405,7 @@ namespace Service.Client
             var responseObject = (dynamic)Deserialize(response.Content, typeof(T));
             var nextPage = responseObject.NextPage;
 
-            FillCache(responseObject, out counter);
+            FillDataBase(responseObject, out counter);
 
             if (response.IsSuccessful && !string.IsNullOrEmpty(responseObject.NextPage))
             {
@@ -416,7 +417,7 @@ namespace Service.Client
                     queryParams["cursor"] = nextPage;
                     response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
                     var contentResponse = Deserialize(response.Content, typeof(T));
-                    FillCache(contentResponse, out counter);
+                    FillDataBase(contentResponse, out counter);
                     nextPage = contentResponse.NextPage;
                 }
                 Counter += counter;
@@ -447,7 +448,7 @@ namespace Service.Client
                     var contentResponse = (dynamic)Deserialize(response.Content, typeof(T));
                     responseObject.Data.AddRange(contentResponse.Data);
                     responseObject.NextPage = contentResponse.NextPage;
-                    FillCache(contentResponse, out counter);
+                    FillDataBase(contentResponse, out counter);
 
                 }
 
@@ -480,7 +481,7 @@ namespace Service.Client
                     queryParams["cursor"] = responseObject.NextPage;
                     response = (RestResponse)CallApi<T>(path, Method.Get, queryParams, postBody);
                     var contentResponse = (dynamic)Deserialize(response.Content, typeof(T));
-                    FillCache(contentResponse, out counter);
+                    FillDataBase(contentResponse, out counter);
                     responseObject.NextPage = contentResponse.NextPage;
                 }
 
@@ -620,10 +621,11 @@ namespace Service.Client
                 }
             }
         }
-        private void FillCache(dynamic resultData, out int counter)
+        private void FillDataBase(dynamic resultData, out int counter)
         {
             if (resultData.Data != null)
             {
+            
                 foreach (var item in resultData.Data)
                 {
                     dynamic mapped = null;
@@ -694,6 +696,18 @@ namespace Service.Client
                                 _context.BillingDocument.Add(mapped);
                             }
                             break;
+                        case "Contact":
+                            mapped = ObjectMapper.MapTo<Contact>(item);
+                            result = _context.Contact.Find(mapped.Id);
+                            if (result != null)
+                            {
+                                _context.Contact.Update(result);
+                            }
+                            else
+                            {
+                                _context.Contact.Add(mapped);
+                            }
+                            break;
                         case "Invoice":
                             mapped = ObjectMapper.MapTo<Invoice>(item);
                             result = _context.Invoice.Find(mapped.Id);
@@ -759,6 +773,19 @@ namespace Service.Client
                                 _context.DebitMemo.Add(mapped);
                             }
                             break;
+                        case "DebitMemoItem":
+                            mapped = ObjectMapper.MapTo<DebitMemoItem>(item);
+                            result = _context.DebitMemoItem.Find(mapped.Id);
+
+                            if (result != null)
+                            {
+                                _context.DebitMemoItem.Update(result);
+                            }
+                            else
+                            {
+                                _context.DebitMemoItem.Add(mapped);
+                            }
+                            break;
                         case "Payment":
                             mapped = ObjectMapper.MapTo<Payment>(item);
                             result = _context.Payment.Find(mapped.Id);
@@ -786,16 +813,16 @@ namespace Service.Client
                             }
                             break;
                         case "Refund":
-                            mapped = ObjectMapper.MapTo<CreditMemoItem>(item);
-                            result = _context.CreditMemoItem.Find(mapped.Id);
+                            mapped = ObjectMapper.MapTo<Refund>(item);
+                            result = _context.Refund.Find(mapped.Id);
 
                             if (result != null)
                             {
-                                _context.CreditMemoItem.Update(result);
+                                _context.Refund.Update(result);
                             }
                             else
                             {
-                                _context.CreditMemoItem.Add(mapped);
+                                _context.Refund.Add(mapped);
                             }
                             break;
                         case "Subscription":
@@ -993,7 +1020,6 @@ namespace Service.Client
                                 _context.Price.Add(mapped);
                             }
                             break;
-
                         case "ProductPrice":
                             mapped = ObjectMapper.MapTo<ProductPrice>(item);
                             result = _context.ProductPrice.Find(mapped.Id);
@@ -1033,7 +1059,6 @@ namespace Service.Client
                                 _context.ProductTier.Add(mapped);
                             }
                             break;
-
                         case "Tier":
                             mapped = ObjectMapper.MapTo<Tier>(item);
                             result = _context.Tier.Find(mapped.Id);
@@ -1047,7 +1072,6 @@ namespace Service.Client
                                 _context.Tier.Add(mapped);
                             }
                             break;
-
                         case "Order":
                             mapped = ObjectMapper.MapTo<Order>(item);
                             result = _context.Order.Find(mapped.Id);
@@ -1062,19 +1086,7 @@ namespace Service.Client
                             }
                             break;
 
-                        case "DebitMemoItem":
-                            mapped = ObjectMapper.MapTo<DebitMemoItem>(item);
-                            result = _context.DebitMemoItem.Find(mapped.Id);
-
-                            if (result != null)
-                            {
-                                _context.DebitMemoItem.Update(result);
-                            }
-                            else
-                            {
-                                _context.DebitMemoItem.Add(mapped);
-                            }
-                            break;
+                       
                         default:
                             break;
                     }

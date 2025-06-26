@@ -89,7 +89,7 @@ namespace DataExtractor.WorkServices.HostedService
             {
                 var service = scope.ServiceProvider.GetRequiredService<ISubscriptionPlansService>();
 
-                service.FillSubscriptionPlansTabled();
+                service.FillSubscriptionPlansTable();
             }
 
         }

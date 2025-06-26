@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ZIP2GO.Repository.Models;
 
 namespace Repository.DataContext
@@ -166,42 +167,58 @@ namespace Repository.DataContext
         //public DbSet<WriteOffState> WriteOffState { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Account>().ToTable("Account", "DataExtractor");
-            modelBuilder.Entity<Subscription>().ToTable("Subscription", "DataExtractor");
-            modelBuilder.Entity<SubscriptionAddPlan>().ToTable("SubscriptionAddPlan", "DataExtractor");
-            modelBuilder.Entity<SubscriptionCancel>().ToTable("SubscriptionCancel", "DataExtractor");
-            modelBuilder.Entity<SubscriptionPause>().ToTable("SubscriptionPause", "DataExtractor");
-            modelBuilder.Entity<SubscriptionRemovePlan>().ToTable("SubscriptionRemovePlan", "DataExtractor");
-            modelBuilder.Entity<SubscriptionRenew>().ToTable("SubscriptionRenew", "DataExtractor");
-            modelBuilder.Entity<ArTransactions>().ToTable("ArTransactions", "DataExtractor");
-            modelBuilder.Entity<CreditMemo>().ToTable("CreditMemo", "DataExtractor");
-            modelBuilder.Entity<Invoice>().ToTable("Invoice", "DataExtractor");
-            modelBuilder.Entity<PaymentTransactions>().ToTable("PaymentTransactions", "DataExtractor");
-            modelBuilder.Entity<RefundTransactions>().ToTable("RefundTransactions", "DataExtractor");
-            modelBuilder.Entity<TransactionsState>().ToTable("TransactionsState", "DataExtractor");
-            modelBuilder.Entity<Usage>().ToTable("Usage", "DataExtractor");
-            modelBuilder.Entity<CreditMemoItem>().ToTable("CreditMemoItem", "DataExtractor");
-            modelBuilder.Entity<InvoiceItem>().ToTable("InvoiceItem", "DataExtractor");
-            modelBuilder.Entity<Refund>().ToTable("Refund", "DataExtractor");
-            modelBuilder.Entity<SubscriptionPlan>().ToTable("SubscriptionPlan", "DataExtractor");
-            modelBuilder.Entity<SubscriptionTerm>().ToTable("SubscriptionTerm", "DataExtractor");
-            modelBuilder.Entity<TaxCertificate>().ToTable("TaxCertificate", "DataExtractor");
-            modelBuilder.Entity<SubscriptionItem>().ToTable("SubscriptionItem", "DataExtractor");
-            modelBuilder.Entity<BillingDocument>().ToTable("BillingDocument", "DataExtractor");
-            modelBuilder.Entity<BillingDocumentSettings>().ToTable("BillingDocumentSettings", "DataExtractor");
-            modelBuilder.Entity<Contact>().ToTable("Contact", "DataExtractor");
-            modelBuilder.Entity<CustomObject>().ToTable("CustomObject", "DataExtractor");
-            modelBuilder.Entity<DebitMemo>().ToTable("DebitMemo", "DataExtractor");
-            modelBuilder.Entity<PaymentMethod>().ToTable("PaymentMethod", "DataExtractor");
-            modelBuilder.Entity<Payment>().ToTable("Payment", "DataExtractor");
-            modelBuilder.Entity<TaxIdentifier>().ToTable("TaxIdentifier", "DataExtractor");
-            modelBuilder.Entity<BillingDocumentItem>().ToTable("BillingDocumentItem", "DataExtractor");
-            modelBuilder.Entity<PaymentScheduleItem>().ToTable("PaymentScheduleItem", "DataExtractor");
-            modelBuilder.Entity<OrderItem>().ToTable("OrderLineItem", "DataExtractor");
-            modelBuilder.Entity<PaymentsAppliedTo>().ToTable("PaymentsAppliedTo", "DataExtractor");
-            modelBuilder.Entity<CreditMemoAppliedTo>().ToTable("CreditMemoAppliedTo", "DataExtractor");
-            modelBuilder.Entity<DebitMemoItem>().ToTable("DebitMemoItem", "DataExtractor");
-            modelBuilder.Entity<TaxationItem>().ToTable("TaxationItem", "DataExtractor");
+
+
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var foreignKey in entityType.GetForeignKeys())
+                {
+                    foreignKey.DeleteBehavior = DeleteBehavior.ClientSetNull;
+                }
+            }
+
+
+            base.OnModelCreating(modelBuilder);
+
+
+            // Mapear entidades para tabelas específicas no esquema "DataExtractor"
+            //modelBuilder.Entity<Address>().ToTable("Address", "DataExtractor");
+            //modelBuilder.Entity<Account>().ToTable("Account", "DataExtractor");
+            //modelBuilder.Entity<Subscription>().ToTable("Subscription", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionAddPlan>().ToTable("SubscriptionAddPlan", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionCancel>().ToTable("SubscriptionCancel", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionPause>().ToTable("SubscriptionPause", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionRemovePlan>().ToTable("SubscriptionRemovePlan", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionRenew>().ToTable("SubscriptionRenew", "DataExtractor");
+            //modelBuilder.Entity<ArTransactions>().ToTable("ArTransactions", "DataExtractor");
+            //modelBuilder.Entity<CreditMemo>().ToTable("CreditMemo", "DataExtractor");
+            //modelBuilder.Entity<Invoice>().ToTable("Invoice", "DataExtractor");
+            //modelBuilder.Entity<PaymentTransactions>().ToTable("PaymentTransactions", "DataExtractor");
+            //modelBuilder.Entity<RefundTransactions>().ToTable("RefundTransactions", "DataExtractor");
+            //modelBuilder.Entity<TransactionsState>().ToTable("TransactionsState", "DataExtractor");
+            //modelBuilder.Entity<Usage>().ToTable("Usage", "DataExtractor");
+            //modelBuilder.Entity<CreditMemoItem>().ToTable("CreditMemoItem", "DataExtractor");
+            //modelBuilder.Entity<InvoiceItem>().ToTable("InvoiceItem", "DataExtractor");
+            //modelBuilder.Entity<Refund>().ToTable("Refund", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionPlan>().ToTable("SubscriptionPlan", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionTerm>().ToTable("SubscriptionTerm", "DataExtractor");
+            //modelBuilder.Entity<TaxCertificate>().ToTable("TaxCertificate", "DataExtractor");
+            //modelBuilder.Entity<SubscriptionItem>().ToTable("SubscriptionItem", "DataExtractor");
+            //modelBuilder.Entity<BillingDocument>().ToTable("BillingDocument", "DataExtractor");
+            //modelBuilder.Entity<BillingDocumentSettings>().ToTable("BillingDocumentSettings", "DataExtractor");
+            //modelBuilder.Entity<Contact>().ToTable("Contact", "DataExtractor");
+            //modelBuilder.Entity<CustomObject>().ToTable("CustomObject", "DataExtractor");
+            //modelBuilder.Entity<DebitMemo>().ToTable("DebitMemo", "DataExtractor");
+            //modelBuilder.Entity<PaymentMethod>().ToTable("PaymentMethod", "DataExtractor");
+            //modelBuilder.Entity<Payment>().ToTable("Payment", "DataExtractor");
+            //modelBuilder.Entity<TaxIdentifier>().ToTable("TaxIdentifier", "DataExtractor");
+            //modelBuilder.Entity<BillingDocumentItem>().ToTable("BillingDocumentItem", "DataExtractor");
+            //modelBuilder.Entity<PaymentScheduleItem>().ToTable("PaymentScheduleItem", "DataExtractor");
+            //modelBuilder.Entity<OrderItem>().ToTable("OrderLineItem", "DataExtractor");
+            //modelBuilder.Entity<PaymentsAppliedTo>().ToTable("PaymentsAppliedTo", "DataExtractor");
+            //modelBuilder.Entity<CreditMemoAppliedTo>().ToTable("CreditMemoAppliedTo", "DataExtractor");
+            //modelBuilder.Entity<DebitMemoItem>().ToTable("DebitMemoItem", "DataExtractor");
+            //modelBuilder.Entity<TaxationItem>().ToTable("TaxationItem", "DataExtractor");
         }
     }
 }

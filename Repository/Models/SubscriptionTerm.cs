@@ -42,28 +42,6 @@ namespace ZIP2GO.Repository.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "renewal_term")]
         public Term RenewalTerm { get; set; }
 
-        /// <summary>
-        /// Get the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string? ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>string presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class SubscriptionTermPatchResponse {\n");
-            sb.Append("  CurrentTerm: ").Append(CurrentTerm).Append("\n");
-            sb.Append("  RenewalTerm: ").Append(RenewalTerm).Append("\n");
-            sb.Append("  AutoRenew: ").Append(AutoRenew).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+       
     }
 }
