@@ -50,7 +50,6 @@ namespace Service
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
             
-            
             string postBody = null;
 
             if (expand != null) queryParams.Add("expand[]", _apiClient.ParameterToString(expand)); // query parameter
@@ -60,7 +59,7 @@ namespace Service
 
             // make the HTTP request
             _apiClient.FillPersistentTable<BillingDocumentListResponse>(path, queryParams, postBody);
-            return new BillingDocumentListResponse();
+     
         }
 
     }

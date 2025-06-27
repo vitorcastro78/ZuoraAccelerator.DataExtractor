@@ -56,8 +56,8 @@ namespace Service
 
 
             // make the HTTP request
-            _apiClient.ExecuteRequest<BillingDocumentItemListResponse>(path, queryParams, postBody, true);
-            return new BillingDocumentItemListResponse();
+            _apiClient.FillPersistentTable<BillingDocumentItemListResponse>(path, queryParams, postBody);
+
         }
       
     }
