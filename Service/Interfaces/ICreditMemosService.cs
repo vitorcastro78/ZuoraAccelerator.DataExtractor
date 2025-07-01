@@ -4,7 +4,7 @@ namespace Service.Interfaces
 {
     public interface ICreditMemosService
     {
-        CreditMemoItemListResponse GetCreditMemoItems(string zuoraTrackId, bool? async);
-        CreditMemoListResponse GetCreditMemos(string zuoraTrackId, bool? async);
+        void FillCreditMemoItemsTable(string zuoraTrackId, bool? async);
+        void FillCreditMemoTable(string zuoraTrackId, bool? async);
     }
 }

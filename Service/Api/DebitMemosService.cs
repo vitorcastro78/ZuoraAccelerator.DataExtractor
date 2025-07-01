@@ -14,7 +14,7 @@ namespace Service
     {
         public readonly IApiClient _apiClient;
 
-        private readonly List<string> expand;
+        private List<string> expand;
 
         private List<string> filter;
 
@@ -43,25 +43,24 @@ namespace Service
         /// <param name="zuoraTrackId"></param>
         /// <param name="async"></param>
         /// <returns></returns>
-        public DebitMemoItemListResponse GetDebitMemoItems(string zuoraTrackId, bool? async)
+        public void FillDebitMemoItemsTable(string zuoraTrackId, bool? async)
         {
             var path = $"v2/debit_memo_items";
             
 
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
-
+            expand = new Expands().DebitMemoItemExpand;
 
             string postBody = null;
 
             if (expand != null) queryParams.Add("expand[]", _apiClient.ParameterToString(expand)); // query parameter
-            if (filter != null) queryParams.Add("filter[]", _apiClient.ParameterToString(filter)); // query parameter
+           // if (filter != null) queryParams.Add("filter[]", _apiClient.ParameterToString(filter)); // query parameter
             if (zuoraTrackId != null) headerParams.Add("zuora-track-id", _apiClient.ParameterToString(zuoraTrackId)); // header parameter
             if (async != null) headerParams.Add("async", _apiClient.ParameterToString(async)); // header parameter
 
             // make the HTTP request
             _apiClient.FillPersistentTable<DebitMemoItemListResponse>(path, queryParams, postBody);
-            return new DebitMemoItemListResponse();
         }
 
         /// <summary>
@@ -71,7 +70,7 @@ namespace Service
         /// <param name="zuoraTrackId"></param>
         /// <param name="async"></param>
         /// <returns></returns>
-        public DebitMemoListResponse GetDebitMemos(string zuoraTrackId, bool? async)
+        public void FillDebitMemoTable(string zuoraTrackId, bool? async)
         {
             var path = $"v2/debit_memos";
             
@@ -81,16 +80,16 @@ namespace Service
 
 
             string postBody = null;
-
+            expand = new Expands().DebitMemoExpand;
 
             if (expand != null) queryParams.Add("expand[]", _apiClient.ParameterToString(expand)); // query parameter
             if (zuoraTrackId != null) headerParams.Add("zuora-track-id", _apiClient.ParameterToString(zuoraTrackId)); // header parameter
-            if (filter != null) queryParams.Add("filter[]", _apiClient.ParameterToString(filter));
+            //if (filter != null) queryParams.Add("filter[]", _apiClient.ParameterToString(filter));
             if (async != null) headerParams.Add("async", _apiClient.ParameterToString(async)); // header parameter
 
             // make the HTTP request
             _apiClient.FillPersistentTable<DebitMemoListResponse>(path, queryParams, postBody);
-            return new DebitMemoListResponse();
+
         }
 
     }

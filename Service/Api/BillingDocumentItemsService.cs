@@ -38,7 +38,7 @@ namespace Service
         /// <param name="zuoraTrackId"></param>
         /// <param name="async"></param>
         /// <returns></returns>
-        public BillingDocumentItemListResponse GetBillingDocumentItems(string zuoraTrackId, bool? async)
+        public void FillBillingDocumentItemsTable(string zuoraTrackId, bool? async)
         {
             var path =$"v2/billing_document_items";
             

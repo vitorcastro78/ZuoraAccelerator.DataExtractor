@@ -56,6 +56,12 @@ namespace DataExtractor.WorkServices.HostedService
               
                 service.FillSubscriptionsTable(zuoraTrackId, async);
             }
+            using (var scope = _services.CreateScope())
+            {
+                var service = scope.ServiceProvider.GetRequiredService<IContactsService>();
+
+                service.FillContactsTable(zuoraTrackId, async);
+            }
 
             using (var scope = _services.CreateScope())
             {
@@ -76,8 +82,24 @@ namespace DataExtractor.WorkServices.HostedService
                 var service = scope.ServiceProvider.GetRequiredService<IInvoicesService>();
 
                 service.FillInvoicesTable(zuoraTrackId, async);
+                service.FillInvoicesItemsTable(zuoraTrackId, async);
             }
-          
+            using (var scope = _services.CreateScope())
+            {
+                var service = scope.ServiceProvider.GetRequiredService<ICreditMemosService>();
+
+                service.FillCreditMemoTable(zuoraTrackId, async);
+                service.FillCreditMemoItemsTable(zuoraTrackId, async);
+            }
+
+            using (var scope = _services.CreateScope())
+            {
+                var service = scope.ServiceProvider.GetRequiredService<IDebitMemosService>();
+
+                service.FillDebitMemoTable(zuoraTrackId, async);
+                service.FillDebitMemoItemsTable(zuoraTrackId, async);
+            }
+
             using (var scope = _services.CreateScope())
             {
                 var service = scope.ServiceProvider.GetRequiredService<IPlansService>();

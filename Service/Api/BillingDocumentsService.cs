@@ -42,7 +42,7 @@ namespace Service
         /// <param name="async">A boolean value indicating whether the operation should be performed asynchronously.  If <see
         /// langword="true"/>, the operation is executed asynchronously; otherwise, it is executed synchronously.</param>
         /// <returns>A <see cref="BillingDocumentListResponse"/> object containing the list of billing documents.</returns>
-        public BillingDocumentListResponse GetBillingDocuments(string zuoraTrackId, bool? async)
+        public void FillBillingDocumentsTable(string zuoraTrackId, bool? async)  
         {
             var path =$"v2/billing_documents";
             

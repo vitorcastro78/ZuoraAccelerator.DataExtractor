@@ -4,7 +4,8 @@ namespace Service.Interfaces
 {
     public interface IDebitMemosService
     {
-        DebitMemoItemListResponse GetDebitMemoItems(string zuoraTrackId, bool? async);
-        DebitMemoListResponse GetDebitMemos(string zuoraTrackId, bool? async);
+        void FillDebitMemoTable(string zuoraTrackId, bool? async);
+
+        void FillDebitMemoItemsTable(string zuoraTrackId, bool? async);
     }
 }
