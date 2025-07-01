@@ -68,8 +68,8 @@ namespace DataExtractor.WorkServices
         static void ConfigureHostedService(IServiceCollection services)
         {
             services.AddHostedService<AccountsHostedService>();
-            services.AddHostedService<SubscriptionsHostedService>();
-            services.AddHostedService<InvoicesHostedService>();
+            //services.AddHostedService<SubscriptionsHostedService>();
+            //services.AddHostedService<InvoicesHostedService>();
         }
 
         static void ConfigureService(IServiceCollection services)

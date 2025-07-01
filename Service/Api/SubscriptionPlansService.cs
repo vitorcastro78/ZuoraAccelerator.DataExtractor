@@ -37,17 +37,19 @@ namespace Service
         /// Fills the cache with subscription plans
         /// </summary>
         /// <returns></returns>
-        public void FillSubscriptionPlansTable()
+        public void FillSubscriptionPlansTable(string zuoraTrackId, bool? async)
         {
             var path = $"v2/subscription_plans";
             
-
+            var headerParams = new Dictionary<string, string>();
             var queryParams = new Dictionary<string, string>();
             string postBody = null;
             filter = new List<string>();
 
             if (expand.Any()) queryParams.Add("expand[]", _apiClient.ParameterToString(expand)); // query parameter
-            if (filter.Any()) queryParams.Add("filter[]", _apiClient.ParameterToString(filter)); // query parameter
+            // if (filter.Any()) queryParams.Add("filter[]", _apiClient.ParameterToString(filter)); // query parameter
+            if (zuoraTrackId != null) headerParams.Add("zuora-track-id", _apiClient.ParameterToString(zuoraTrackId)); // header parameter
+            if (async != null) headerParams.Add("async", _apiClient.ParameterToString(async)); // header parameter
 
             // make the HTTP request
             _apiClient.FillPersistentTable<SubscriptionPlanListResponse>(path, queryParams, postBody);

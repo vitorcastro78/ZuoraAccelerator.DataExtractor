@@ -111,8 +111,21 @@ namespace DataExtractor.WorkServices.HostedService
             {
                 var service = scope.ServiceProvider.GetRequiredService<ISubscriptionPlansService>();
 
-                service.FillSubscriptionPlansTable();
+                service.FillSubscriptionPlansTable(zuoraTrackId,async);
             }
+            using (var scope = _services.CreateScope())
+            {
+                var service = scope.ServiceProvider.GetRequiredService<IOrdersService>();
+
+                service.FillOrdersTable(zuoraTrackId, async);
+            }
+            using (var scope = _services.CreateScope())
+            {
+                var service = scope.ServiceProvider.GetRequiredService<ISubscriptionItemsService>();
+
+                service.FillSubscriptionItemsTable(zuoraTrackId, async);
+            }
+
 
         }
 

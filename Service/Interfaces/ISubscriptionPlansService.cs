@@ -4,7 +4,7 @@ namespace Service.Interfaces
 {
     public interface ISubscriptionPlansService
     {
-        void FillSubscriptionPlansTable();
+        void FillSubscriptionPlansTable(string zuoraTrackId, bool? async);
 
     }
 }
